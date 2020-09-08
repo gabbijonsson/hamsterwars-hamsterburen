@@ -30,4 +30,11 @@
 ---
 
 ### Level ups
-Lista över valda level ups
++ ###### Wowfaktor
+Använd CSS-animeringar eller ljudeffekter för att förhöja användarupplevelsen!
++ ###### Mer statistik
+Visa mer information på statistik-sidan. Till exempel vilka hamstrar som deltagit i minst antal strider och de senaste striderna.
++ ###### Rättvisare slumpning
+Välj bland de hamstrar som haft minst antal matcher, när appen ska slumpa fram hamstrar.
++ ###### Ladda upp bildfil
+Formuläret för att lägga till ny hamster ska kunna ladda upp riktiga bilder.
