@@ -1,6 +1,7 @@
 import React from 'react';
 import './App.css';
 import Hamsterburen from './components/HamburgerMenuBtn';
+import HamburgerMenu from './components/HamburgerMenu';
 
 function App() {
   return (
@@ -10,6 +11,7 @@ function App() {
           <h1 className="splash-title">HELLO TEAM</h1>
           <p>Hamsterburen</p>
 		  <Hamsterburen />
+		  <HamburgerMenu />
         </div>
       
     </div>

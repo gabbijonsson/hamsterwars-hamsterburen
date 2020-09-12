@@ -1,0 +1,14 @@
+.hamburger-content {
+	border: 1px solid;
+	text-align: right;
+	
+	background-color: var(--background-color-header);
+	border: none;
+}
+.hamburger-content > div {
+	padding: 1em;
+}
+
+.hamburger-content > div:hover {
+	background-color: #DED5C8;
+}
