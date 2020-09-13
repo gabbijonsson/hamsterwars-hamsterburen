@@ -1,0 +1,12 @@
+.start-header {
+	border: 1px solid;
+	width: 100vw;
+	padding: 1em;
+	text-align: center;
+	background-color: var(--background-color-header);
+	border: none;
+}
+
+.start-header h1 {
+	font-size: 4em;
+}

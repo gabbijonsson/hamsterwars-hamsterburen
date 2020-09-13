@@ -1,7 +1,8 @@
 import React from 'react';
 import './App.css';
-import Hamsterburen from './components/HamburgerMenuBtn';
-import HamburgerMenu from './components/HamburgerMenu';
+import HamburgerMenuBtn from './components/HamburgerMenuBtn';
+import StartHeader from './components/StartHeader';
+
 
 function App() {
   return (
@@ -9,9 +10,11 @@ function App() {
       
         <div className="splash-container">
           <h1 className="splash-title">HELLO TEAM</h1>
-          <p>Hamsterburen</p>
-		  <Hamsterburen />
-		  <HamburgerMenu />
+          <p>Hamsterburen</p> 
+		  
+		   <HamburgerMenuBtn />
+		  <StartHeader />
+		  
         </div>
       
     </div>

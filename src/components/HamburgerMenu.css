@@ -4,6 +4,7 @@
 	
 	background-color: var(--background-color-header);
 	border: none;
+	
 }
 .hamburger-content > div {
 	padding: 1em;
