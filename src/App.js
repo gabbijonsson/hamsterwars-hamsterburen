@@ -7,9 +7,10 @@ import CombatantImg from './hamsterTest-1.jpg';
 import PickWinnerBtn from './components/PickWinnerBtn';
 import CombatantPicCard from './components/CombatantPicCard';
 import CombatantInfoCard from './components/CombatantInfoCard';
+import StatsToplistCombatant from './components/StatsToplistCombatant';
 function App() {
  
-	let hamster = {_id:0, name:'Sweetie', age: 2 , loves:'To run', food: 'Pasta', wins: 0, games: 0};
+	let hamster = {_id:0, name:'Sweetie', age: 2 , loves:'To run', food: 'Pasta', wins: 1, games: 5, loses:4};
 
   return (
     <div className="App">
@@ -24,8 +25,9 @@ function App() {
 		   {/* <CombatantCard CombatantImg={CombatantImg} borderColor='blue' /> */}
 
 		  {/* <PickWinnerBtn /> */}
-		  <CombatantPicCard CombatantImg={CombatantImg} />
-		  <CombatantInfoCard hamster={hamster} />
+		  {/* <CombatantPicCard CombatantImg={CombatantImg} />
+		  <CombatantInfoCard hamster={hamster} /> */}
+		  <StatsToplistCombatant CombatantImg={CombatantImg} combatant={hamster} combatantInfo='WINS' />
 		  
         </div>
       
