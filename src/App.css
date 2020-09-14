@@ -13,7 +13,7 @@ body {
   background-color: #F1EBDE;
 }
 
-h1 {
+h1,h2 {
   font-family: 'Bangers', cursive;
 }
 
@@ -29,4 +29,19 @@ h1 {
   font-size: 8rem;
   margin-bottom: 0.2em;
   text-align: center;
+}
+
+:root {
+	--background-color-header: #AFA18C;
+	--blue: #048BA8;
+	--purple: #A4036F;
+	--pink: #FCA795;
+}
+
+.border-blue {
+	border: 4px solid var(--blue);
+}
+
+.border-purple {
+	border: 4px solid var(--purple);
 }

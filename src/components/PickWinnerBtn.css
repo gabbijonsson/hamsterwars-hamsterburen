@@ -1,0 +1,7 @@
+.pick-button {
+	border: 1px solid;
+	border: none;
+	background-color: var(--pink);
+	color: white;
+	padding: 1em;
+}
