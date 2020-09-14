@@ -7,7 +7,7 @@ const CombatantCard = ({CombatantImg, borderColor}) => {
 	
 	return (
 		<div className={`combatant-card border-${borderColor}`}>
-           <img src={CombatantImg} alt="combatant img" />
+           <img src={CombatantImg} alt="combatant" />
 		</div>
 	)
 }
