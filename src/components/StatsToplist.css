@@ -1,0 +1,21 @@
+@media only screen and (max-width: 520px){
+
+	.stats-toplist {
+		display: flex;
+		flex-direction: column;
+	}
+	  .title{
+		 font-family: Arial, Helvetica, sans-serif;
+		 font-style: normal;
+		
+	 }
+	 .text-blue {
+		 color: var(--blue);
+	 }
+	 .text-pink {
+		 color: var(--pink);
+	 }
+	 .text-purple {
+		 color: var(--purple);
+	 }
+}

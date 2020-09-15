@@ -11,6 +11,13 @@
   padding: 0;
 }
 
+:root {
+	--background-color-header: #AFA18C;
+	--blue: #048BA8;
+	--purple: #A4036F;
+	--pink: #FCA795;
+}
+
 body {
   background-color: #F1EBDE;
 }
@@ -36,4 +43,14 @@ button:hover{
   font-size: 8rem;
   margin-bottom: 0.2em;
   text-align: center;
+}
+
+
+
+.border-blue {
+	border: 4px solid var(--blue);
+}
+
+.border-purple {
+	border: 4px solid var(--purple);
 }
