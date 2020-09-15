@@ -1,0 +1,13 @@
+@media only screen and (max-width: 520px){
+	.combatant-pic {
+		border: 1px solid;
+		margin-top: 2em;
+		width: 80vw;
+		height: 30vh;
+	}
+
+	.combatant-pic > img {
+		width: 100%;
+		height: 100%;
+	}
+}

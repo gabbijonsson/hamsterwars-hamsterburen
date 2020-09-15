@@ -1,0 +1,16 @@
+@media only screen and (max-width: 520px){
+	.combatant-info {
+		width: 80vw;
+		height: 200px;
+		margin-top: 1em;
+		
+	
+		padding-bottom: 1em;
+		overflow: auto;
+		
+	}
+	.combatant-info > div {
+		padding: 0.2em;
+	}
+	
+}

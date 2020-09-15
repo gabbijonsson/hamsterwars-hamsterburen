@@ -1,0 +1,29 @@
+@media only screen and (max-width: 520px) {
+	.hamburger-menu  img{
+		height: 2em;
+		
+	}
+
+
+
+	.visible {
+		display: block;
+		
+	}
+	.invisible {
+		display: none;
+	}
+
+
+
+
+	.visible-content {
+		display: block;
+		position: absolute;
+	}
+	.invisible-content {
+		display: none;
+	}
+
+
+}
