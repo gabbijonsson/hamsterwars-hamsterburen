@@ -1,0 +1,40 @@
+.menuCard{
+  width: 70vw;
+  height: 15vh;
+  background-color: #FFFFFF;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+  
+.menuCard:hover{
+  cursor: pointer;
+}
+
+.menuCard h2{
+  font-size: 3rem;
+}
+
+.menuCard:hover h2{
+  transform: scale(1.2);
+  transition: .2s ease-in-out;
+}
+
+article.peach{
+  border: 5px solid #FCA795;
+}
+
+article.teal{
+  border: 5px solid #048BA8;
+}
+
+article.pink{
+  border: 5px solid #A4036F;
+}
+
+@media(min-width: 1025px){
+  .menuCard{
+    width: 20vw;
+    height: 22vw;
+  }
+}

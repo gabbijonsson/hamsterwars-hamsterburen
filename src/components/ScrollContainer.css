@@ -1,0 +1,19 @@
+div.scrollDiv{
+    margin: 1rem auto;
+    width: 80vw; 
+    overflow-Y: scroll;
+    border: 2px solid black;
+    font-size: 1.5rem;
+}
+
+div.scrollDiv .hamsterInfo{
+    height: calc(40vh);
+
+    /* Calc ska egentligen vara 100vh - headerns höjd - marginal - bild - marginal - knapp - marginal */
+}
+
+div.scrollDiv .stats{
+    height: calc(100vh - 3.5rem - .6em);
+
+    /* Calc ska egentligen vara 100vh - headerns höjd - knapp plus liite marginal */
+}
