@@ -9,6 +9,7 @@ import CombatantPicCard from './components/CombatantPicCard';
 import CombatantInfoCard from './components/CombatantInfoCard';
 import StatsToplistCombatant from './components/StatsToplistCombatant';
 import StatsToplist from './components/StatsToplist';
+import TotalNoMatches from './components/TotalNoMatches';
 function App() {
  
 	let hamster = {_id:0, name:'Sweetie', age: 2 , loves:'To run', food: 'Pasta', wins: 1, games: 5, losts:4};
@@ -30,6 +31,7 @@ function App() {
 		  <CombatantInfoCard hamster={hamster} /> */}
 		  {/* <StatsToplistCombatant CombatantImg={CombatantImg} combatant={hamster} combatantInfo='WINS' /> */}
 		  {/* <StatsToplist title= "winners" /> */}
+		  {/* <TotalNoMatches total ="8"/> */}
 		  
 
         </div>
