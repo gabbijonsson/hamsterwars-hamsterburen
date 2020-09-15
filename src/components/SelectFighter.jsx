@@ -11,7 +11,11 @@ function SelectFighter() {
 				<label className="select-fighter-label" htmlFor="select-fighter-2">Pick your second fighter</label> <br/>
 				<input placeholder="Write hamsters name..." type="text" id="select-fighter-2" name="fighter-2"></input>
 			</form>
-
+			<div className="description-text">
+				
+					If you only pick one fighter, and leave the other one empty, your combatant will meet a random other fighter.
+				
+			</div>
 		</div>
 		
 	)
