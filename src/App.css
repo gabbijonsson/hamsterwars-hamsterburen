@@ -1,5 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Bangers&family=Montserrat&display=swap');
 
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@600&display=swap');
+
 *,
 *::before,
 *::after {
@@ -13,16 +15,21 @@ body {
   background-color: #F1EBDE;
 }
 
-h1 {
+h1, h2, button {
   font-family: 'Bangers', cursive;
 }
 
+button:hover{
+  cursor: pointer;
+}
+
 .splash-container {
-  display: flex;
+  /* display: flex;
   flex-direction: column;
   justify-content: center;
-  align-items: center;
-  height: 66vh;
+  align-items: center; */
+  height: 100vh;
+  border: 2px solid black;
 }
 
 .splash-title {
