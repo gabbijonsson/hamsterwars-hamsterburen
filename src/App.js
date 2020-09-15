@@ -19,20 +19,9 @@ function App() {
 		
       
         <div className="splash-container">
-          {/* <h1 className="splash-title">HELLO TEAM</h1>
-          <p>Hamsterburen</p>  */}
-		  
-		   {/* <HamburgerMenuBtn /> */}
-		  <StartHeader /> 
-		   {/* <CombatantCard CombatantImg={CombatantImg} borderColor='blue' /> */}
-
-		  {/* <PickWinnerBtn /> */}
-		  {/* <CombatantPicCard CombatantImg={CombatantImg} />
-		  <CombatantInfoCard hamster={hamster} /> */}
-		  {/* <StatsToplistCombatant CombatantImg={CombatantImg} combatant={hamster} combatantInfo='WINS' /> */}
-		  {/* <StatsToplist title= "winners" /> */}
-		  {/* <TotalNoMatches total ="8"/> */}
-		  
+          <h1 className="splash-title">HELLO TEAM</h1>
+          <p>Hamsterburen</p>
+		   
 
         </div>
       
