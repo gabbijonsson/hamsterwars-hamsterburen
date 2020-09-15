@@ -1,0 +1,21 @@
+.select-fighter-form{
+	margin-top: 3em;
+}
+#select-fighter-1,#select-fighter-2{
+	padding: 12px 20px;
+	border: none;
+	width: 90vw;
+	display: block;
+	margin:auto;
+	margin-top: 5px;
+}
+.select-fighter-label{
+	margin-left: 20px;
+}
+.description-text{
+	margin-top: 40px;
+	margin-left: 60px;
+	margin-right: 60px;
+	text-align: center;
+
+}

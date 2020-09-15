@@ -1,4 +1,4 @@
-@media only screen and (max-width: 520px){
+@media only screen and (max-width: 1050px){
 	#HeaderGeneric{
 		display: flex;
 		justify-content: space-between;
