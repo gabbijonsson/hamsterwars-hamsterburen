@@ -8,9 +8,10 @@ import PickWinnerBtn from './components/PickWinnerBtn';
 import CombatantPicCard from './components/CombatantPicCard';
 import CombatantInfoCard from './components/CombatantInfoCard';
 import StatsToplistCombatant from './components/StatsToplistCombatant';
+import StatsToplist from './components/StatsToplist';
 function App() {
  
-	let hamster = {_id:0, name:'Sweetie', age: 2 , loves:'To run', food: 'Pasta', wins: 1, games: 5, loses:4};
+	let hamster = {_id:0, name:'Sweetie', age: 2 , loves:'To run', food: 'Pasta', wins: 1, games: 5, losts:4};
 
   return (
     <div className="App">
@@ -27,8 +28,10 @@ function App() {
 		  {/* <PickWinnerBtn /> */}
 		  {/* <CombatantPicCard CombatantImg={CombatantImg} />
 		  <CombatantInfoCard hamster={hamster} /> */}
-		  <StatsToplistCombatant CombatantImg={CombatantImg} combatant={hamster} combatantInfo='WINS' />
+		  {/* <StatsToplistCombatant CombatantImg={CombatantImg} combatant={hamster} combatantInfo='WINS' /> */}
+		  {/* <StatsToplist title= "winners" /> */}
 		  
+
         </div>
       
     </div>

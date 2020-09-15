@@ -24,7 +24,7 @@ const StatsToplistCombatant = ({CombatantImg, combatant, combatantInfo}) => {
 	 }
 
 	return(
-		<div className="stats-toplist">
+		<div className="stats-combatant">
 			 <div>
 				<img src={CombatantImg} alt="combatant" />
 			 </div>
