@@ -4,8 +4,6 @@ import HeaderGeneric from './components/HeaderGeneric'
 import SelectFighter from './components/SelectFighter'
 
 function App() {
-  let testmode = true
-  if(!testmode)
   return (
     <div className="App">
       <HeaderGeneric/>
@@ -17,13 +15,7 @@ function App() {
       </body>
     </div>
   );
-  else
-  return (
-    <div>
-      <HeaderGeneric/>
-      <SelectFighter/>
-    </div>
-  )
+  
 }
 
 export default App;
