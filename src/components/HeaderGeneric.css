@@ -2,7 +2,6 @@
 	display: flex;
 	justify-content: space-between;
 	height: 60px;
-	width: 100vw;
 	background-color: #afa18c;
 	align-items: center;
 }
@@ -21,17 +20,17 @@
 .desktop-nav{
 	display: none;
 }
+.header-item-3 > .desktop-header-btn{
+	display: none;
+}
 @media only screen and (min-width: 1025px){
-	#HeaderGeneric{
-		display: block;
-	}
 	.header-item-1 > img{
 		display: none;
 	}
 	.desktop-nav{
 		display: block;
 	}
-	.header-item-3{
-		
+	.header-item-3 > .desktop-header-btn{
+		display: block;
 	}
 }

@@ -3,6 +3,7 @@ import './HeaderGeneric.css'
 import HomeIcon from './HomeIcon.svg'
 import HamburgerMenu from './HamburgerMenu'
 import HamburgerMenuBtn from './HamburgerMenuBtn'
+import DesktopHeaderBtn from './DesktopHeaderBtn'
 
 function HeaderGeneric() {
 	return (
@@ -19,6 +20,9 @@ function HeaderGeneric() {
 			</div>
 			<div className="header-item-3">
 				<HamburgerMenuBtn/>
+				<div className="desktop-header-btn">
+					<DesktopHeaderBtn text="PICK YOUR OWN FIGHTERS" color="teal"/>
+				</div>
 			</div>
 			
 		</header>
