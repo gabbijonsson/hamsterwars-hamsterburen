@@ -4,6 +4,7 @@ const StartHeader = () => {
 	return(
 		<div className="start-header">
 			<h1>HAMSTERWARS</h1>
+		
 		</div>
 
 	)
