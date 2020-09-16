@@ -1,5 +1,6 @@
 import React from 'react';
 import './App.css';
+import UploadForm from './components/UploadForm';
 function App() {
 
   return (
@@ -8,10 +9,7 @@ function App() {
       
         <div className="splash-container">
 
-          <h1 className="splash-title">HELLO TEAM</h1>
-          <p>Hamsterburen</p>
-		   
-
+        <UploadForm/>
 
         </div>
       
@@ -20,3 +18,7 @@ function App() {
 }
 
 export default App;
+
+//          <h1 className="splash-title">HELLO TEAM</h1>
+//<p>Hamsterburen</p>
+		   

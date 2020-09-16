@@ -8,15 +8,14 @@ const UploadForm = () => {
             <div className="inputs">
                 <label htmlFor="formName">Name: </label>
                 <input id="formName" type="text"/>
-                <div className="formRow">
                     <label htmlFor="formAge">Age: </label>
                     <input type="number" id="formAge"/>
                     <label htmlFor="formFood">Favourite food: </label>
                     <input type="text" id="formFood"/>
-                </div>
                 <label htmlFor="formLoves">Loves: </label>
                 <input type="text" id="formLoves"/>
             </div>
+            <button className="uploadImage">Press to upload image</button>
         </form>
     );
 }
