@@ -2,18 +2,14 @@
 	.start-header {
 		border: 1px solid;
 		width: 100%;
-		
 		padding: 1em;
 		text-align: center;
-		
 		background-color: var(--background-color-header);
 		border: none;
+	
 	}
 
-	.start-header h1 {
-		font-size: 3em;
-		
-	}
+
 
 	@media(min-width: 1025px){
 		.start-header {
@@ -24,6 +20,7 @@
 		}
 
 		.start-header h1 {
-			font-size: 10em;
+			font-size: 5vh;
+			margin: auto;
 		}
 	  }
