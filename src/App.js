@@ -1,7 +1,7 @@
 import React from 'react';
 import './App.css';
 import HeaderGeneric from './components/HeaderGeneric';
-import ResultView from './components/ResultView'
+import ResultView from './components/ResultView';
 
 function App() {
   let testMode = true;
