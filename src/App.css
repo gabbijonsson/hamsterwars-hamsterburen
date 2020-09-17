@@ -45,6 +45,16 @@ button:hover{
   text-align: center;
 }
 
+form label{
+  font-family: 'Montserrat', sans-serif;
+  color: #AFA19C;
+  font-weight: bold;
+}
+.description-text{
+  font-family: 'Montserrat', sans-serif;
+  color: #AFA19C;
+}
+
 
 
 .border-blue {
