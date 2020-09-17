@@ -1,8 +1,8 @@
 import React, { useState } from 'react';
 import './HamburgerMenuBtn.css';
-import menuIcon from '../hamburger-menu.png';
+import menuIcon from '../assets/frontend/hamburger-menu.png';
 import HamburgerMenu from './HamburgerMenu';
-import menuClose from '../CloseHamburger.svg';
+import menuClose from '../assets/frontend/CloseHamburger.svg';
 
 const HamburgerMenuBtn = () => {
   const [myclass, setMyClass] = useState(true);
