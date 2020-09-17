@@ -1,6 +1,7 @@
 import React from 'react';
 import './App.css';
 import UploadForm from './components/UploadForm';
+import ScrollContainer from './components/ScrollContainer';
 function App() {
 
   return (
@@ -9,7 +10,7 @@ function App() {
       
         <div className="splash-container">
 
-        <UploadForm/>
+        <ScrollContainer/>
 
         </div>
       
