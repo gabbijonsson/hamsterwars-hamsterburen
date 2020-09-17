@@ -17,6 +17,7 @@
 	margin: auto;
 }
 
+
 @media(min-width: 1025px){
 	.startpage-main{
 	  display: flex;

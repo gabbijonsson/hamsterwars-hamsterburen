@@ -15,7 +15,7 @@ function App() {
           {/* <h1 className="splash-title">HELLO TEAM</h1> */}
           {/* <p>Hamsterburen</p> */}
 		   
-          
+         
 
 		  <BattlePage img1={hamster1} img2={hamster1} />
 

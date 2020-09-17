@@ -1,8 +1,30 @@
 .battlepage {
 
-	display: flex;
-	flex-direction: column;
-	/* display: grid;
-	grid-template-rows: 8vh 25vh 8vh 5vh 25vh 8vh 10vh;
-	grid-gap: 3vh; */
+	display: grid;
+	grid-template-rows: 10vh 25vh 6vh 25vh 10vh;
+	grid-gap: 4vh;
+	text-align: center;
+	
+}
+
+.battlepage > article {
+	margin: auto;
+
+}
+
+
+.stack-up1 {
+	position: absolute;
+	margin-left: 45vw;
+	margin-top: 34vh;
+}
+
+.stack-up2 {
+	position: absolute;
+	margin-left: 45vw;
+	margin-top: 74vh;
+}
+
+.generic {
+	margin: auto;
 }

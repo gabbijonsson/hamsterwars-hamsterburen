@@ -1,10 +1,13 @@
-@media only screen and (max-width: 520px) {
+
 	.pick-button {
 		border: 1px solid;
 		border: none;
 		background-color: var(--pink);
 		color: white;
-		padding: 1em;
-		position: absolute;
+		padding: 0.5em;
+		
 	}
-}
+
+	.pick-button > h1 {
+		font-weight: lighter;
+	}
