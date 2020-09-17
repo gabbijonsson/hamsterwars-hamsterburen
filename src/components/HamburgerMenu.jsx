@@ -3,12 +3,12 @@ import './HamburgerMenu.css';
 const HamburgerMenu = () => {
 
 	return(
-		<div className="hamburger-content">
-			<div>Home</div>
-			<div>Battle</div>
-			<div>Statistics</div>
-			<div>Add your hamster</div>
-		</div>
+		<nav role="navigation" className="hamburger-content">
+			<h2 role="link">Home</h2>
+			<h2 role="link">Battle</h2>
+			<h2 role="link">Statistics</h2>
+			<h2 role="link">Add your hamster</h2>
+		</nav>
 	)
 }
 
