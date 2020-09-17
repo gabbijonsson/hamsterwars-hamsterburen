@@ -1,13 +1,19 @@
-.battlepage {
 
-	display: grid;
-	grid-template-rows: 10vh 25vh 6vh 25vh 10vh;
-	grid-gap: 4vh;
-	text-align: center;
-	
+.battlepage {
+	display: flex;
+	flex-direction: column;
 }
 
-.battlepage > article {
+.battlepage-main {
+
+	display: grid;
+	grid-template-rows: 1fr 6vh 1fr 10vh;
+	grid-gap: 4vh;
+	text-align: center;
+	margin-top: 4vh;
+}
+
+.battlepage-main > article {
 	margin: auto;
 
 }
@@ -16,15 +22,43 @@
 .stack-up1 {
 	position: absolute;
 	margin-left: 45vw;
-	margin-top: 34vh;
+	margin-top: 20vh;
 }
 
 .stack-up2 {
 	position: absolute;
 	margin-left: 45vw;
-	margin-top: 74vh;
+	margin-top: 59vh;
 }
 
 .generic {
 	margin: auto;
 }
+
+@media(min-width: 1025px){
+	.battlepage-main {
+	   display: flex;
+	   flex-direction: row;
+	   margin-top: 7vh;
+	}
+	
+	.battlepage-main > h1 {
+		margin: auto;
+		font-size: 10vh;
+	}
+	.generic {
+		display: none;
+	}
+	
+	.stack-up1 {
+		
+		margin-left: 13vw;
+		margin-top: 69vh;
+	}
+	
+	.stack-up2 {
+		
+		margin-left: 70vw;
+		margin-top: 69vh;
+	}
+  }
