@@ -1,0 +1,8 @@
+.battlepage {
+
+	display: flex;
+	flex-direction: column;
+	/* display: grid;
+	grid-template-rows: 8vh 25vh 8vh 5vh 25vh 8vh 10vh;
+	grid-gap: 3vh; */
+}

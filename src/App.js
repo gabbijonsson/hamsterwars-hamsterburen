@@ -3,6 +3,7 @@ import './App.css';
 import './components/StartPage';
 import StartPage from './components/StartPage';
 import BattlePage from './components/BattlePage';
+import hamster1 from './assets/hamsters/hamster-1.jpg';
 
 function App() {
 
@@ -17,7 +18,7 @@ function App() {
 		   
           {/* <StartPage /> */}
 
-		  <BattlePage />
+		  <BattlePage img1={hamster1} img2={hamster1} />
 
         </div>
       

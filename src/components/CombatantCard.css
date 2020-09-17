@@ -1,7 +1,7 @@
-@media only screen and (max-width: 520px){
 	.combatant-card {
-		width: 80%;
-		height: 100%;
+		width: 80vw;
+		height: 30vh;
+		
 	}
 	
 	.combatant-card > :nth-child(1) {
@@ -9,5 +9,5 @@
 		height: 100%;
 	}
 	
-}
+
 
