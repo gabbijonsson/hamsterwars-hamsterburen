@@ -5,7 +5,8 @@ button.generic{
     border: none;
     font-size: 1.5rem;
     color: white;
-    display: block;
+	display: block;
+
 }
 
 button.peach{
