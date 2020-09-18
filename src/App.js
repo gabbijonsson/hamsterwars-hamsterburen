@@ -28,7 +28,10 @@ function App() {
       break;
 
     default:
-      content = <StartPage/>
+      content = <StartPage
+      showBattle={()=>setScreen(BATTLEPAGE)}
+      showStats={()=>setScreen(STATSPAGE)}
+      showCreate={()=>setScreen(CREATEHAMSTERPAGE)}/>
   }
 
   return (
