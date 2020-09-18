@@ -1,14 +1,12 @@
 import React from 'react';
 import './App.css';
-import UploadForm from './components/UploadForm';
-import ScrollContainer from './components/ScrollContainer';
 import CreateHamsterView from './components/CreateHamsterView';
+import HeaderGeneric from './components/HeaderGeneric'
+
 function App() {
 
   return (
     <div className="App">
-		
-      
         <div className="splash-container">
 
         <CreateHamsterView/>
@@ -17,6 +15,7 @@ function App() {
       
     </div>
   );
+  
 }
 
 export default App;

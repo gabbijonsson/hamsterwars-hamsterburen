@@ -1,0 +1,14 @@
+button.teal{
+    background-color: #048BA8;
+}
+
+@media(min-width: 1025px){
+    button.generic-desktop{
+        width: 20rem;
+        font-size: 1.8em;
+        float: right;
+		padding: .5em;
+		border: none;
+		color: white;
+    }   
+}
