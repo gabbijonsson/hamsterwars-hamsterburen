@@ -1,0 +1,56 @@
+.desktop-view {
+	display: none;
+}
+
+.choose-fightersBtn {
+	display: none;
+}
+
+.pickWinnerBtns {
+	display: none;
+}
+
+.generic-btn {
+	margin-top: 10vh;
+}
+@media(min-width: 1025px){
+	.desktop-view {
+		display: block;
+		display: grid;
+		grid-template-columns: 1fr 10% 1fr;
+	    justify-items: center;
+		align-items: center;
+	}
+	
+	.pickWinnerBtns {
+		grid-column: 1/4;
+		margin-top: 1em;
+		display: flex;
+		flex-direction: row;
+		justify-content: space-around;
+	}
+	
+	.choose-fightersBtn{
+		display: block;	
+		display: flex;
+		align-items: center;
+	}
+
+	.choose-fightersBtn > button {
+		border: none;
+		padding: 1.3em;
+		background-color: var(--background-color-header);
+		
+	}
+	.selectFighter-form {
+		
+		display: flex;
+		flex-direction: row;
+		justify-content: space-around;
+		
+	}
+    .generic-btn {
+		display: none;
+	}
+	
+  }
