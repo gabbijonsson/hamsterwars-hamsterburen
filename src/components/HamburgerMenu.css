@@ -1,15 +1,15 @@
 .hamburger-content {
 	border: 1px solid;
 	text-align: right;
-	width: 100vw;
-	height: 100vh;
+	width: 60vw;
+	height: 35vh;
 	background-color: var(--background-color-header);
 	border: none;
 	position: absolute;		
 	right: 0;
 }
 .hamburger-content > h2 {
-	padding: .5em 1em;
+	padding: 2vh;
 }
 
 .hamburger-content > h2:hover {

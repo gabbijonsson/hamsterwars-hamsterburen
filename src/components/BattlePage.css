@@ -22,14 +22,16 @@
 .stack-up1 {
 	position: absolute;
 	margin-left: 45vw;
-	margin-top: 20vh;
+	margin-top: 33vh;
 }
 
 .stack-up2 {
 	position: absolute;
 	margin-left: 45vw;
-	margin-top: 59vh;
+	margin-top: 72vh;
+	
 }
+
 
 .generic {
 	margin: auto;
@@ -53,12 +55,12 @@
 	.stack-up1 {
 		
 		margin-left: 13vw;
-		margin-top: 69vh;
+		margin-top: 79vh;
 	}
 	
 	.stack-up2 {
 		
 		margin-left: 70vw;
-		margin-top: 69vh;
+		margin-top: 79vh;
 	}
   }
