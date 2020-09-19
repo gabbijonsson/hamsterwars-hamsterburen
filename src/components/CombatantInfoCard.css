@@ -1,25 +1,27 @@
 .combatant-info {
 	width: 80vw;
-	height: 230px;
-	/* margin-top: 1em; */
+	height: 200px;
+	font-size: 1.5em;
+	margin-top: 1em;
 	display: flex;
 	flex-direction: column;
-	/* padding-bottom: 1em; */
+	padding-bottom: 1em;
 	overflow: auto;
 	justify-content: space-between;
-	
+	margin-bottom: 2em;
 }
 .combatant-info > div {
-	padding: 0.2em;
+	padding: 0.3em;
 	
 }
 .combatant-info > div span{
-		margin-right: 2%;
+		margin-right: 4%;
 	}
 @media only screen and (min-width: 1025px){
 	.combatant-info > div{
 		padding-bottom: 2em;
 		width: 70vw;
+		height: 230px;
 	}
 	.combatant-info{
 		height: 55vh;
