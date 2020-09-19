@@ -2,7 +2,7 @@ div.scrollDiv{
     margin: 1rem auto;
     width: 80vw; 
     overflow-Y: scroll;
-    border: 2px solid black;
+    /* border: 2px solid black; */
     font-size: 1.5rem;
 }
 
@@ -16,4 +16,13 @@ div.scrollDiv .stats{
     height: calc(100vh - 3.5rem - .6em);
 
     /* Calc ska egentligen vara 100vh - headerns höjd - knapp plus liite marginal */
+}
+@media only screen and (min-width: 1025px){
+    div.scrollDiv{
+        padding-top: 5em;
+        padding-left: 1em;
+        height: 80vh;
+        width: 55vw;
+        overflow: hidden;
+    }
 }
