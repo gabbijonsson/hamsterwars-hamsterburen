@@ -1,10 +1,8 @@
 import React from 'react';
 import './App.css';
 import CreateHamsterView from './components/CreateHamsterView';
-import HeaderGeneric from './components/HeaderGeneric'
 
 function App() {
-
   return (
     <div className="App">
         <div className="splash-container">
