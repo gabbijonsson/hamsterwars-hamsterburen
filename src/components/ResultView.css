@@ -1,0 +1,24 @@
+.resultView-container{
+	display: flex;
+	flex-direction: column;
+}
+.resultView-pic-card{
+	margin: auto;
+}
+.resultView-info-card{
+	margin: auto;
+}
+.resultView-mobile-btn{
+	margin: auto;
+}
+@media only screen and (min-width: 1025px){
+	.resultView-container{
+		display: flex;
+		flex-direction: row;
+	}
+	.resultView-mobile-btn{
+		position: absolute;
+		bottom: 2%;
+		right: 5%;
+	}
+}
