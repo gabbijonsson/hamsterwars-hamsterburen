@@ -1,7 +1,7 @@
 import React from 'react';
 import './App.css';
-import CreateHamsterView from './components/CreateHamsterView';
-import HeaderGeneric from './components/HeaderGeneric'
+
+
 
 function App() {
 
@@ -9,7 +9,7 @@ function App() {
     <div className="App">
         <div className="splash-container">
 
-        <CreateHamsterView/>
+       
 
         </div>
       
