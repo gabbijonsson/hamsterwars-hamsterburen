@@ -13,6 +13,9 @@
 	padding: 0.2em;
 	
 }
+.combatant-info > div span{
+		margin-right: 2%;
+	}
 @media only screen and (min-width: 1025px){
 	.combatant-info > div{
 		padding-bottom: 2em;
