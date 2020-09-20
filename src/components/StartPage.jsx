@@ -14,9 +14,9 @@ const StartPage = ({showBattle, showStats, showCreate}) => {
 			</header>
 
 			<main className="startpage-main">
-               <MenuCard onClick={()=>showBattle()} color='peach' text='Battle' img={BattleImg} />
-			   <MenuCard onClick={()=>showStats()} color='teal' text='Statistics' img={StatisticsImg}/>
-			   <MenuCard onClick={()=>showCreate()} color='pink' text='Add your hamster' img={AddImg} />
+               <MenuCard showPage={showBattle} color='peach' text='Battle' img={BattleImg} />
+			   <MenuCard showPage={showStats} color='teal' text='Statistics' img={StatisticsImg}/>
+			   <MenuCard showPage={showCreate} color='pink' text='Add your hamster' img={AddImg} />
 			</main>
 		</div>
 	)

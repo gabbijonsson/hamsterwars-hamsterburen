@@ -12,7 +12,7 @@ function App() {
 
   let content = null;
 
-  switch(screen){
+  switch (screen){
 
     case CREATEHAMSTERPAGE:
       content = <CreateHamsterView/>
