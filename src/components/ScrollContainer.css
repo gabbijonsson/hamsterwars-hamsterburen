@@ -2,6 +2,7 @@ div.scrollDiv{
     margin: 1rem auto;
     width: 80vw; 
     overflow-Y: scroll;
+    /* border: 2px solid black; */
     font-size: 1.5rem;
 }
 
@@ -22,7 +23,16 @@ div.scrollDiv .stats{
 @media(min-width: 1025px){
     div.scrollDiv .stats{
         height: 50vh;
-
+    }
         /* Kommer troligen behöva justeras pga att storlek ännu inte finns i statsToplistCombatant saken i desktop vy */
+    /* Calc ska egentligen vara 100vh - headerns höjd - knapp plus liite marginal */
+}
+@media only screen and (min-width: 1025px){
+    div.scrollDiv{
+        padding-top: 5em;
+        padding-left: 1em;
+        height: 80vh;
+        width: 55vw;
+        font-size: unset;
     }
 }

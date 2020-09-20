@@ -6,9 +6,9 @@ const CombatantCard = ({CombatantImg, borderColor}) => {
    
 	
 	return (
-		<div className={`combatant-card border-${borderColor}`}>
+		<article className={`combatant-card border-${borderColor}`}>
            <img src={CombatantImg} alt="combatant" />
-		</div>
+		</article>
 	)
 }
 

@@ -1,0 +1,66 @@
+
+.battlepage {
+	display: flex;
+	flex-direction: column;
+}
+
+.battlepage-main {
+
+	display: grid;
+	grid-template-rows: 1fr 6vh 1fr 10vh;
+	grid-gap: 4vh;
+	text-align: center;
+	margin-top: 4vh;
+}
+
+.battlepage-main > article {
+	margin: auto;
+
+}
+
+
+.stack-up1 {
+	position: absolute;
+	margin-left: 45vw;
+	margin-top: 33vh;
+}
+
+.stack-up2 {
+	position: absolute;
+	margin-left: 45vw;
+	margin-top: 72vh;
+	
+}
+
+
+.generic {
+	margin: auto;
+}
+
+@media(min-width: 1025px){
+	.battlepage-main {
+	   display: flex;
+	   flex-direction: row;
+	   margin-top: 7vh;
+	}
+	
+	.battlepage-main > h1 {
+		margin: auto;
+		font-size: 10vh;
+	}
+	.generic {
+		display: none;
+	}
+	
+	.stack-up1 {
+		
+		margin-left: 13vw;
+		margin-top: 79vh;
+	}
+	
+	.stack-up2 {
+		
+		margin-left: 70vw;
+		margin-top: 79vh;
+	}
+  }

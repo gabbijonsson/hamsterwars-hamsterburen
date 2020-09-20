@@ -3,17 +3,15 @@ import './CombatantInfoCard.css';
 
 
 const CombatantInfoCard = ({hamster}) => {
-
 	return(
 		<div>
 			<main className="combatant-info">
-				<div>Name:{hamster.name}</div>
-				<div>Age:{hamster.age}</div>
-				<div>Love:{hamster.loves}</div>
-				<div>Favorite food:{hamster.food}</div>
-				<div>Wins:{hamster.wins}</div>
-				<div>Games:{hamster.games}</div>
-           
+				<div><span>Name:</span>{hamster.name}</div>
+				<div><span>Age:</span>{hamster.age}</div>
+				<div><span>Love:</span>{hamster.loves}</div>
+				<div><span>Favorite food:</span>{hamster.favFood}</div>
+				<div><span>Wins:</span>{hamster.wins}</div>
+				<div><span>Games:</span>{hamster.games}</div>
 			</main>
 
 		</div>
