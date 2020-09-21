@@ -13,6 +13,7 @@ try {
 if (!dbPW) {
     throw new Error("Please add a password to /server/dbuserinfo.js");
 }
+
 const url = `mongodb+srv://hamsterburen-user:${dbPW}@hamsterburen.lmwyp.mongodb.net/test?authSource=admin&replicaSet=atlas-hyrfxy-shard-0&readPreference=primary&appname=MongoDB%20Compass%20Community&ssl=true`
 const dbName = 'hamsterdata';
 const collectionName = 'hamsters';
@@ -37,6 +38,33 @@ function connectToDB() {
     )
 }
 
+function getRandomHamsters(query, cb) {
+    MongoClient.connect(
+        url,
+        { useUnifiedTopology: true },
+        async (error, client) => {
+            if(error) {
+                cb('An error occured. Could not connect. ' + error);
+                return;
+            }
+            const col = client.db(dbName).collection(collectionName);
+            try {
+                const cursor = await col.aggregate([
+					{ $sample: { size: Number(query.count) } },
+                ]);
+                const array = await cursor.toArray();
+                cb(array);
+            } catch (err) {
+                console.log('Invalid query! ' + err)
+            } finally {
+                client.close();
+            }
+        }
+    )
+}
+
+
 module.exports = {
-    connectToDB
+    connectToDB,
+    getRandomHamsters
 }
