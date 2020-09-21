@@ -71,3 +71,12 @@ Använd count för att efterfråga önskat antal hamstrar.
 /gethamsters/random?count=1 Returnerar 1 slumpmässigt utvald hamster
 /gethamsters/random?count=2 Returnerar 2 slumpmässigt utvalda hamstrar
 ```
+
+|Resurs    |Metod   |Förväntat svar|
+|----------|--------|---|
+|/gethamster | GET | Returnerar vald hamster baserad på angivet ID |
+
+Använd id för att specificera hamster.
+```
+/gethamster?id=:id Returnerar hamster med valt ID.
+```
