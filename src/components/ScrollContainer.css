@@ -31,7 +31,8 @@ div.scrollDiv .stats{
         padding-top: 5em;
         padding-left: 1em;
         height: 80vh;
-        width: 55vw;
-        font-size: unset;
+        width: 55vw;    
+        overflow-Y: hidden;
+
     }
 }
