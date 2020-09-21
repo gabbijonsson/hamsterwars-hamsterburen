@@ -12,7 +12,9 @@ button.generic{
 button.peach{
     background-color: #FCA795;
 }
-
+button.peach.result{
+    margin: 0 auto 0;
+}
 button.teal{
     background-color: #048BA8;
 }
@@ -20,9 +22,11 @@ button.teal{
 @media(min-width: 1025px){
     button.generic{
         width: 10rem;
-        font-size: 1.8;
         float: right;
         margin: 0 3rem 3rem 0;
         padding: .4em;
-    }   
+    } 
+    button.peach.result{
+        margin: 0 3rem 3rem 0;
+    }  
 }

@@ -28,7 +28,7 @@ function ResultView() {
 				</ScrollContainer>
 			</div>
 			<div className="resultView-mobile-btn">
-			<GenericBtn color="peach" text="BATTLE"/>
+			<GenericBtn color="peach" text="BATTLE" page="result"/>
 
 			</div>
 		</div>
