@@ -31,7 +31,7 @@ const StatsToplist = ({title, children}) => {
 
 	return(
 		<div className="stats-toplist">
-           <h1 className={`title text-${color}` } >{header}</h1>
+           <h2 className={`title text-${color}` } >{header}</h2>
 		    {children}
 
 		</div>

@@ -1,0 +1,28 @@
+.stats-viw {
+	display: flex;
+	flex-direction: row;
+}
+.visible {
+	display: block;
+}
+
+.invisible {
+	display: none;
+}
+
+.main-stats {
+	display: flex;
+	flex-direction: column;
+}
+@media only screen and (min-width: 1025px){
+
+
+   .main-stats {  
+	display: grid;
+	grid-template-columns: auto auto;
+}
+	.main-stats :nth-child(1){
+		grid-area: 2 / 1 / span 2 / span 2 ;
+	}
+
+}

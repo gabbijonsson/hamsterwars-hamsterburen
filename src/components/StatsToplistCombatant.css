@@ -1,21 +1,26 @@
-@media only screen and (max-width: 520px){
 	.stats-combatant {
-		/* border: 1px solid ; */
-		padding: 1em;
-		width: 100vw;
+		width: 100%;
 		display: flex;
 		flex-direction: row;
 		justify-content: space-around;
 	}
 	.stats-combatant > div {
-		/* border: 1px solid ; */
 		width: 100%;
 		text-align: center;
+		font-size: 5vw;
 		margin: auto;
+		margin-left: 0.3em;
 	}
-}
 
-img {
+
+.stats-combatant img {
 	width: 100%;
 	height: 100%;
+}
+
+@media only screen and (min-width: 1025px){
+   /* .stats-combatant {
+	   width: 50vw;
+   } */
+	
 }

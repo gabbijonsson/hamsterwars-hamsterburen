@@ -1,13 +1,20 @@
 import React from 'react';
 import './App.css';
-import CreateHamsterView from './components/CreateHamsterView';
+import StatisticsView from './components/StatisticsView';
+import StartPage from './components/StartPage';
+import BattlePage from './components/BattlePage';
+import img from './assets/hamsters/hamster-1.jpg';
 
 function App() {
+
+	const total = 8;
+	
   return (
     <div className="App">
         <div className="splash-container">
 
-       
+       {/* <StatisticsView total={total}/> */}
+	   <BattlePage img1={img} img2={img} />
 
         </div>
       
