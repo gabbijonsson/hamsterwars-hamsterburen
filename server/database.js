@@ -4,14 +4,14 @@ const { MongoClient } = require("mongodb");
 let dbPW = "";
 
 try {
-    let { databasePW } = require("./dbuserinfo.js");
+    let { databasePW } = process.env.DATABASEPASSWORD;
     dbPW = databasePW;
 } catch {
-    throw new Error('Could not find /server/dbuserinfo.js');
+    throw new Error('Could not find .env');
 };
 
 if (!dbPW) {
-    throw new Error("Please add a password to /server/dbuserinfo.js");
+    throw new Error("Please add a password to .env");
 }
 
 const url = `mongodb+srv://hamsterburen-user:${dbPW}@hamsterburen.lmwyp.mongodb.net/test?authSource=admin&replicaSet=atlas-hyrfxy-shard-0&readPreference=primary&appname=MongoDB%20Compass%20Community&ssl=true`
