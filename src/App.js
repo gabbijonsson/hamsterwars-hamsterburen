@@ -13,8 +13,8 @@ function App() {
     <div className="App">
         <div className="splash-container">
 
-       {/* <StatisticsView total={total}/> */}
-	   <BattlePage img1={img} img2={img} />
+       <StatisticsView total={total}/>
+	   
 
         </div>
       

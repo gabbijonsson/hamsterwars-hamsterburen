@@ -1,7 +1,7 @@
 
 	.total-matches {
-		padding: 0.5em;
 		text-align: center;
+		margin-top: 1em;
 	}
 
 	.total-matches p {
@@ -13,16 +13,17 @@
 	.show-total {
 		font-family: Arial, Helvetica, sans-serif;
 		text-align: center;
-		font-size: 3em;
+		font-size: 2em;
 	}
 
 	@media only screen and (min-width: 1025px){
       .total-matches p {
-		   font-size: 5vw;
+		   font-size: 2vw;
 	   }
 
 	   .show-total {
 		   font-size: 3em;
+		  
 	   }
    
 	}

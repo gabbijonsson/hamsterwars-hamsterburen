@@ -43,17 +43,17 @@ const StatisticsView = ({total}) => {
 						
 
 		let oldest = combatant.map((hamster) =>
-						<div key={hamster.id}> 
+						<div className="item1" key={hamster.id}> 
 							<StatsToplistCombatant combatant={hamster} combatantInfo='AGE' />
 						</div>)
 
 		let youngest = combatant.map((hamster) =>
-						<div key={hamster.id}> 
+						<div className="item1" key={hamster.id}> 
 							<StatsToplistCombatant combatant={hamster} combatantInfo='AGE' />
 						</div>)
 
 	return(
-		<div>
+		<div className="stats-view">
 			<HeaderGeneric />
 			
 			<ScrollContainer content='stats'>
@@ -72,16 +72,18 @@ const StatisticsView = ({total}) => {
 						
 
 						<section className={ moreStats===true ? 'visible' : 'invisible'}>
-							<StatsToplist title="oldest">
-								{oldest}
-
-							</StatsToplist>
+							
+								<StatsToplist title="oldest">
+									<div className="item2">{oldest}</div>
+								</StatsToplist>
+							
+							
 							<StatsToplist title="youngest">
-								{youngest}
+								<div className="item2">{youngest}</div>
 
 							</StatsToplist>
 							<StatsToplist title="%">
-								{topWinners}
+								<div className="item2">{topWinners}</div>
 
 							</StatsToplist>
 
@@ -89,11 +91,9 @@ const StatisticsView = ({total}) => {
 				</div>
 				
 				
-			</ScrollContainer>
+			</ScrollContainer>	
 			
-			
-			
-			<GenericBtn text={buttonTxt} color='peach' functionality={lessOrMoreStats}/>
+	 		<GenericBtn text={buttonTxt} color='peach' functionality={lessOrMoreStats}/>
 			
 			
 
