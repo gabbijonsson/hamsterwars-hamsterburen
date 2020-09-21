@@ -6,10 +6,9 @@ div.scrollDiv{
     font-size: 1.5rem;
 }
 
-div.scrollDiv .hamsterInfo{
-    height: calc(100vh - 30vh - 60px - 2em - .6em - 5.5rem);
-
-    /* Calc ska vara 100vh - headerns höjd - marginal - bild - marginal - knapp - marginal */
+div.scrollDiv.hamsterInfo{
+    height: calc(35vh);
+    /* Calc ska egentligen vara 100vh - headerns höjd - marginal - bild - marginal - knapp - marginal */
 }
 
 div.scrollDiv .stats{
@@ -28,7 +27,7 @@ div.scrollDiv .stats{
     /* Calc ska egentligen vara 100vh - headerns höjd - knapp plus liite marginal */
 }
 @media only screen and (min-width: 1025px){
-    div.scrollDiv{
+    div.scrollDiv.hamsterInfo{
         padding-top: 5em;
         padding-left: 1em;
         height: 80vh;
