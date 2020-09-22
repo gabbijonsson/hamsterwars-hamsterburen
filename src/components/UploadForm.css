@@ -86,6 +86,38 @@ button.uploadImage{
     margin-top: 2rem;
 }
 
+/* Validering Text */
+.name-error-message > span,
+.age-error-message > span,
+.favFood-error-message > span,
+.loves-error-massage > span{
+    position: absolute;
+    font-size: x-small;
+}
+.name-error-message > span{
+    top: 17%;
+    right: 5%;
+}
+.age-error-message > span{
+    top: 26.6%;
+    left: 14%;
+}
+.age-error-message > span:first-child{
+    top: 27.2%;
+    left: 5%;
+}
+.favFood-error-message > span{
+    top: 26.6%;
+    right: 5%;
+}
+.loves-error-massage > span{
+    top: 42%;
+    right: 5%;
+}
+.genericBtn-form{
+    margin-top: 9em;
+}
+
 @media(min-width: 1025px){
 
     form{
@@ -150,5 +182,26 @@ button.uploadImage{
         width: 30%;
         font-size: 1.2rem;
 
+    }
+
+
+    /* Validering text */
+    .name-error-message > span{
+        top: 20.6%;
+        left: 40%;
+    }
+    .age-error-message > span{
+        left: unset;
+        top: 20.6%;
+        right: 8%;
+    }
+    .favFood-error-message > span{
+        right: unset;
+        top: 37.6%;
+        left: 40%;
+    }
+    .loves-error-massage > span{
+        top: 37.6%;
+        right: 8%;
     }
 }
