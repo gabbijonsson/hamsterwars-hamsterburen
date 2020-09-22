@@ -1,20 +1,45 @@
-import React from 'react';
+import React, {useState} from 'react';
 import './App.css';
-import StatisticsView from './components/StatisticsView';
 import StartPage from './components/StartPage';
+import CreateHamsterView from './components/CreateHamsterView';
 import BattlePage from './components/BattlePage';
-import img from './assets/hamsters/hamster-1.jpg';
+import StatisticsView from './components/StatisticsView';
 
 function App() {
 
-	const total = 8;
-	
+  const STARTPAGE = 'startpage' , BATTLEPAGE = 'battlepage' , CREATEHAMSTERPAGE = 'createhamsterpage' , STATSPAGE = 'statspage' ;
+
+  const [screen, setScreen] = useState(STARTPAGE);
+
+  let content = null;
+
+  switch (screen){
+
+    case CREATEHAMSTERPAGE:
+      content = <CreateHamsterView/>
+      break;
+
+    case BATTLEPAGE:
+      content = <BattlePage/>
+      break;
+
+    case STATSPAGE:
+      content = <StatisticsView total='8' />
+       //Lägg till statsview här istället när klar
+      break;
+
+    default:
+      content = <StartPage
+      showBattle={()=>setScreen(BATTLEPAGE)}
+      showStats={()=>setScreen(STATSPAGE)}
+      showCreate={()=>setScreen(CREATEHAMSTERPAGE)}/>
+  }
+
   return (
     <div className="App">
         <div className="splash-container">
 
-       <StatisticsView total={total}/>
-	   
+        {content}
 
         </div>
       

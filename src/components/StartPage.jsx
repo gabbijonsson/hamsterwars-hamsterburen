@@ -6,7 +6,7 @@ import BattleImg from '../assets/frontend/KarateHamster.svg';
 import StatisticsImg from '../assets/frontend/NutHamster.svg';
 import AddImg from '../assets/frontend/JoyfulHamster.svg';
 
-const StartPage = () => {
+const StartPage = ({showBattle, showStats, showCreate}) => {
 	return(
 		<div className="startpage">
 			<header>
@@ -14,9 +14,9 @@ const StartPage = () => {
 			</header>
 
 			<main className="startpage-main">
-               <MenuCard color='peach' text='Battle' img={BattleImg} />
-			   <MenuCard color='teal' text='Statistics' img={StatisticsImg}/>
-			   <MenuCard color='pink' text='Add your hamster' img={AddImg} />
+               <MenuCard showPage={showBattle} color='peach' text='Battle' img={BattleImg} />
+			   <MenuCard showPage={showStats} color='teal' text='Statistics' img={StatisticsImg}/>
+			   <MenuCard showPage={showCreate} color='pink' text='Add your hamster' img={AddImg} />
 			</main>
 		</div>
 	)

@@ -1,16 +1,12 @@
 import React from 'react';
 import './ScrollContainer.css';
-import CombatantInfoCard from './CombatantInfoCard'
 
-const ScrollContainer = ({content,children}) => {
-    
+
+const ScrollContainer = ({content,children}) => {	
     return(
         <div className={'scrollDiv ' + content}>
-			
-			{children}
-            
-		</div>
-		
+            {children}
+        </div>
     )
 }
 

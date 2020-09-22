@@ -2,6 +2,7 @@
 ## Team: Hamsterburen
 ---
 
+## Generellt
 
 ### Teknik
 + Backend: Node.js, Express och MongoDB.
@@ -38,3 +39,35 @@ Visa mer information på statistik-sidan. Till exempel vilka hamstrar som deltag
 Välj bland de hamstrar som haft minst antal matcher, när appen ska slumpa fram hamstrar.
 + ###### Ladda upp bildfil
 Formuläret för att lägga till ny hamster ska kunna ladda upp riktiga bilder.
+
+---
+
+## Server
+
+### Datamodell - Hamster
+
+En hamster har följande egenskaper:
++ ObjectID - Skapas av MongoDB
++ id - Skapas av webservern
++ name - Sträng med upp till 15 tecken (inte begränsad just nu)
++ age - Heltal
++ favFood - Sträng med upp till 15 tecken (inte begränsad just nu)
++ loves - Sträng med upp till 40 tecken (inte begränsad just nu)
++ imgName - Sträng med upp till 20 tecken (inte begränsad just nu)
++ wins - Anges ej, startar på 0
++ defeats - Anges ej, startar på 0
++ games - Anges ej, startar på 0
+
+---
+
+### Endpoints
+
+|Resurs    |Metod   |Förväntat svar|
+|----------|--------|---|
+|/gethamsters/random | GET | Returnerar slumpmässig/a hamster/hamstrar |
+
+Använd count för att efterfråga önskat antal hamstrar.
+```
+/gethamsters/random?count=1 Returnerar 1 slumpmässigt utvald hamster
+/gethamsters/random?count=2 Returnerar 2 slumpmässigt utvalda hamstrar
+```

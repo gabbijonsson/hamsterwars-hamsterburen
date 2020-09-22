@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useEffect} from 'react';
 import './BattlePage.css';
 import HeaderGeneric from '../components/HeaderGeneric';
 import GenericBtn from '../components/GenericBtn';
@@ -6,6 +6,17 @@ import CombatantCard from '../components/CombatantCard';
 import PickWinnerBtn from '../components/PickWinnerBtn';
 
 const BattlePage = ({img1,img2}) => {
+
+
+	useEffect( async () => {
+		console.log('useEffect körs []');
+		
+		const randomHamsters = await fetch('/gethamsters/random?count=2' , {method:'GET'});
+		const randomHamstersResult = await randomHamsters.json();
+		console.log('random result is:', randomHamstersResult);
+    }, [])
+	
+
 	return(
 		<div className="battlepage">
                 
