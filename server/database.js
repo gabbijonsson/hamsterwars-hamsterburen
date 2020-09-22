@@ -1,11 +1,11 @@
 // const { MongoClient } = require("mongodb");
 // const fs = require("fs");
+require("dotenv").config();
 
 let dbPW = "";
 
 try {
-    let { databasePW } = process.env.DATABASEPASSWORD;
-    dbPW = databasePW;
+    dbPW = process.env.DB_PASS;
 } catch {
     throw new Error('Could not find .env');
 };

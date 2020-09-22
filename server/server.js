@@ -1,8 +1,8 @@
 const express = require('express');
 const bodyParser = require('body-parser');
 const app = express();
-const getRandomHamsters = require('./getRandomHamsters.js');
-const getSelectedHamster = require('./getSelectedHamster.js');
+const { getRandomHamsters } = require("./getRandomHamsters.js");
+const { getSelectedHamster } = require('./getSelectedHamster.js');
 
 const port = 1234;
 
@@ -31,8 +31,8 @@ app.get("/gethamsters/random", (req, res) => {
 
 // Get specified hamsters based on request query
 app.get("/gethamster", (req, res) => {
-    let query = req.query;
-    getSelectedHamster(query, (response) => {
+    console.log('Query ', req.query);
+    getSelectedHamster(req, (response) => {
         res.send(response)
     })
 });

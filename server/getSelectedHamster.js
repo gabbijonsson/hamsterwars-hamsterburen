@@ -1,7 +1,7 @@
 const { MongoClient } = require("mongodb");
 const { url, dbName, collectionName } = require("./database.js");
 
-function getSelectedHamster(query, cb) {
+function getSelectedHamster(req, cb) {
 	MongoClient.connect(
 		url,
 		{ useUnifiedTopology: true },
@@ -12,7 +12,8 @@ function getSelectedHamster(query, cb) {
 			}
 			const col = client.db(dbName).collection(collectionName);
 			try {
-				const hamster = await col.findOne(query.id);
+				const hamster = await col.findOne(Number(req.param.id));
+				console.log('Hamster is ', hamster)
 				cb(hamster);
 			} catch (err) {
 				console.log("Invalid query! " + err);
@@ -24,5 +25,5 @@ function getSelectedHamster(query, cb) {
 }
 
 module.exports = {
-	getSelectedHamster,
+	getSelectedHamster
 };
