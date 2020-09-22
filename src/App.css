@@ -1,5 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Bangers&family=Montserrat&display=swap');
 
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@600&display=swap');
+
 *,
 *::before,
 *::after {
@@ -9,20 +11,32 @@
   padding: 0;
 }
 
-body {
-  background-color: #F1EBDE;
+:root {
+	--background-color-header: #AFA18C;
+	--blue: #048BA8;
+	--purple: #A4036F;
+	--pink: #FCA795;
 }
 
-h1 {
+body {
+  background-color: #F1EBDE;
+  width: 100vw;
+}
+
+h1, h2, button {
   font-family: 'Bangers', cursive;
 }
 
+button:hover{
+  cursor: pointer;
+}
+
 .splash-container {
-  display: flex;
+  /* display: flex;
   flex-direction: column;
   justify-content: center;
-  align-items: center;
-  height: 66vh;
+  align-items: center; */
+  height: 100vh;
 }
 
 .splash-title {
@@ -30,3 +44,17 @@ h1 {
   margin-bottom: 0.2em;
   text-align: center;
 }
+
+form label{
+  font-family: 'Montserrat', sans-serif;
+  color: #AFA19C;
+  font-weight: bold;
+}
+.description-text{
+  font-family: 'Montserrat', sans-serif;
+  color: #AFA19C;
+}
+
+
+
+

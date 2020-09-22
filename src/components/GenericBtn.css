@@ -1,0 +1,32 @@
+button.generic{
+    margin: 0 auto 6rem;
+    width: 65vw;
+    padding: .3em;
+    border: none;
+    font-size: 1.5rem;
+    color: white;
+	display: block;
+
+}
+
+button.peach{
+    background-color: #FCA795;
+}
+button.peach.result{
+    margin: 0 auto 0;
+}
+button.teal{
+    background-color: #048BA8;
+}
+
+@media(min-width: 1025px){
+    button.generic{
+        width: 10rem;
+        float: right;
+        margin: 0 3rem 3rem 0;
+        padding: .4em;
+    } 
+    button.peach.result{
+        margin: 0 3rem 3rem 0;
+    }  
+}

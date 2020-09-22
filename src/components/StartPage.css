@@ -1,0 +1,29 @@
+.startpage-main {
+	height: 100%;
+	display: grid;
+	grid-template-rows: 1fr 1fr 1fr;
+	
+	
+
+}
+
+.startpage {
+	height: 100%;
+	display: flex; 
+	flex-direction: column;
+}
+
+.startpage-main > article {
+	margin: auto;
+}
+
+
+@media(min-width: 1025px){
+	.startpage-main{
+	  display: flex;
+	  flex-direction: row;
+
+	}
+
+	
+  }

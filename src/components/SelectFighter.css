@@ -1,0 +1,48 @@
+.select-fighter-form{
+	margin-top: 6em;
+}
+#select-fighter-1,#select-fighter-2{
+	padding: 12px 20px;
+	border: none;
+	width: 90vw;
+	display: block;
+	margin: auto;
+}
+.select-fighter-label{
+	margin-left: 5%;
+}
+.description-text-mobile{
+	display: block;
+	width: 16em;
+	text-align: center;
+	margin: auto;
+	margin-top: 5em;
+}
+.description-text-desktop{
+	display: none;
+}
+@media only screen and (min-width: 1025px){
+	.select-fighter-form{
+		display: flex;
+		margin-top: 0em;
+		
+	}
+	#select-fighter-1,#select-fighter-2{
+		width: 25vw;
+		margin-left: 5%;
+		margin-right: 0;
+	}
+
+	.select-fighter-label{
+		display: none;
+	}
+	.description-text-mobile{
+		display: none;
+	}
+	.description-text-desktop{
+		display: block;
+		width: 15em;
+		text-align: center;
+		margin-left: 15px;
+	}
+}

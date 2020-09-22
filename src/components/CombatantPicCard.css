@@ -1,0 +1,17 @@
+.combatant-pic {
+	margin-top: 3em;
+	width: 80vw;
+	height: 40vh;
+}
+
+.combatant-pic > img {
+	width: 100%;
+	height: 100%;
+}
+@media only screen and (min-width: 1025px){
+	.combatant-pic{
+		margin-left: 2em;
+		width: 40vw;
+		height: 80vh;
+	}
+}
