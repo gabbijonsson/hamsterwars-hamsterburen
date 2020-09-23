@@ -3,6 +3,7 @@ import './App.css';
 import StartPage from './components/StartPage';
 import CreateHamsterView from './components/CreateHamsterView';
 import BattlePage from './components/BattlePage';
+import StatisticsView from './components/StatisticsView';
 
 function App() {
 
@@ -23,7 +24,7 @@ function App() {
       break;
 
     case STATSPAGE:
-      content = null
+      content = <StatisticsView total='8' />
        //Lägg till statsview här istället när klar
       break;
 

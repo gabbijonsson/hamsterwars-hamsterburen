@@ -26,7 +26,7 @@ app.use(bodyParser.json());
 
 // Get # of randomized hamsters based on request query
 app.get("/gethamsters/random", (req, res) => {
-    let query = req.query;
+	let query = req.query;
     getRandomHamsters(query, (response) => {
         res.send(response)
     })

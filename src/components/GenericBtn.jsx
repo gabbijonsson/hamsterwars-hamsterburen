@@ -1,9 +1,9 @@
 import React from 'react';
 import './GenericBtn.css';
 
-const GenericBtn = ({text, color, page}) => {
+const GenericBtn = ({text, color,functionality}) => {
     return(
-        <button className={'generic ' + color + ' ' + page}>
+        <button className={'generic ' + color} onClick={functionality}>
             {text}
         </button>
     )

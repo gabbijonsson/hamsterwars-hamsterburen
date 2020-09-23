@@ -1,7 +1,7 @@
 import React,{useState} from 'react';
 import './StatsToplistCombatant.css';
 
-const StatsToplistCombatant = ({CombatantImg, combatant, combatantInfo}) => {
+const StatsToplistCombatant = ({combatant, combatantInfo}) => {
 	 let info = '';
 	 let text = '';
 	
@@ -12,10 +12,10 @@ const StatsToplistCombatant = ({CombatantImg, combatant, combatantInfo}) => {
 			 break;
 		 case 'WINS' :
 			info = combatant.wins;
-			text = 'WINS';
+			text = 'wins';
 			 break;
 		 case 'LOSTS':
-			 text = 'LOSTS';
+			 text = 'losts';
 			 info = combatant.losts;
 			 break;
 		 default:
@@ -26,7 +26,7 @@ const StatsToplistCombatant = ({CombatantImg, combatant, combatantInfo}) => {
 	return(
 		<div className="stats-combatant">
 			 <div>
-				<img src={CombatantImg} alt="combatant" />
+				<img src={combatant.img} alt="combatant" />
 			 </div>
 			<div>
 				{combatant.name}
