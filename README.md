@@ -80,3 +80,13 @@ Använd id för att specificera hamster.
 ```
 /gethamster?id=:id Returnerar hamster med valt ID.
 ```
+
+|Resurs    |Metod   |Förväntat svar|
+|----------|--------|---|
+|/addhamster | POST | Lägger till ny hamster |
+
+Skicka obligatorisk information i request body (name, age, favFood, loves, imgName).
+Se [Datamodell - Hamster](#-datamodell---hamster) för mer info.
+```
+/gethamster?id=:id Returnerar hamster med valt ID.
+```
