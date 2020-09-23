@@ -1,5 +1,4 @@
 import React from 'react';
-import HeaderGeneric from './HeaderGeneric';
 import UploadForm from './UploadForm';
 import GenericBtn from './GenericBtn';
 

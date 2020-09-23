@@ -1,6 +1,5 @@
 import React from 'react';
 import './StartPage.css';
-import StartHeader from './StartHeader';
 import MenuCard from './MenuCard';
 import BattleImg from '../assets/frontend/KarateHamster.svg';
 import StatisticsImg from '../assets/frontend/NutHamster.svg';
