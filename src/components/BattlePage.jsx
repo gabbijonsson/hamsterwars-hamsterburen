@@ -1,4 +1,4 @@
-import React, {useEffect,useState} from 'react';
+import React, {useEffect, useState} from 'react';
 import './BattlePage.css';
 import HeaderGeneric from '../components/HeaderGeneric';
 import GenericBtn from '../components/GenericBtn';
@@ -6,42 +6,26 @@ import CombatantCard from '../components/CombatantCard';
 import PickWinnerBtn from '../components/PickWinnerBtn';
 
 const BattlePage = ({img1,img2}) => {
-
-    
-	
-		const [hamsters, setHamsters] = useState([]);
-		useEffect(() => {
-		  getRandomHamsters(setHamsters);
-		}, []);
-	  
-		
-		function getRandomHamsters(callback) {
-			fetch("http://localhost:1234/gethamsters/random?count=4")
-			  .then((res) => res.json())
-			  .then(
+	function getRandomHamsters(callback) {
+		fetch(
+			"/gethamsters/random?count=4"
+		)
+			.then((res) => res.json())
+			.then(
 				(result) => {
-				  callback(result);
+					callback(result);
 				},
 				(error) => {
-				  console.log("error", error);
+					console.log("error", error);
 				}
-			  );
-		  }
-
-		  
-		// async function getRandomHamster(){
-		// 	const response =  await fetch('http://localhost:1234/gethamsters/random?count=4' , {method:'GET'});
-		// 	const result =  await response.json();
-		// 	console.log('random result is:', result);
-		// 	hamster = result;
-		// }  
-        //    console.log('result is', hamster);
-
-
+			);
+	}
 			
-   
-	
-   
+	const [hamsters, setHamsters] = useState([]);
+	useEffect(() => {
+		getRandomHamsters(setHamsters);
+	}, []);
+
 	return(
 		<div className="battlepage">
                 <button onClick={()=> console.log(hamsters)}>Click</button>
