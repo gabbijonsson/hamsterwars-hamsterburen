@@ -9,9 +9,6 @@ import AddImg from '../assets/frontend/JoyfulHamster.svg';
 const StartPage = ({showBattle, showStats, showCreate}) => {
 	return(
 		<div className="startpage">
-			<header>
-				<StartHeader />
-			</header>
 
 			<main className="startpage-main">
                <MenuCard showPage={showBattle} color='peach' text='Battle' img={BattleImg} />

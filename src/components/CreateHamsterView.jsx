@@ -3,10 +3,9 @@ import HeaderGeneric from './HeaderGeneric';
 import UploadForm from './UploadForm';
 import GenericBtn from './GenericBtn';
 
-const CreateHamsterView = ({showBattle, showStats, showCreate}) => {
+const CreateHamsterView = () => {
     return(
         <>
-            <HeaderGeneric />
             <UploadForm/>
             <GenericBtn text={"add"} color={"peach"}/>
         </>
