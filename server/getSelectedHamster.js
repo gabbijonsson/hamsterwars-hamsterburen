@@ -12,8 +12,8 @@ function getSelectedHamster(req, cb) {
 			}
 			const col = client.db(dbName).collection(collectionName);
 			try {
-				const hamster = await col.findOne(Number(req.param.id));
-				console.log('Hamster is ', hamster)
+				let hamsterID = Number(req.query.id);
+				const hamster = await col.findOne( {id: hamsterID} );
 				cb(hamster);
 			} catch (err) {
 				console.log("Invalid query! " + err);

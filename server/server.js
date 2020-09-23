@@ -3,22 +3,25 @@ const bodyParser = require('body-parser');
 const app = express();
 const { getRandomHamsters } = require("./getRandomHamsters.js");
 const { getSelectedHamster } = require('./getSelectedHamster.js');
+const { addHamster } = require('./addHamster.js');
 
-const port = 1234;
+const port = process.env.PORT || 1234;
 
 // Middleware
 app.use(
     (req, res, next) => {
         console.log('LOGGER: ');
-        console.log(`Method: ${req.method}. URL: ${req.url}. Query: ${req.query}`)
-        next()
-    }
-);
+        console.log(
+            `Method: ${req.method}. URL: ${req.url}.`
+            );
+            next()
+        }
+        );
 app.use(express.static(__dirname + "src"));
 app.use(express.static(__dirname + "public"));
-app.use(bodyParser.urlencoded({ extended: true }));
+app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
-
+        
 // TODO: ROUTES HERE
 
 // Get # of randomized hamsters based on request query
@@ -36,6 +39,15 @@ app.get("/gethamster", (req, res) => {
         res.send(response)
     })
 });
+
+// Add a new hamster
+app.post("/addhamster", (req, res) => {
+    addHamster(req.body, (response) => {
+        console.log('Adding hamster. Req. body is: ');
+        console.log(req.body);
+        res.send(response)
+    })
+})
 
 
 // START SERVER
