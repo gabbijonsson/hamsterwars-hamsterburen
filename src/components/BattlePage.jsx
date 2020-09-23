@@ -7,19 +7,26 @@ import PickWinnerBtn from '../components/PickWinnerBtn';
 
 const BattlePage = ({img1,img2}) => {
 
+    let randomHamstersResult =[];
+	
+	 async function getAllStations(){
+		try{
+			const response = await fetch( '/gethamsters/random?count=2' ,{method:'GET'});
+			const data = await response.json();
+			console.log(`Here: ${data}`)
+		} catch(e) {
+			console.log(`Error: ${e}`)
+		}
+	
+	}
 
-	useEffect( async () => {
-		console.log('useEffect körs []');
-		
-		const randomHamsters = await fetch('/gethamsters/random?count=2' , {method:'GET'});
-		const randomHamstersResult = await randomHamsters.json();
-		console.log('random result is:', randomHamstersResult);
-    }, [])
+			
+   
 	
 
 	return(
 		<div className="battlepage">
-                
+                <button onClick={getAllStations}>Click</button>
 				<div className="stack-up1">
 					<PickWinnerBtn />
 				</div>
