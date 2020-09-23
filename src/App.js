@@ -3,6 +3,7 @@ import './App.css';
 import StartPage from './components/StartPage';
 import CreateHamsterView from './components/CreateHamsterView';
 import BattlePage from './components/BattlePage';
+import {BrowserRouter as Router, Route} from 'react-router-dom';
 
 function App() {
 
@@ -15,11 +16,17 @@ function App() {
   switch (screen){
 
     case CREATEHAMSTERPAGE:
-      content = <CreateHamsterView/>
+      content = <CreateHamsterView
+      showBattle={()=>setScreen(BATTLEPAGE)}
+      showStats={()=>setScreen(STATSPAGE)}
+      showCreate={()=>setScreen(CREATEHAMSTERPAGE)}/>
       break;
 
     case BATTLEPAGE:
-      content = <BattlePage/>
+      content = <BattlePage
+      showBattle={()=>setScreen(BATTLEPAGE)}
+      showStats={()=>setScreen(STATSPAGE)}
+      showCreate={()=>setScreen(CREATEHAMSTERPAGE)}/>
       break;
 
     case STATSPAGE:
