@@ -7,26 +7,35 @@ import PickWinnerBtn from '../components/PickWinnerBtn';
 
 const BattlePage = ({img1,img2}) => {
 
-    let randomHamstersResult =[];
+    
+	    let hamster = [];
+		async function getRandomHamster(){
+			const response =  await fetch('http://localhost:1234/gethamsters/random?count=4' , {method:'GET'});
+			const result =  await response.json();
+			console.log('random result is:', result);
+			hamster = result;
+		}  
+           console.log('result is', hamster);
+    
+
+
+
+	//   function getAllStations(){
+	// 	const randomHamsters =  fetch('/gethamsters/random?count=2' , {method:'GET'})
+    //         .then((res) => res.json())
+    //         .then(result =>  console.log('result is:',result));
+
+		 
 	
-	 async function getAllStations(){
-		try{
-			const response = await fetch( '/gethamsters/random?count=2' ,{method:'GET'});
-			const data = await response.json();
-			console.log(`Here: ${data}`)
-		} catch(e) {
-			console.log(`Error: ${e}`)
-		}
-	
-	}
+	// }
 
 			
    
 	
-
+   getRandomHamster()
 	return(
 		<div className="battlepage">
-                <button onClick={getAllStations}>Click</button>
+                <button onClick={()=> console.log(hamster)}>Click</button>
 				<div className="stack-up1">
 					<PickWinnerBtn />
 				</div>
