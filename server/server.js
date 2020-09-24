@@ -58,6 +58,7 @@ app.post("/api/addhamster", (req, res) => {
 
 // Upload image of hamster
 app.post("/api/upload", upload.single("imgName"), (req, res) => {
+    console.log('reqfile is ', req.file)
 	let fileType = req.file.mimetype.split("/")[1];
 	console.log("fileType ", fileType);
 	let newFileName = req.file.filename + "." + fileType;
