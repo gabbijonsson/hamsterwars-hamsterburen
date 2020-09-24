@@ -18,15 +18,15 @@ app.use(
         }
         );
 app.use(express.static(__dirname + "/../build/"));
-app.use(express.static(__dirname + "/../src/"));
-app.use(express.static(__dirname + "/../public/"));
+// app.use(express.static(__dirname + "/../src/"));
+// app.use(express.static(__dirname + "/../public/"));
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
         
 // TODO: ROUTES HERE
 
 // Get # of randomized hamsters based on request query
-app.get("/gethamsters/random", (req, res) => {
+app.get("/api/gethamsters/random", (req, res) => {
 	let query = req.query;
     getRandomHamsters(query, (response) => {
         res.send(response)
@@ -34,21 +34,21 @@ app.get("/gethamsters/random", (req, res) => {
 });
 
 // Get specified hamsters based on request query
-app.get("/gethamster", (req, res) => {
-    console.log('Query ', req.query);
-    getSelectedHamster(req, (response) => {
-        res.send(response)
-    })
+app.get("/api/gethamster", (req, res) => {
+	console.log("Query ", req.query);
+	getSelectedHamster(req, (response) => {
+		res.send(response);
+	});
 });
 
 // Add a new hamster
-app.post("/addhamster", (req, res) => {
-    addHamster(req.body, (addedHamster) => {
-        console.log('Adding hamster.');
-        console.log(req.body);
-        res.send(addedHamster)
-    })
-})
+app.post("/api/addhamster", (req, res) => {
+	addHamster(req.body, (addedHamster) => {
+		console.log("Adding hamster.");
+		console.log(req.body);
+		res.send(addedHamster);
+	});
+});
 
 
 // START SERVER
