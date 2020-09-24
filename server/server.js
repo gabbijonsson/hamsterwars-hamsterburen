@@ -10,6 +10,7 @@ const newHamsterId = require('./newHamsterId.js');
 
 const PORT = process.env.PORT || 1234;
 
+// Daniel START //
 // SET STORAGE
 var storage = multer.diskStorage({
     destination: function (req, file, cb) {
@@ -33,6 +34,8 @@ app.post("/upload", upload.single('imgName'), (req, res) => {
         res.send('200')
     })
 })
+
+// Daniel END //
 
 app.use(
     (req, res, next) => {
