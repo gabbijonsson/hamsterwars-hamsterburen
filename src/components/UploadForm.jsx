@@ -240,14 +240,14 @@ const UploadForm = ({ hamster }) => {
 					/>
 				</div>
 
-				<label htmlFor="fileReader" className="fileReader">
+				<label htmlFor="hamsterImage" className="hamsterImage">
 					Press to upload image
 				</label>
 				<input
 					accept="image/*"
 					type="file"
-					name="fileReader"
-					id="fileReader"
+					name="hamsterImage"
+					id="hamsterImage"
 					onChange={(e) => addImg(e)}
 				/>
 

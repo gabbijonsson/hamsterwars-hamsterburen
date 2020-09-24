@@ -1,32 +1,16 @@
 const express = require('express');
 const bodyParser = require('body-parser');
 const app = express();
-const fs = require('fs');
 const cors = require('cors');
 const { getRandomHamsters } = require("./getRandomHamsters.js");
 const { getSelectedHamster } = require('./getSelectedHamster.js');
 const { addHamster } = require('./addHamster.js');
-const { upload } = require('./imgHandler.js')
+const fileUpload = require('express-fileupload');
+const fs = require('fs');
 
 const PORT = process.env.PORT || 1234;
 
 // Middleware
-
-// Upload image of hamster
-app.post("/api/upload", upload.any("imgName"), (req, res) => {
-    console.log('reqfile is ', req.file)
-	let fileType = req.file.mimetype.split("/")[1];
-	console.log("fileType ", fileType);
-	let newFileName = req.file.filename + "." + fileType;
-	fs.rename(
-		`/assets/${req.file.filename}`,
-		`/assets/${newFileName}`,
-		function () {
-			console.log("callback");
-			res.send("200");
-		}
-	);
-});
 
 app.use(cors());
 app.use(
@@ -43,6 +27,7 @@ app.use(express.static(__dirname + "/../src/assets/"));
 // app.use(express.static(__dirname + "/../public/"));
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
+app.use(fileUpload());
 
     
 // TODO: ROUTES HERE
@@ -65,6 +50,12 @@ app.get("/api/gethamster", (req, res) => {
 
 // Add a new hamster
 app.post("/api/addhamster", (req, res) => {
+    console.log('req before writefile is ', req);
+    fs.writeFile(
+		"/assets/" + req.files.hamsterImage.name,
+		req.files.hamsterImage.data,
+		() => console.log("uploaded")
+	);
 	addHamster(req.body, (addedHamster) => {
 		console.log("Adding hamster.");
 		console.log(req.body);
