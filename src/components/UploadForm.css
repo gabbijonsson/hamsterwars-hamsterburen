@@ -74,16 +74,53 @@ div.inputs :nth-child(8){
     grid-area: 6 / 1 / span 1 / span 6;
 
 }
+input[type='file']{
+    visibility: hidden;
+    width: 70%;
+}
 
-
-button.uploadImage{
+label.fileReader{
     font-family: montserrat, cursive;
     width: 100%;
-    height: 3rem;
     background-color: #AFA18C;
-    border: none;
-    font-weight: 600;
     margin-top: 2rem;
+    color: black;
+    text-align: center;
+    padding: 1.2em;
+    font-size: small;
+}
+
+
+/* Validering Text */
+.name-error-message > span,
+.age-error-message > span,
+.favFood-error-message > span,
+.loves-error-massage > span{
+    position: absolute;
+    font-size: x-small;
+}
+.name-error-message > span{
+    top: 25%;
+    right: -55%;
+}
+.age-error-message > span:last-child{
+    top: 26.6%;
+    left: 51%;
+}
+.age-error-message > span:first-child{
+    top: 75.2%;
+    left: 3%;
+}
+.favFood-error-message > span{
+    top: 26.6%;
+    right: 5%;
+}
+.loves-error-massage > span{
+    top: 24%;
+    right: 4%;
+}
+.genericBtn-form{
+    margin-top: 9em;
 }
 
 @media(min-width: 1025px){
@@ -150,5 +187,31 @@ button.uploadImage{
         width: 30%;
         font-size: 1.2rem;
 
+    }
+
+
+    /* Validering text */
+    .name-error-message > span{
+        top: 95.6%;
+        left: 80%;
+    }
+    .age-error-message > span:last-child{
+        left: unset;
+        right: 1%;
+    top: 82.2%;
+    }
+    .age-error-message > span:first-child{
+        left: unset;
+        right: 1%;
+        top: 82.2%;
+    }
+    .favFood-error-message > span{
+        right: unset;
+    top: 82.6%;
+    left: 81%;
+    }
+    .loves-error-massage > span{
+        top: 83.6%;
+    right: 1%;
     }
 }
