@@ -5,7 +5,7 @@ const { getRandomHamsters } = require("./getRandomHamsters.js");
 const { getSelectedHamster } = require('./getSelectedHamster.js');
 const { addHamster } = require('./addHamster.js');
 
-const port = process.env.PORT || 1234;
+const PORT = process.env.PORT || 1234;
 
 // Middleware
 app.use(
@@ -17,8 +17,9 @@ app.use(
             next()
         }
         );
-app.use(express.static(__dirname + "src"));
-app.use(express.static(__dirname + "public"));
+app.use(express.static(__dirname + "/../build/"));
+app.use(express.static(__dirname + "/../src/"));
+app.use(express.static(__dirname + "/../public/"));
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
         
@@ -42,16 +43,16 @@ app.get("/gethamster", (req, res) => {
 
 // Add a new hamster
 app.post("/addhamster", (req, res) => {
-    addHamster(req.body, (response) => {
-        console.log('Adding hamster. Req. body is: ');
+    addHamster(req.body, (addedHamster) => {
+        console.log('Adding hamster.');
         console.log(req.body);
-        res.send(response)
+        res.send(addedHamster)
     })
 })
 
 
 // START SERVER
 
-app.listen(port, () => {
-    console.log("Server is listening on port: " + port);
+app.listen(PORT, () => {
+    console.log(`Server is listening on port: ${PORT}`);
 });

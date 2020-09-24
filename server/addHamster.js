@@ -1,7 +1,9 @@
 const { MongoClient } = require("mongodb");
 const { url, dbName, collectionName } = require("./database.js");
+const { newHamsterId } = require("./newHamsterId.js")
 
 function addHamster(newHamster, cb) {
+    
 	MongoClient.connect(
 		url,
 		{ useUnifiedTopology: true },
@@ -10,15 +12,23 @@ function addHamster(newHamster, cb) {
 				cb("An error occured. Could not connect. " + error);
 				return;
 			}
-			const col = client.db(dbName).collection(collectionName);
-			try {
-				const response = await col.insertOne(newHamster);
-				cb(response.result);
-			} catch (err) {
-				console.log("Invalid query! " + err);
-			} finally {
-				client.close();
-			}
+            newHamsterId((nextId) => {
+			    const col = client.db(dbName).collection(collectionName);
+			    try {
+                    newHamster.id = nextId;
+                    newHamster.wins = 0;
+                    newHamster.defeats = 0;
+                    newHamster.games = 0;
+                    col.insertOne(newHamster).catch((err) => {
+                        console.log('Could not add hamster ', newHamster)
+                        console.log(err);
+                    });
+                    
+                    cb(newHamster);
+                } finally {
+                    client.close();
+                }
+            });
 		}
 	);
 }
