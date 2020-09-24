@@ -25,7 +25,7 @@ var storage = multer.diskStorage({
 
 // Middleware
 
-app.post("/upload", upload.single('imgName'), (req, res) => {
+app.post("/api/upload", upload.single('imgName'), (req, res) => {
     let fileType = req.file.mimetype.split('/')[1];
     console.log('fileType ', fileType);
     let newFileName = req.file.filename + '.' + fileType
