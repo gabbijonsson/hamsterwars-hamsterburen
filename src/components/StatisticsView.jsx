@@ -1,6 +1,5 @@
 import React, {useState} from 'react';
 import './StatisticsView.css';
-import HeaderGeneric from './HeaderGeneric';
 import ScrollContainer from './ScrollContainer';
 import StatsToplist from './StatsToplist';
 import StatsToplistCombatant from './StatsToplistCombatant';
