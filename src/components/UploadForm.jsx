@@ -81,11 +81,11 @@ const UploadForm = ({ hamster }) => {
 			let imgFormData = new FormData();
 			imgFormData.append("imgName", imgName); //! imgName är variabeln vi angett i server.js (app.post upload.single(...HÄR...))
 
-			let request1 = fetch("/api/upload/", {
+			let request1 = fetch("/api/addhamster/", {
 				method: "post",
 				body: imgFormData,
 			});
-			let request2 = fetch("/api/upload/", {
+			let request2 = fetch("/api/addhamster/", {
 				method: "post",
 				body: hamster,
 			});
