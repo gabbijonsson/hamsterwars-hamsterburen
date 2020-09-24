@@ -85,12 +85,8 @@ const UploadForm = ({ hamster }) => {
 				method: "post",
 				body: imgFormData,
 			});
-			let request2 = fetch("/api/addhamster/", {
-				method: "post",
-				body: hamster,
-			});
 
-			Promise.all([request1, request2])
+			Promise.all([request1])
 				.then((requests) => {
 					requests.forEach((request) => {
 						process(request.json());

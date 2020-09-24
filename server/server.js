@@ -7,6 +7,7 @@ const { getSelectedHamster } = require('./getSelectedHamster.js');
 const { addHamster } = require('./addHamster.js');
 const fileUpload = require('express-fileupload');
 const fs = require('fs');
+const path = require('path');
 
 const PORT = process.env.PORT || 1234;
 
@@ -24,6 +25,8 @@ app.use(
         );
 app.use(express.static(__dirname + "/../build/"));
 app.use(express.static(__dirname + "/../src/assets/"));
+app.use(express.static(path.join(__dirname, "../assets")));
+app.use(express.static(path.join(__dirname, "/assets")));
 // app.use(express.static(__dirname + "/../public/"));
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
