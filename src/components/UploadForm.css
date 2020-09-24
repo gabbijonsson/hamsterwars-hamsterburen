@@ -80,7 +80,7 @@ input[type='file'] {
     width: 70%;
 }
 
-label.hamsterImage {
+label.fileReader {
     font-family: montserrat, cursive;
     width: 100%;
     background-color: #AFA18C;

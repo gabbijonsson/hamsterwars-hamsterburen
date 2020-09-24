@@ -11,43 +11,27 @@ const UploadForm = ({ hamster }) => {
 	const [ageTouched, setAgeTouched] = useState(false);
 	const [favFoodTouched, setFavFoodTouched] = useState(false);
 	const [lovesTouched, setLovesTouched] = useState(false);
-	// const [broadcastMsg, setBroadcastMsg] = useState("");
-	const [imgName, setImgName] = useState({});
-	const maxSize = 3000000;
-	// const addImg = (e) => {
-	// 	let impFile = e.target.files;
-	// 	console.log(impFile);
-	// 	for(let file of impFile){
-	// 		if(file.size > 3000000){
-	// 			console.log('size too large');
-	// 			impFile = undefined
-	// 			console.log(impFile);
-	// 		} else{
-	// 			let fileReader = new FileReader();
-
-	// 			fileReader.onload = function(event) {
-	// 				let imgData = event.target.result;
-	// 				console.log(imgData);
-	// 				setImgName(imgData)
-	// 				console.log(imgName + 'this is the image');
-	// 			}
-	// 			fileReader.readAsDataURL(file)
-
-	// 		}
-	// 	}
-	// }
+	const [broadcastMsg, setBroadcastMsg] = useState("");
+	const [imgName, setImgName] = useState("");
 
 	const addImg = (e) => {
 		let impFile = e.target.files;
+		console.log(impFile);
 		for (let file of impFile) {
-			if (file.size > maxSize && file.type === "image/*") {
-				console.log("File too large, max 3MB, choese another one");
+			if (file.size > 3000000) {
+				console.log("size too large");
 				impFile = undefined;
-				//TODO add message that file is not accepted
+				console.log(impFile);
 			} else {
-				console.log("File accepted");
-				setImgName(file); //Bilden läggs här
-				//TODO add message that file is accepted
+				let fileReader = new FileReader();
+
+				fileReader.onload = function (event) {
+					let imgData = event.target.result;
+					console.log(imgData);
+					setImgName(imgData);
+					console.log(imgName + "this is the image");
+				};
+				fileReader.readAsDataURL(file);
 			}
 		}
 	};
@@ -66,37 +50,18 @@ const UploadForm = ({ hamster }) => {
 			age < 0
 		) {
 			console.log("inside if");
-			// setBroadcastMsg(
-			// 	"You made a misstake filling in the fields! Luckily you can easily fix this by following the instructions given"
-			// );
+			setBroadcastMsg(
+				"You made a misstake filling in the fields! Luckily you can easily fix this by following the instructions given"
+			);
 		} else {
+			console.log("inside else");
+
 			hamster = {
 				name: name,
 				age: age,
 				favFood: favFood,
 				loves: loves,
 				imgName: imgName,
-			};
-			console.log("inside else");
-			let imgFormData = new FormData();
-			imgFormData.append("imgName", imgName); //! imgName är variabeln vi angett i server.js (app.post upload.single(...HÄR...))
-
-			let request1 = fetch("/api/addhamster/", {
-				method: "post",
-				body: imgFormData,
-			});
-
-			Promise.all([request1])
-				.then((requests) => {
-					requests.forEach((request) => {
-						process(request.json());
-					});
-				})
-				.catch((err) => {});
-			let process = (promise) => {
-				promise.then((data) => {
-					console.log(data);
-				}); //Promise needs to waite untill it's resolved
 			};
 			console.log(imgName);
 		}
@@ -236,14 +201,14 @@ const UploadForm = ({ hamster }) => {
 					/>
 				</div>
 
-				<label htmlFor="hamsterImage" className="hamsterImage">
+				<label htmlFor="fileReader" className="fileReader">
 					Press to upload image
 				</label>
 				<input
 					accept="image/*"
 					type="file"
-					name="hamsterImage"
-					id="hamsterImage"
+					name="fileReader"
+					id="fileReader"
 					onChange={(e) => addImg(e)}
 				/>
 
