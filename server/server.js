@@ -12,6 +12,22 @@ const PORT = process.env.PORT || 1234;
 
 // Middleware
 
+// Upload image of hamster
+app.post("/api/upload", upload.any("imgName"), (req, res) => {
+    console.log('reqfile is ', req.file)
+	let fileType = req.file.mimetype.split("/")[1];
+	console.log("fileType ", fileType);
+	let newFileName = req.file.filename + "." + fileType;
+	fs.rename(
+		`/assets/${req.file.filename}`,
+		`/assets/${newFileName}`,
+		function () {
+			console.log("callback");
+			res.send("200");
+		}
+	);
+});
+
 app.use(cors());
 app.use(
     (req, res, next) => {
@@ -56,21 +72,7 @@ app.post("/api/addhamster", (req, res) => {
 	});
 });
 
-// Upload image of hamster
-app.post("/api/upload", upload.single("imgName"), (req, res) => {
-    console.log('reqfile is ', req.file)
-	let fileType = req.file.mimetype.split("/")[1];
-	console.log("fileType ", fileType);
-	let newFileName = req.file.filename + "." + fileType;
-	fs.rename(
-		`/assets/${req.file.filename}`,
-		`/assets/${newFileName}`,
-		function () {
-			console.log("callback");
-			res.send("200");
-		}
-	);
-});
+
 
 // START SERVER
 
