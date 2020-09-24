@@ -12,36 +12,43 @@ const BattlePage = ({showResult,pickWinner}) => {
 	let id1 = '', id2='';
 	
 	
-	function getRandomHamsters(callback) {
-		fetch(
-			"/gethamsters/random?count=2"
-		)
-			.then((res) => res.json())
-			.then(
-				(result) => {
-					callback(result);
-				},
-				(error) => {
-					console.log("error", error);
-				}
-			);
-	}
+	
 	
 	
 	useEffect(() => {
+		let mounted = true;
+		function getRandomHamsters(callback) {
+			fetch(
+				"/gethamsters/random?count=2"
+			)
+				.then((res) => res.json())
+				.then( 
+					(result) => {
+						if(mounted){
+							console.log('1');
+							callback(result);
+						}
+				},
+					(error) => {
+						console.log("error", error);
+					}
+				);
+		}
+
 		getRandomHamsters(setHamsters);
+
+		return () => mounted = false;
 		
 	}, []);
 	 
-	
+	console.log('2');
      if(hamsters.length > 0){
 		 console.log('hamsters is:', hamsters);
 		 image1 = hamsters[0].imgName;
 		 image2 = hamsters[1].imgName;
 		 id1 = hamsters[0].id;
 		 id2 = hamsters[1].id;
-		 
-		}
+	 }
 		
 		console.log(image1);
 		console.log(image2);

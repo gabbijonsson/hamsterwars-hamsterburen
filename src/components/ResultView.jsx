@@ -18,10 +18,14 @@ let hamster =
 		}
 
 let hamsterImg = TestHamsterPic;
-function ResultView({id}) {
+function ResultView({id,showBattle}) {
 	console.log('id is:', id);
 	const [winnerHamster, setWinnerHamster] = useState();
 
+	
+    useEffect(() => {
+    
+		
 	function getHamster(callback) {
 		fetch(
 			`/gethamster?id=${id}`
@@ -37,8 +41,7 @@ function ResultView({id}) {
 				}
 			);
 	}
-	
-    useEffect(() => {
+
 		getHamster(setWinnerHamster);
 		
 	}, []);
@@ -60,7 +63,7 @@ function ResultView({id}) {
 				</ScrollContainer>
 			</div>
 			<div className="resultView-mobile-btn">
-			<GenericBtn color="peach" text="BATTLE" page="result"/>
+			<GenericBtn color="peach" text="BATTLE" page="result" functionality={showBattle} />
 
 			</div>
 		</div>

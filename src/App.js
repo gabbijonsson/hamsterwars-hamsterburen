@@ -46,7 +46,9 @@ function App() {
 	  break;
 	  
 	case RESULTPAGE:
-		content = <ResultView id={winnerId}/>
+		content = <ResultView
+		 showBattle={()=>setScreen(BATTLEPAGE)}
+		 id={winnerId}/>
 		break;
 		
     default:
