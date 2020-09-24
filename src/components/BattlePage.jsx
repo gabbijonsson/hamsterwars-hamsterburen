@@ -1,6 +1,5 @@
 import React, {useEffect, useState} from 'react';
 import './BattlePage.css';
-import HeaderGeneric from '../components/HeaderGeneric';
 import GenericBtn from '../components/GenericBtn';
 import CombatantCard from '../components/CombatantCard';
 import PickWinnerBtn from '../components/PickWinnerBtn';
@@ -36,7 +35,6 @@ const BattlePage = ({img1,img2}) => {
 					<PickWinnerBtn />
 				</div>
 			    
-				<HeaderGeneric />
             <div className="battlepage-main">
 			    <CombatantCard CombatantImg={img1} borderColor='blue'/>
 
