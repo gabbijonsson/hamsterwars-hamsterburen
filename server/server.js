@@ -62,8 +62,8 @@ app.post("/api/upload", upload.single("imgName"), (req, res) => {
 	console.log("fileType ", fileType);
 	let newFileName = req.file.filename + "." + fileType;
 	fs.rename(
-		`../src/assets/${req.file.filename}`,
-		`../src/assets/${newFileName}`,
+		`/assets/${req.file.filename}`,
+		`/assets/${newFileName}`,
 		function () {
 			console.log("callback");
 			res.send("200");
