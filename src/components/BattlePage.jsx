@@ -5,6 +5,12 @@ import CombatantCard from '../components/CombatantCard';
 import PickWinnerBtn from '../components/PickWinnerBtn';
 
 const BattlePage = ({img1,img2}) => {
+	
+	const [hamsters, setHamsters] = useState([]);
+	let image1 = '';
+	let image2 = '';
+	
+	
 	function getRandomHamsters(callback) {
 		fetch(
 			"/gethamsters/random?count=4"
@@ -12,6 +18,7 @@ const BattlePage = ({img1,img2}) => {
 			.then((res) => res.json())
 			.then(
 				(result) => {
+					console.log('2');
 					callback(result);
 				},
 				(error) => {
@@ -19,15 +26,28 @@ const BattlePage = ({img1,img2}) => {
 				}
 			);
 	}
-			
-	const [hamsters, setHamsters] = useState([]);
+	
+	
 	useEffect(() => {
 		getRandomHamsters(setHamsters);
+		
 	}, []);
+	 
+	
+     if(hamsters.length > 0){
+		 console.log('hamsters is:', hamsters);
+		 image1 = hamsters[0].imgName;
+		 image2 = hamsters[1].imgName;
+		 
+		}
+		
+		console.log(image1);
+		console.log(image2);
+	 
 
 	return(
 		<div className="battlepage">
-                <button onClick={()=> console.log(hamsters)}>Click</button>
+                
 				<div className="stack-up1">
 					<PickWinnerBtn />
 				</div>
@@ -36,13 +56,13 @@ const BattlePage = ({img1,img2}) => {
 				</div>
 			    
             <div className="battlepage-main">
-			    <CombatantCard CombatantImg={img1} borderColor='blue'/>
+			    <CombatantCard CombatantImg={image1} borderColor='blue'/>
 
 				
 			
 				<h1>VS.</h1>
 
-				<CombatantCard CombatantImg={img2} borderColor='purple'/>
+				<CombatantCard CombatantImg={image2} borderColor='purple'/>
 
 				
 
