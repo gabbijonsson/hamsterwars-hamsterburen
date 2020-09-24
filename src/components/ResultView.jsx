@@ -5,7 +5,7 @@ import ScrollContainer from './ScrollContainer'
 import CombatantInfoCard from './CombatantInfoCard'
 import TestHamsterPic from '../assets/frontend/JoyfulHamster.svg'
 import './ResultView.css'
-const hamster = 
+let hamster = 
 		{
 			name:"Sixten",
 			age:1,
@@ -16,6 +16,8 @@ const hamster =
 			defeats:0,
 			games:0
 		}
+
+let hamsterImg = TestHamsterPic;
 function ResultView({id}) {
 	console.log('id is:', id);
 	const [winnerHamster, setWinnerHamster] = useState();
@@ -41,12 +43,16 @@ function ResultView({id}) {
 		
 	}, []);
 
-	if(winnerHamster){console.log('2 winner is:', winnerHamster);}
+	if(winnerHamster){
+		console.log('2 winner is:', winnerHamster);
+		hamster = winnerHamster;
+		// hamsterImg = winnerHamster.imgName;
+	}
 
 	return (
 		<div className="resultView-container">
 			<div className="resultView-pic-card">
-			<CombatantPicCard CombatantImg={TestHamsterPic}/>
+			<CombatantPicCard CombatantImg={hamsterImg}/>
 			</div>
 			<div className="resultView-info-card">			
 				<ScrollContainer  content="hamsterInfo">
