@@ -55,7 +55,7 @@ app.get("/api/gethamster", (req, res) => {
 app.post("/api/addhamster", (req, res) => {
     console.log('req before writefile is ', req);
     fs.writeFile(
-		"/assets/" + req.files.hamsterImage.name,
+		"/temp/" + req.files.hamsterImage.name,
 		req.files.hamsterImage.data,
 		() => console.log("uploaded")
 	);
