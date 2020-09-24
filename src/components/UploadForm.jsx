@@ -14,27 +14,43 @@ const UploadForm = ({hamster}) => {
 	const [favFoodTouched, setFavFoodTouched] = useState(false)
 	const [lovesTouched, setLovesTouched] = useState(false)
 	const [broadcastMsg, setBroadcastMsg] = useState('')
-	const [imgName, setImgName] = useState('')
+	const [imgName, setImgName] = useState({})
+	const maxSize = 3000000; 
+	// const addImg = (e) => {
+	// 	let impFile = e.target.files;
+	// 	console.log(impFile);
+	// 	for(let file of impFile){
+	// 		if(file.size > 3000000){
+	// 			console.log('size too large');
+	// 			impFile = undefined
+	// 			console.log(impFile);
+	// 		} else{
+	// 			let fileReader = new FileReader();
+				
+	// 			fileReader.onload = function(event) {
+	// 				let imgData = event.target.result;
+	// 				console.log(imgData);
+	// 				setImgName(imgData)
+	// 				console.log(imgName + 'this is the image');
+	// 			}
+	// 			fileReader.readAsDataURL(file)
+
+	// 		}
+	// 	}
+	// }
 
 	const addImg = (e) => {
 		let impFile = e.target.files;
-		console.log(impFile);
 		for(let file of impFile){
-			if(file.size > 3000000){
-				console.log('size too large');
+			if(file.size > maxSize && file.type === 'image/*'){
+				console.log('File too large, max 3MB, choese another one');
 				impFile = undefined
-				console.log(impFile);
-			} else{
-				let fileReader = new FileReader();
-				
-				fileReader.onload = function(event) {
-					let imgData = event.target.result;
-					console.log(imgData);
-					setImgName(imgData)
-					console.log(imgName + 'this is the image');
-				}
-				fileReader.readAsDataURL(file)
-
+				//TODO add message that file is not accepted
+			}
+			else{
+				console.log('File accepted');
+				setImgName(file) //Bilden läggs här
+				//TODO add message that file is accepted
 			}
 		}
 	}
@@ -53,8 +69,6 @@ const UploadForm = ({hamster}) => {
 				
 			}
 			else{
-				console.log('inside else');
-
 				hamster = 
 				{
 					name: name,
@@ -62,6 +76,33 @@ const UploadForm = ({hamster}) => {
 					favFood: favFood,
 					loves: loves,
 					imgName: imgName
+				}
+				console.log('inside else');
+				let imgFormData = new FormData()
+				imgFormData.append('imgName', imgName); //! imgName är variabeln vi angett i server.js (app.post upload.single(...HÄR...))
+
+				let request1 = fetch('/upload/', {
+					method: 'post',
+					body: imgFormData
+				})
+				let request2 = fetch('/upload/', {
+					method: 'post',
+					body: hamster
+				})
+				
+				Promise.all([request1, request2])
+				.then(requests => {
+					requests.forEach(request => {
+						process( request.json() )
+					})
+				})
+				.catch(err => {
+
+				})
+				let process = (promise) => {
+					promise.then(data => {
+						console.log(data);
+					}) //Promise needs to waite untill it's resolved
 				}
 				console.log(imgName);
 		}
