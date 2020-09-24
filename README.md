@@ -83,10 +83,7 @@ Använd id för att specificera hamster.
 
 |Resurs    |Metod   |Förväntat svar|
 |----------|--------|---|
-|/api/addhamster | POST | Lägger till ny hamster |
+|/api/addhamster | POST | Lägger till ny hamster och returnerar hamsterobjektet |
 
 Skicka obligatorisk information i request body (name, age, favFood, loves, imgName).
 Se [Datamodell - Hamster](#-datamodell---hamster) för mer info.
-```
-/api/gethamster?id=:id Returnerar hamster med valt ID.
-```
