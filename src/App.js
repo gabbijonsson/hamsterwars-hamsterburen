@@ -3,7 +3,6 @@ import './App.css';
 import StartPage from './components/StartPage';
 import CreateHamsterView from './components/CreateHamsterView';
 import BattlePage from './components/BattlePage';
-import {BrowserRouter as Router, Route} from 'react-router-dom';
 import StatisticsView from './components/StatisticsView';
 import StartHeader from './components/StartHeader';
 import HeaderGeneric from './components/HeaderGeneric';
