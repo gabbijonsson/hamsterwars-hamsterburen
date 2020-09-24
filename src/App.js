@@ -7,12 +7,14 @@ import {BrowserRouter as Router, Route} from 'react-router-dom';
 import StatisticsView from './components/StatisticsView';
 import StartHeader from './components/StartHeader';
 import HeaderGeneric from './components/HeaderGeneric';
+import ResultView from './components/ResultView';
 
 function App() {
 
-  const STARTPAGE = 'startpage' , BATTLEPAGE = 'battlepage' , CREATEHAMSTERPAGE = 'createhamsterpage' , STATSPAGE = 'statspage' ;
+  const STARTPAGE = 'startpage' , BATTLEPAGE = 'battlepage' , CREATEHAMSTERPAGE = 'createhamsterpage' , STATSPAGE = 'statspage' , RESULTPAGE = 'resultpage' ;
 
   const [screen, setScreen] = useState(STARTPAGE);
+  const [winnerId, setWinnerId] = useState('');
 
   let content = null;
   let header = <StartHeader/>;
@@ -34,13 +36,19 @@ function App() {
       content = <BattlePage
       showBattle={()=>setScreen(BATTLEPAGE)}
       showStats={()=>setScreen(STATSPAGE)}
-      showCreate={()=>setScreen(CREATEHAMSTERPAGE)}/>
+      showCreate={()=>setScreen(CREATEHAMSTERPAGE)}
+	  showResult={()=>setScreen(RESULTPAGE)}
+	  pickWinner ={(ID) => setWinnerId(ID)} />
       break;
 
     case STATSPAGE:
       content = <StatisticsView total='8' />
-      break;
-
+	  break;
+	  
+	case RESULTPAGE:
+		content = <ResultView id={winnerId}/>
+		break;
+		
     default:
       content = <StartPage
       showBattle={()=>setScreen(BATTLEPAGE)}

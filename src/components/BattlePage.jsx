@@ -4,21 +4,21 @@ import GenericBtn from '../components/GenericBtn';
 import CombatantCard from '../components/CombatantCard';
 import PickWinnerBtn from '../components/PickWinnerBtn';
 
-const BattlePage = ({img1,img2}) => {
+const BattlePage = ({showResult,pickWinner}) => {
 	
 	const [hamsters, setHamsters] = useState([]);
 	let image1 = '';
 	let image2 = '';
+	let id1 = '', id2='';
 	
 	
 	function getRandomHamsters(callback) {
 		fetch(
-			"/gethamsters/random?count=4"
+			"/gethamsters/random?count=2"
 		)
 			.then((res) => res.json())
 			.then(
 				(result) => {
-					console.log('2');
 					callback(result);
 				},
 				(error) => {
@@ -38,21 +38,24 @@ const BattlePage = ({img1,img2}) => {
 		 console.log('hamsters is:', hamsters);
 		 image1 = hamsters[0].imgName;
 		 image2 = hamsters[1].imgName;
+		 id1 = hamsters[0].id;
+		 id2 = hamsters[1].id;
 		 
 		}
 		
 		console.log(image1);
 		console.log(image2);
-	 
+		console.log('id1', id1);
+		console.log('id2', id2);
 
 	return(
 		<div className="battlepage">
                 
 				<div className="stack-up1">
-					<PickWinnerBtn />
+					<PickWinnerBtn pickWinner={()=>pickWinner(id1)}  showResult={showResult} />
 				</div>
 				<div className="stack-up2">
-					<PickWinnerBtn />
+					<PickWinnerBtn pickWinner={()=>pickWinner(id2)} showResult={showResult} />
 				</div>
 			    
             <div className="battlepage-main">

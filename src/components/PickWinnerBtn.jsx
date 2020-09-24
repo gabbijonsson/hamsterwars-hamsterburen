@@ -1,10 +1,16 @@
 import React from 'react';
 import './PickWinnerBtn.css';
 
-const PickWinnerBtn = () => {
+const PickWinnerBtn = ({pickWinner,showResult}) => {
+
+	// const PickWinnerFunction = () => {
+	// 	pickWinner
+	// 	showResult
+        
+	// }
 	return(
 		<div>
-			<button className="pick-button"><h1>Pick as winner</h1></button>
+			<button className="pick-button" onClick={() => { pickWinner(); showResult(); }}><h1>Pick as winner</h1></button>
 		</div>
 	)
 }

@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState,useEffect} from 'react'
 import CombatantPicCard from './CombatantPicCard'
 import GenericBtn from './GenericBtn'
 import ScrollContainer from './ScrollContainer'
@@ -16,7 +16,33 @@ const hamster =
 			defeats:0,
 			games:0
 		}
-function ResultView() {
+function ResultView({id}) {
+	console.log('id is:', id);
+	const [winnerHamster, setWinnerHamster] = useState();
+
+	function getHamster(callback) {
+		fetch(
+			`/gethamster?id=${id}`
+		)
+			.then((res) => res.json())
+			.then(
+				(result) => {
+					console.log('1 winner is:',result);
+					callback(result)
+				},
+				(error) => {
+					console.log("error", error);
+				}
+			);
+	}
+	
+    useEffect(() => {
+		getHamster(setWinnerHamster);
+		
+	}, []);
+
+	if(winnerHamster){console.log('2 winner is:', winnerHamster);}
+
 	return (
 		<div className="resultView-container">
 			<div className="resultView-pic-card">
