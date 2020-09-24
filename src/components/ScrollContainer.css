@@ -11,17 +11,20 @@ div.scrollDiv.hamsterInfo{
     /* Calc ska egentligen vara 100vh - headerns höjd - marginal - bild - marginal - knapp - marginal */
 }
 
-div.scrollDiv .stats{
-    height: calc(100vh - 60px - 3.5rem - .6em - 5em);
+div.scrollDiv.stats{
+	
+	height: calc(100vh - 60px - 3.5rem - .6em - 5em);
 
+   
     /* Calc ska vara 100vh - headerns höjd - knapp plus liite marginal */
 
     /* De där 5em kommer troligen behöva justeras i efterhand pga ingen font-size på statsToplistCombatant saken */
 }
 
 @media(min-width: 1025px){
-    div.scrollDiv .stats{
-        height: 50vh;
+    div.scrollDiv.stats{
+		height: calc(100vh - 60px - 3.5rem - .6em - 5em);
+       
     }
         /* Kommer troligen behöva justeras pga att storlek ännu inte finns i statsToplistCombatant saken i desktop vy */
     /* Calc ska egentligen vara 100vh - headerns höjd - knapp plus liite marginal */
