@@ -64,29 +64,26 @@ En hamster har följande egenskaper:
 
 |Resurs    |Metod   |Förväntat svar|
 |----------|--------|---|
-|/gethamsters/random | GET | Returnerar slumpmässig/a hamster/hamstrar |
+|/api/gethamsters/random | GET | Returnerar slumpmässig/a hamster/hamstrar |
 
 Använd count för att efterfråga önskat antal hamstrar.
 ```
-/gethamsters/random?count=1 Returnerar 1 slumpmässigt utvald hamster
-/gethamsters/random?count=2 Returnerar 2 slumpmässigt utvalda hamstrar
+/api/gethamsters/random?count=1 Returnerar 1 slumpmässigt utvald hamster
+/api/gethamsters/random?count=2 Returnerar 2 slumpmässigt utvalda hamstrar
 ```
 
 |Resurs    |Metod   |Förväntat svar|
 |----------|--------|---|
-|/gethamster | GET | Returnerar vald hamster baserad på angivet ID |
+|/api/gethamster | GET | Returnerar vald hamster baserad på angivet ID |
 
 Använd id för att specificera hamster.
 ```
-/gethamster?id=:id Returnerar hamster med valt ID.
+/api/gethamster?id=:id Returnerar hamster med valt ID.
 ```
 
 |Resurs    |Metod   |Förväntat svar|
 |----------|--------|---|
-|/addhamster | POST | Lägger till ny hamster |
+|/api/addhamster | POST | Lägger till ny hamster och returnerar hamsterobjektet |
 
 Skicka obligatorisk information i request body (name, age, favFood, loves, imgName).
 Se [Datamodell - Hamster](#-datamodell---hamster) för mer info.
-```
-/gethamster?id=:id Returnerar hamster med valt ID.
-```

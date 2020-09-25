@@ -1,4 +1,4 @@
-form{
+form {
     padding: 2rem 1.5rem;
     /* display: flex;
     flex-direction: column;
@@ -11,14 +11,14 @@ form{
 
 }
 
-form h2{
+form h2 {
     font-size: 1.5rem;
     padding-bottom: 2rem;
     text-align: center;
 
 }
 
-form label{
+form label {
     font-size: 1.2rem;
     color: #AFA18C;
     font-weight: 800;
@@ -33,122 +33,196 @@ form input {
     margin-bottom: .5rem;
 }
 
-div.inputs{
+div.inputs {
     display: grid;
     grid-template-rows: repeat(3, 2rem 1fr);
     grid-template-columns: 6rem 1fr;
     width: 100%;
 }
 
-div.inputs :nth-child(1){
+div.inputs :nth-child(1) {
     grid-area: 1 / 1 / span 1 / span 1;
 }
 
-div.inputs :nth-child(2){
+div.inputs :nth-child(2) {
     grid-area: 2 / 1 / span 1 / span 6;
 }
 
-div.inputs :nth-child(3){
+div.inputs :nth-child(3) {
     grid-area: 3 / 1 / span 1 / span 1;
 }
 
-div.inputs :nth-child(4){
+div.inputs :nth-child(4) {
     grid-area: 4 / 1 / span 1 / span 1;
     margin-right: 1rem;
 
 }
 
-div.inputs :nth-child(5){
+div.inputs :nth-child(5) {
     grid-area: 3 / 2 / span 1 / span 1;
 }
 
-div.inputs :nth-child(6){
+div.inputs :nth-child(6) {
     grid-area: 4 / 2 / span 1 / span 1;
 }
 
-div.inputs :nth-child(7){
+div.inputs :nth-child(7) {
     grid-area: 5 / 1 / span 1 / span 6;
 }
 
-div.inputs :nth-child(8){
+div.inputs :nth-child(8) {
     grid-area: 6 / 1 / span 1 / span 6;
 
 }
 
-
-button.uploadImage{
-    font-family: montserrat, cursive;
-    width: 100%;
-    height: 3rem;
-    background-color: #AFA18C;
-    border: none;
-    font-weight: 600;
-    margin-top: 2rem;
+input[type='file'] {
+    visibility: hidden;
+    width: 70%;
 }
 
-@media(min-width: 1025px){
+label.fileReader {
+    font-family: montserrat, cursive;
+    width: 100%;
+    background-color: #AFA18C;
+    margin-top: 2rem;
+    color: black;
+    text-align: center;
+    padding: 1.2em;
+    font-size: small;
+}
 
-    form{
+
+/* Validering Text */
+.name-error-message>span,
+.age-error-message>span,
+.favFood-error-message>span,
+.loves-error-massage>span {
+    position: absolute;
+    font-size: x-small;
+}
+
+.name-error-message>span {
+    top: 25%;
+    right: -55%;
+}
+
+.age-error-message>span:last-child {
+    top: 26.6%;
+    left: 51%;
+}
+
+.age-error-message>span:first-child {
+    top: 75.2%;
+    left: 3%;
+}
+
+.favFood-error-message>span {
+    top: 26.6%;
+    right: 5%;
+}
+
+.loves-error-massage>span {
+    top: 24%;
+    right: 4%;
+}
+
+.genericBtn-form {
+    margin-top: 9em;
+}
+
+@media(min-width: 1025px) {
+
+    form {
         height: auto;
         position: relative;
         padding: 2rem 5rem;
 
     }
 
-    form h2{
+    form h2 {
         font-size: 3rem;
         text-align: left;
-    
+
     }
 
-    form label{
+    form label {
         font-size: 1.5rem;
     }
 
-    div.inputs{
+    div.inputs {
         grid-template-columns: repeat(2, 1fr);
         grid-template-rows: repeat(2, 1rem 1fr);
         gap: 1.5rem 4rem;
         width: 100%;
     }
 
-    div.inputs :nth-child(1){
+    div.inputs :nth-child(1) {
         grid-area: 1 / 1 / span 1 / span 1;
     }
 
-    div.inputs :nth-child(2){
+    div.inputs :nth-child(2) {
         grid-area: 2 / 1 / span 1 / span 1;
     }
 
-    div.inputs :nth-child(3){
+    div.inputs :nth-child(3) {
         grid-area: 1 / 2 / span 1 / span 1;
     }
 
-    div.inputs :nth-child(4){
+    div.inputs :nth-child(4) {
         grid-area: 2 / 2 / span 1 / span 1;
         margin-right: 0;
     }
 
-    div.inputs :nth-child(5){
+    div.inputs :nth-child(5) {
         grid-area: 3 / 1 / span 1 / span 1;
     }
 
-    div.inputs :nth-child(6){
+    div.inputs :nth-child(6) {
         grid-area: 4 / 1 / span 1 / span 1;
     }
 
-    div.inputs :nth-child(7){
+    div.inputs :nth-child(7) {
         grid-area: 3 / 2 / span 1 / span 1;
     }
 
-    div.inputs :nth-child(8){
+    div.inputs :nth-child(8) {
         grid-area: 4 / 2 / span 1 / span 1;
     }
 
-    button.uploadImage{
+    button.uploadImage {
         margin-top: 7rem;
         width: 30%;
         font-size: 1.2rem;
 
+    }
+
+
+    /* Validering text */
+    .name-error-message>span {
+        top: 95.6%;
+        left: 80%;
+    }
+
+    .age-error-message>span:last-child {
+        left: unset;
+        right: 1%;
+        top: 82.2%;
+    }
+
+    .age-error-message>span:first-child {
+        left: unset;
+        right: 1%;
+        top: 82.2%;
+    }
+
+    .favFood-error-message>span {
+        right: unset;
+        top: 82.6%;
+        left: 81%;
+    }
+
+    .loves-error-massage>span {
+        top: 83.6%;
+        right: 1%;
     }
 }

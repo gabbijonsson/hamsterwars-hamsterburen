@@ -1,13 +1,22 @@
 import React from 'react';
 import './HamburgerMenu.css';
-const HamburgerMenu = ({showHome, showBattle, showStats, showCreate}) => {
+import {Link} from 'react-router-dom';
+const HamburgerMenu = () => {
 
 	return(
 		<nav role="navigation" className="hamburger-content">
-			<h2 role="link" onClick={showHome}>Home</h2>
-			<h2 role="link" onClick={showBattle}>Battle</h2>
-			<h2 role="link" onClick={showStats}>Statistics</h2>
-			<h2 role="link" onClick={showCreate}>Add your hamster</h2>
+			<Link to='/'>
+				<h2 role="link">Home</h2>
+			</Link>
+			<Link to='/battle'>
+				<h2 role="link">Battle</h2>
+			</Link>
+			<Link to='/stats'>
+				<h2 role="link">Statistics</h2>
+			</Link>
+			<Link to='/upload'>
+				<h2 role="link">Add your hamster</h2>
+			</Link>
 		</nav>
 	)
 }
