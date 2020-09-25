@@ -20,7 +20,11 @@ function App() {
   let header = <StartHeader/>;
 
   if (screen !== STARTPAGE){
-    header = <HeaderGeneric/>
+    header = <HeaderGeneric
+	showHome = {()=>setScreen(STARTPAGE)}
+	showBattle={()=>setScreen(BATTLEPAGE)}
+	showStats={()=>setScreen(STATSPAGE)}
+	showCreate={()=>setScreen(CREATEHAMSTERPAGE)}/>
   }
 
   switch (screen){
