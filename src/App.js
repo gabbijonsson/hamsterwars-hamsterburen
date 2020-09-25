@@ -59,9 +59,10 @@ function App() {
 		break;
 	
 	case PICKOWNPAGE:
-		content = <PickFightersView />
+		content = <PickFightersView
+		showBattle={()=>setScreen(BATTLEPAGE)} />
 		break;
-		
+
     default:
       content = <StartPage
       showBattle={()=>setScreen(BATTLEPAGE)}
