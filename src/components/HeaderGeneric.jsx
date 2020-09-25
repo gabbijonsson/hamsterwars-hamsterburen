@@ -21,7 +21,7 @@ function HeaderGeneric({showHome,showStats,showBattle,showCreate}) {
 			<div className="header-item-3">
 				<HamburgerMenuBtn showHome={showHome} showBattle={showBattle} showStats={showStats} showCreate={showCreate} />
 				<div className="desktop-header-btn">
-					<DesktopHeaderBtn text="PICK YOUR OWN FIGHTERS" color="teal"/>
+					<DesktopHeaderBtn text="PICK YOUR OWN FIGHTERS" color="teal" functionality={showCreate} />
 				</div>
 			</div>
 			

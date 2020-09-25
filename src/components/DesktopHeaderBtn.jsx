@@ -1,9 +1,9 @@
 import React from 'react';
 import './DesktopHeaderBtn.css';
 
-const DesktopHeaderBtn = ({text, color}) => {
+const DesktopHeaderBtn = ({text, color,functionality}) => {
     return(
-        <button className={'generic-desktop ' + color}>
+        <button className={'generic-desktop ' + color} onClick={functionality}>
             {text}
         </button>
     )
