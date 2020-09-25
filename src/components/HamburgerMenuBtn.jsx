@@ -4,7 +4,7 @@ import menuIcon from '../assets/frontend/hamburger-menu.png';
 import HamburgerMenu from './HamburgerMenu';
 import menuClose from '../assets/frontend/CloseHamburger.svg';
 
-const HamburgerMenuBtn = () => {
+const HamburgerMenuBtn = ({showHome, showBattle, showStats, showCreate}) => {
   const [myclass, setMyClass] = useState(true);
 	
 
@@ -12,16 +12,23 @@ const HamburgerMenuBtn = () => {
 
 		
 		<div className="hamburger-menu">
-			<div>
+            
+			<div id="nav-icon1" className={(!myclass) ? 'open' : ''} onClick={()=>setMyClass(!myclass)}>
+				<span></span>
+				<span></span>
+				<span></span>
+			</div>
+
+			{/* <div>
 				<img className = {(!myclass) ? 'invisible' : 'visible'} src={menuIcon} alt="Menu icon" onClick={() => setMyClass(!myclass)} />
 				<img className = {(!myclass) ? 'visible' : 'invisible'} src={menuClose} alt="Close-menu Icon" onClick={() => setMyClass(!myclass)}/>
-			</div>
+			</div> */}
 				
 			
 			
 
 			<div className = { (!myclass) ? 'visible-content' : 'invisible-content'}>
-				<HamburgerMenu />
+				<HamburgerMenu showHome={showHome} showBattle={showBattle} showStats={showStats} showCreate={showCreate} />
 			</div>
 			
 		</div>

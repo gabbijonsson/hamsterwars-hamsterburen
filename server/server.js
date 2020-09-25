@@ -1,42 +1,21 @@
 const express = require('express');
 const bodyParser = require('body-parser');
-const multer = require('multer');
 const fs = require('fs');
 const app = express();
+const cors = require('cors');
 const { getRandomHamsters } = require("./getRandomHamsters.js");
 const { getSelectedHamster } = require('./getSelectedHamster.js');
 const { addHamster } = require('./addHamster.js');
-const newHamsterId = require('./newHamsterId.js');
+const fileUpload = require('express-fileupload');
+const path = require('path');
 
 const PORT = process.env.PORT || 1234;
 
-// Daniel START //
-// SET STORAGE
-var storage = multer.diskStorage({
-    destination: function (req, file, cb) {
-      cb(null, '../src/assets')
-    },
-    filename: function (req, file, cb) {
-      cb(null, file.fieldname + '-' + Date.now())
-    }
-  })
-   
-  var upload = multer({ storage: storage })
+
 
 // Middleware
 
-app.post("/api/upload", upload.single('imgName'), (req, res) => {
-    let fileType = req.file.mimetype.split('/')[1];
-    console.log('fileType ', fileType);
-    let newFileName = req.file.filename + '.' + fileType
-    fs.rename(`../src/assets/${req.file.filename}`, `../src/assets/${newFileName}`, function(){
-        console.log('callback');
-        res.send('200')
-    })
-})
-
-// Daniel END //
-
+app.use(cors());
 app.use(
     (req, res, next) => {
         console.log('LOGGER: ');
@@ -47,11 +26,15 @@ app.use(
         }
         );
 app.use(express.static(__dirname + "/../build/"));
-// app.use(express.static(__dirname + "/../src/"));
+app.use(express.static(__dirname + "/../src/assets/"));
+app.use(express.static(path.join(__dirname, "../assets")));
+app.use(express.static(path.join(__dirname, "/assets")));
 // app.use(express.static(__dirname + "/../public/"));
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
-        
+app.use(fileUpload());
+
+    
 // TODO: ROUTES HERE
 
 // Get # of randomized hamsters based on request query
@@ -72,12 +55,19 @@ app.get("/api/gethamster", (req, res) => {
 
 // Add a new hamster
 app.post("/api/addhamster", (req, res) => {
+    console.log('req before writefile is ', req);
+    fs.writeFile(
+		"/tmp/" + req.files.hamsterImage.name,
+		req.files.hamsterImage.data,
+		() => console.log("uploaded")
+	);
 	addHamster(req.body, (addedHamster) => {
 		console.log("Adding hamster.");
 		console.log(req.body);
 		res.send(addedHamster);
 	});
 });
+
 
 
 // START SERVER

@@ -9,10 +9,10 @@ import SelectFighter from './SelectFighter';
 import GenericBtn from './GenericBtn';
 
 
-const PickFightersView = ({img1,img2}) => {
+const PickFightersView = ({img1,img2,showBattle}) => {
 	return(
 		<div>
-			<HeaderGeneric />
+			{/* <HeaderGeneric /> */}
 			<div className="selectFighter-form">
 				<SelectFighter />
 				<div className="choose-fightersBtn">
@@ -32,7 +32,7 @@ const PickFightersView = ({img1,img2}) => {
 			</div>
 
 			<div className="generic-btn">
-				<GenericBtn text='Battle' color='teal'/>
+				<GenericBtn text='Battle' color='teal' functionality={showBattle} />
 			</div>	
 			
 			

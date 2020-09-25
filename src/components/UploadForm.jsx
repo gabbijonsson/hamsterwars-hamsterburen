@@ -33,9 +33,8 @@ const UploadForm = ({hamster}) => {
 				//TODO add message that file is accepted
 			}
 		}
-	}
-	
-	
+	};
+
 	const onSubmit = (e) => {
 		e.preventDefault();
 		if(
@@ -88,91 +87,166 @@ const UploadForm = ({hamster}) => {
 				console.log(imgName);
 		}
 
+			
+			
 		
-	}
+	};
 
-	
-	
-	return(
+	return (
 		<>
-		<form method='POST' encType="multipart/form-data">
-			<h2>Make your own hamster...</h2>
-			<div className="inputs">
-				<label style={{position: 'relative'}} htmlFor="formName">Name: 
-					<div className="name-error-message">    
-						<span style={ !name.trim('') && nameTouched ? {display: "block", color: 'red'} : {display: "none"}}>Field Required
-						</span>
-						<span style={ name.length > 15 && nameTouched ? {display: 'block', color: 'orange'} : {display: "none"}}> max 15 chars
-						</span>
-					</div>
-				</label>    
-				
-				<input id="formName" type="text" 
-				onChange={e => setName(e.target.value)}
-				onBlur={() => setNameTouched(true)}
-				/>
+		<form method="POST" encType="multipart/form-data">
+		<h2>Make your own hamster...</h2>
+				<div className="inputs">
+					<label style={{ position: "relative" }} htmlFor="formName">
+						Name:
+						<div className="name-error-message">
+							<span
+								style={
+									!name.trim("") && nameTouched
+										? { display: "block", color: "red" }
+										: { display: "none" }
+								}
+							>
+								Field Required
+							</span>
+							<span
+								style={
+									name.length > 15 && nameTouched
+										? { display: "block", color: "orange" }
+										: { display: "none" }
+								}
+							>
+								{" "}
+								max 15 chars
+							</span>
+						</div>
+					</label>
 
-				<label style={{position: 'relative'}} htmlFor="formAge">Age: 
-					<div className="age-error-message">    
-						<span style={ !age && ageTouched ? {display: 'block', color: 'red'} : {display: "none"}}>
-							Field Required
-						</span>
-						<span style={((age < 0 || age > 99) || (Number.isInteger(age) && age)) && ageTouched ? {display: 'block', color: 'red'} : {display: "none"}}>
-							0 - 99
-						</span>
-					</div>
-				</label>  
-				
-				<input type="number" id="formAge" 
-				onChange={e => setAge(e.target.value)}
-				onBlur={() => setAgeTouched(true)}
-				/>
+					<input
+						id="formName"
+						type="text"
+						onChange={(e) => setName(e.target.value)}
+						onBlur={() => setNameTouched(true)}
+					/>
 
-				<label style={{position: 'relative'}} htmlFor="formFood">Favourite food: 
-					<div className="favFood-error-message">
-						<span style={ !favFood.trim('') && favFoodTouched ? {display: 'block', color: 'red'} : {display: 'none'}}>
-							Field Required
-						</span>
-						<span style={favFood.length > 15 && favFoodTouched ? {display: 'block', color: 'orange'} : {display: 'none'}}>
-							max 15 chars
-						</span>
-					</div> 
-				</label>  
-				
-				<input type="text" id="formFood" 
-				onChange={e => setfavFood(e.target.value)}
-				onBlur={() => setFavFoodTouched(true)}
-				/>
+					<label style={{ position: "relative" }} htmlFor="formAge">
+						Age:
+						<div className="age-error-message">
+							<span
+								style={
+									!age && ageTouched
+										? { display: "block", color: "red" }
+										: { display: "none" }
+								}
+							>
+								Field Required
+							</span>
+							<span
+								style={
+									(age < 0 ||
+										age > 99 ||
+										(Number.isInteger(age) && age)) &&
+									ageTouched
+										? { display: "block", color: "red" }
+										: { display: "none" }
+								}
+							>
+								0 - 99
+							</span>
+						</div>
+					</label>
 
-				<label style={{position: 'relative'}} htmlFor="formLoves">Loves: 
-					<div className="loves-error-massage">    
-						<span style={ !loves.trim('') && lovesTouched ? {display: 'block', color: 'red'} : {display: "none"}}>
-							Field Required
-						</span>
-						<span style={loves.length > 40 && lovesTouched ? {display: 'block', color: 'orange'} : {display: 'none'}}>
-							max 40 chars
-						</span>
-					</div>
-				</label>  
-				
-				<input type="text" id="formLoves" 
-				onChange={e => setLoves(e.target.value)}
-				onBlur={() => setLovesTouched(true)}
+					<input
+						type="number"
+						id="formAge"
+						onChange={(e) => setAge(e.target.value)}
+						onBlur={() => setAgeTouched(true)}
+					/>
+
+					<label style={{ position: "relative" }} htmlFor="formFood">
+						Favourite food:
+						<div className="favFood-error-message">
+							<span
+								style={
+									!favFood.trim("") && favFoodTouched
+										? { display: "block", color: "red" }
+										: { display: "none" }
+								}
+							>
+								Field Required
+							</span>
+							<span
+								style={
+									favFood.length > 15 && favFoodTouched
+										? { display: "block", color: "orange" }
+										: { display: "none" }
+								}
+							>
+								max 15 chars
+							</span>
+						</div>
+					</label>
+
+					<input
+						type="text"
+						id="formFood"
+						onChange={(e) => setfavFood(e.target.value)}
+						onBlur={() => setFavFoodTouched(true)}
+					/>
+
+					<label style={{ position: "relative" }} htmlFor="formLoves">
+						Loves:
+						<div className="loves-error-massage">
+							<span
+								style={
+									!loves.trim("") && lovesTouched
+										? { display: "block", color: "red" }
+										: { display: "none" }
+								}
+							>
+								Field Required
+							</span>
+							<span
+								style={
+									loves.length > 40 && lovesTouched
+										? { display: "block", color: "orange" }
+										: { display: "none" }
+								}
+							>
+								max 40 chars
+							</span>
+						</div>
+					</label>
+
+					<input
+						type="text"
+						id="formLoves"
+						onChange={(e) => setLoves(e.target.value)}
+						onBlur={() => setLovesTouched(true)}
+					/>
+				</div>
+			<div>
+				<label htmlFor="fileReader" className="fileReader">
+					Press to upload image
+				</label>
+				<input
+					accept="image/*"
+					type="file"
+					name="fileReader"
+					id="fileReader"
+					onChange={(e) => addImg(e)}
 				/>
 
 			</div>
 			
-			<label htmlFor="fileReader" className="fileReader">Press to upload image</label>
-			<input accept="image/*" type="file" name="fileReader" id="fileReader" onChange={(e) => addImg(e)}/>
-			{/* <span>Img added</span>  SOON TO BE ERRORMESSAGE */}
+			
 			
 			<div className="genericBtn-form" onClick={(e) => onSubmit(e)}><div className="did-it-upload">{broadcastMsg}</div>
 				<GenericBtn page={"result"} text={"add"} color={"peach"}/>
-				</div>
+			</div>
 		
 		</form>
-		</>
+	</>
 	);
 }
-
 export default UploadForm;
