@@ -30,8 +30,8 @@ app.use(express.static(__dirname + "/../src/assets/"));
 app.use(express.static(path.join(__dirname, "../assets")));
 app.use(express.static(path.join(__dirname, "/assets")));
 // app.use(express.static(__dirname + "/../public/"));
-app.use(bodyParser.urlencoded({ extended: false }));
-app.use(bodyParser.json());
+app.use(bodyParser.urlencoded({ limit: '50mb', extended: true }));
+app.use(bodyParser.json({ limit: '50mb'}));
 app.use(fileUpload());
 
     
@@ -56,11 +56,12 @@ app.get("/api/gethamster", (req, res) => {
 // Add a new hamster
 app.post("/api/addhamster", (req, res) => {
     console.log('req before writefile is ', req);
-    fs.writeFile(
-		"/tmp/" + req.files.hamsterImage.name,
-		req.files.hamsterImage.data,
-		() => console.log("uploaded")
-	);
+    try {
+		const fileStr = req.body.data;
+		console.log('file in server.js' ,fileStr);
+	} catch (error) {
+		console.error(error)
+	}
 	addHamster(req.body, (addedHamster) => {
 		console.log("Adding hamster.");
 		console.log(req.body);

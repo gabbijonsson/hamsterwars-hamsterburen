@@ -1,6 +1,7 @@
 import React, {useState} from 'react';
 import './UploadForm.css';
 import GenericBtn from './GenericBtn';
+import { json } from 'body-parser';
 
 
 const UploadForm = ({hamster}) => {
@@ -17,7 +18,7 @@ const UploadForm = ({hamster}) => {
 	const [imgName, setImgName] = useState({})
 	const maxSize = 3000000; 
 	const URL = 'https://hamsterwars-hamsterburen.herokuapp.com/'
-	const addURL = 'api/addhamster'
+	const addURL = '/api/addhamster'
 
 	const addImg = (e) => {
 		let impFile = e.target.files;
@@ -29,13 +30,21 @@ const UploadForm = ({hamster}) => {
 			}
 			else{
 				console.log('File accepted');
-				setImgName(file) //Bilden läggs här
+				console.log(file); //objektet användaren ladda upp ligger i "file"
+				const reader = new FileReader();
+				reader.readAsDataURL(file)	//FileReader gör om bilden till base64 sträng
+				reader.onloadend = () => {
+					console.log(reader.result);
+					setImgName(reader.result) //Bilden läggs här i base64 format
+
+				}
+				
 				//TODO add message that file is accepted
 			}
 		}
 	};
 
-	const onSubmit = (e) => {
+	const onSubmit = async (e) => {
 		e.preventDefault();
 		if(
 			!name.trim('') || !age.trim('') ||
@@ -56,36 +65,18 @@ const UploadForm = ({hamster}) => {
 					loves: loves,
 					imgName: imgName
 				}
-				console.log('inside else');
-				let imgFormData = new FormData()
-				imgFormData.append('imgName', imgName); //! imgName är variabeln vi angett i server.js (app.post upload.single(...HÄR...))
-
-				let request1 = fetch(URL + addURL, {
-					method: 'post',
-					body: imgFormData
-				})
-				let request2 = fetch(URL + addURL, {
-					method: 'post',
-					body: hamster
-				})
-				
-				Promise.all([request1, request2])
-				.then(requests => {
-					requests.forEach(request => {
-						process( request.json() )
+				console.log(hamster);
+				console.log('inside else, ALL OK');
+				try {
+					await fetch('https://hamsterwars-hamsterburen.herokuapp.com/api/addhamster', {
+						method: 'POST',
+						body: JSON.stringify({data: hamster}),
+						headers: {'Content-type': 'application/json'}
 					})
-				})
-				.catch(err => {
-					let node = document.getElementsByClassName('genericBtn-form');
-					node.innerText = `Something went wrong - Try again ${err}`;
-				})
-				let process = (promise) => {
-					promise.then(data => {
-						console.log(data);
-					}) //Promise needs to waite untill it's resolved
+				} catch (error) {
+					console.error(error)
 				}
-				console.log(imgName);
-		}
+			}
 
 			
 			
@@ -94,7 +85,7 @@ const UploadForm = ({hamster}) => {
 
 	return (
 		<>
-		<form method="POST" encType="multipart/form-data">
+		<form>
 		<h2>Make your own hamster...</h2>
 				<div className="inputs">
 					<label style={{ position: "relative" }} htmlFor="formName">
