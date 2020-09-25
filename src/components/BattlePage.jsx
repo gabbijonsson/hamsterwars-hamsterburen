@@ -4,7 +4,7 @@ import GenericBtn from '../components/GenericBtn';
 import CombatantCard from '../components/CombatantCard';
 import PickWinnerBtn from '../components/PickWinnerBtn';
 
-const BattlePage = ({showResult,pickWinner,showCreate}) => {
+const BattlePage = ({showResult,pickWinner,showOwnFighter}) => {
 	
 	const [hamsters, setHamsters] = useState([]);
 	let image1 = '';
@@ -77,7 +77,7 @@ const BattlePage = ({showResult,pickWinner,showCreate}) => {
 				
 
 				<div className='generic'>
-					<GenericBtn text ='Pick your own fighter' color='teal' functionality={showCreate} />
+					<GenericBtn text ='Pick your own fighter' color='teal' functionality={showOwnFighter} />
 				</div>
 			
 			</div>

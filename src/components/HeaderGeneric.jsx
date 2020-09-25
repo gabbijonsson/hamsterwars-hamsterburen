@@ -5,7 +5,7 @@ import HamburgerMenu from './HamburgerMenu'
 import HamburgerMenuBtn from './HamburgerMenuBtn'
 import DesktopHeaderBtn from './DesktopHeaderBtn'
 
-function HeaderGeneric({showHome,showStats,showBattle,showCreate}) {
+function HeaderGeneric({showHome,showStats,showBattle,showCreate,showOwnFighter}) {
 	return (
 		<header id='HeaderGeneric'>
 			<div className="header-item-1">
@@ -21,7 +21,7 @@ function HeaderGeneric({showHome,showStats,showBattle,showCreate}) {
 			<div className="header-item-3">
 				<HamburgerMenuBtn showHome={showHome} showBattle={showBattle} showStats={showStats} showCreate={showCreate} />
 				<div className="desktop-header-btn">
-					<DesktopHeaderBtn text="PICK YOUR OWN FIGHTERS" color="teal" functionality={showCreate} />
+					<DesktopHeaderBtn text="PICK YOUR OWN FIGHTERS" color="teal" functionality={showOwnFighter} />
 				</div>
 			</div>
 			

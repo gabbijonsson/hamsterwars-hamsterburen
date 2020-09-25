@@ -8,10 +8,11 @@ import StatisticsView from './components/StatisticsView';
 import StartHeader from './components/StartHeader';
 import HeaderGeneric from './components/HeaderGeneric';
 import ResultView from './components/ResultView';
+import PickFightersView from './components/PickFightersView';
 
 function App() {
 
-  const STARTPAGE = 'startpage' , BATTLEPAGE = 'battlepage' , CREATEHAMSTERPAGE = 'createhamsterpage' , STATSPAGE = 'statspage' , RESULTPAGE = 'resultpage' ;
+  const STARTPAGE = 'startpage' , BATTLEPAGE = 'battlepage' , CREATEHAMSTERPAGE = 'createhamsterpage' , STATSPAGE = 'statspage' , RESULTPAGE = 'resultpage' , PICKOWNPAGE = 'pickOwnFighterPage';
 
   const [screen, setScreen] = useState(STARTPAGE);
   const [winnerId, setWinnerId] = useState('');
@@ -24,7 +25,8 @@ function App() {
 	showHome = {()=>setScreen(STARTPAGE)}
 	showBattle={()=>setScreen(BATTLEPAGE)}
 	showStats={()=>setScreen(STATSPAGE)}
-	showCreate={()=>setScreen(CREATEHAMSTERPAGE)}/>
+	showCreate={()=>setScreen(CREATEHAMSTERPAGE)}
+	showOwnFighter={()=>setScreen(PICKOWNPAGE)}/>
   }
 
   switch (screen){
@@ -42,7 +44,8 @@ function App() {
       showStats={()=>setScreen(STATSPAGE)}
       showCreate={()=>setScreen(CREATEHAMSTERPAGE)}
 	  showResult={()=>setScreen(RESULTPAGE)}
-	  pickWinner ={(ID) => setWinnerId(ID)} />
+	  pickWinner ={(ID) => setWinnerId(ID)}
+	  showOwnFighter={()=>setScreen(PICKOWNPAGE)} />
       break;
 
     case STATSPAGE:
@@ -53,6 +56,10 @@ function App() {
 		content = <ResultView
 		 showBattle={()=>setScreen(BATTLEPAGE)}
 		 id={winnerId}/>
+		break;
+	
+	case PICKOWNPAGE:
+		content = <PickFightersView />
 		break;
 		
     default:
