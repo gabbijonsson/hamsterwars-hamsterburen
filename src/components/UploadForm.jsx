@@ -68,7 +68,7 @@ const UploadForm = ({hamster}) => {
 				console.log(hamster);
 				console.log('inside else, ALL OK');
 				try {
-					await fetch('https://hamsterwars-hamsterburen.herokuapp.com/api/addhamster', {
+					await fetch('/api/addhamster', {
 						method: 'POST',
 						body: JSON.stringify({data: hamster}),
 						headers: {'Content-type': 'application/json'}
