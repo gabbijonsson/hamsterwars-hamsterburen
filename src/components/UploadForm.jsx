@@ -16,28 +16,8 @@ const UploadForm = ({hamster}) => {
 	const [broadcastMsg, setBroadcastMsg] = useState('')
 	const [imgName, setImgName] = useState({})
 	const maxSize = 3000000; 
-	// const addImg = (e) => {
-	// 	let impFile = e.target.files;
-	// 	console.log(impFile);
-	// 	for(let file of impFile){
-	// 		if(file.size > 3000000){
-	// 			console.log('size too large');
-	// 			impFile = undefined
-	// 			console.log(impFile);
-	// 		} else{
-	// 			let fileReader = new FileReader();
-				
-	// 			fileReader.onload = function(event) {
-	// 				let imgData = event.target.result;
-	// 				console.log(imgData);
-	// 				setImgName(imgData)
-	// 				console.log(imgName + 'this is the image');
-	// 			}
-	// 			fileReader.readAsDataURL(file)
-
-	// 		}
-	// 	}
-	// }
+	const URL = 'https://hamsterwars-hamsterburen.herokuapp.com/'
+	const addURL = 'api/addhamster'
 
 	const addImg = (e) => {
 		let impFile = e.target.files;
@@ -65,7 +45,7 @@ const UploadForm = ({hamster}) => {
 			loves.length > 40 || Number.isInteger(age) || age < 0
 			){
 				console.log('inside if');
-				setBroadcastMsg('You made a misstake filling in the fields! Luckily you can easily fix this by following the instructions given')
+				setBroadcastMsg('Error - Did you forgot a field?')
 				
 			}
 			else{
@@ -81,11 +61,11 @@ const UploadForm = ({hamster}) => {
 				let imgFormData = new FormData()
 				imgFormData.append('imgName', imgName); //! imgName är variabeln vi angett i server.js (app.post upload.single(...HÄR...))
 
-				let request1 = fetch('/api/upload/', {
+				let request1 = fetch(URL + addURL, {
 					method: 'post',
 					body: imgFormData
 				})
-				let request2 = fetch('/api/upload/', {
+				let request2 = fetch(URL + addURL, {
 					method: 'post',
 					body: hamster
 				})
@@ -97,7 +77,8 @@ const UploadForm = ({hamster}) => {
 					})
 				})
 				.catch(err => {
-
+					let node = document.getElementsByClassName('genericBtn-form');
+					node.innerText = `Something went wrong - Try again ${err}`;
 				})
 				let process = (promise) => {
 					promise.then(data => {
@@ -183,15 +164,11 @@ const UploadForm = ({hamster}) => {
 			
 			<label htmlFor="fileReader" className="fileReader">Press to upload image</label>
 			<input accept="image/*" type="file" name="fileReader" id="fileReader" onChange={(e) => addImg(e)}/>
+			{/* <span>Img added</span>  SOON TO BE ERRORMESSAGE */}
 			
-			<div className="errorsection">
-			
-			
-			   
-			
-			</div>
-			
-		<div className="genericBtn-form" onClick={(e) => onSubmit(e)}><GenericBtn page={"result"} text={"add"} color={"peach"}/></div>
+			<div className="genericBtn-form" onClick={(e) => onSubmit(e)}><div className="did-it-upload">{broadcastMsg}</div>
+				<GenericBtn page={"result"} text={"add"} color={"peach"}/>
+				</div>
 		
 		</form>
 		</>
