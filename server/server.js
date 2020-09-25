@@ -1,11 +1,10 @@
-const express = require('express');
+    const express = require('express');
 const bodyParser = require('body-parser');
 const app = express();
 const cors = require('cors');
 const { getRandomHamsters } = require("./getRandomHamsters.js");
 const { getSelectedHamster } = require('./getSelectedHamster.js');
 const { addHamster } = require('./addHamster.js');
-const fileUpload = require('express-fileupload');
 const fs = require('fs');
 const path = require('path');
 
@@ -25,12 +24,9 @@ app.use(
         );
 app.use(express.static(__dirname + "/../build/"));
 app.use(express.static(__dirname + "/../src/assets/"));
-app.use(express.static(path.join(__dirname, "../assets")));
-app.use(express.static(path.join(__dirname, "/assets")));
 // app.use(express.static(__dirname + "/../public/"));
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
-app.use(fileUpload());
 
     
 // TODO: ROUTES HERE
@@ -53,12 +49,6 @@ app.get("/api/gethamster", (req, res) => {
 
 // Add a new hamster
 app.post("/api/addhamster", (req, res) => {
-    console.log('req before writefile is ', req);
-    fs.writeFile(
-		"/tmp/" + req.files.hamsterImage.name,
-		req.files.hamsterImage.data,
-		() => console.log("uploaded")
-	);
 	addHamster(req.body, (addedHamster) => {
 		console.log("Adding hamster.");
 		console.log(req.body);
