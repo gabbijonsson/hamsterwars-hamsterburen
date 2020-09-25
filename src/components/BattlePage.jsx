@@ -19,7 +19,7 @@ const BattlePage = ({showResult,pickWinner,showOwnFighter}) => {
 		let mounted = true;
 		function getRandomHamsters(callback) {
 			fetch(
-				"/gethamsters/random?count=2"
+				"api/gethamsters/random?count=2"
 			)
 				.then((res) => res.json())
 				.then( 
