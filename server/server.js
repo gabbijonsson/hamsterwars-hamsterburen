@@ -7,6 +7,7 @@ const { getSelectedHamster } = require('./getSelectedHamster.js');
 const { addHamster } = require('./addHamster.js');
 const { addMatch } = require('./addMatch.js');
 const { updateCombatant } = require('./updateCombatant.js')
+const { getMatchCount } = require('./getMatchCount.js')
 
 const PORT = process.env.PORT || 1234;
 
@@ -62,6 +63,12 @@ app.post("/api/addmatch", (req, res) => {
     })
     updateCombatant(req.body, () => {
         res.send({ message: "Hamsters and match updated." })
+    })
+})
+
+app.get("/api/getmatchcount", (req, res) => {
+    getMatchCount((matchCount) => {
+        res.send(matchCount)
     })
 })
 

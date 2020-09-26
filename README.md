@@ -99,3 +99,7 @@ Skicka id på vinnare och förlorare i request body.
     "loser": id
 }
 ```
+
+|Resurs    |Metod   |Förväntat svar|
+|----------|--------|---|
+|/api/getmatchcount | GET | Hämtar totala antalet matcher registrerade |
