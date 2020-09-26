@@ -77,7 +77,9 @@ const BattlePage = ({showResult,pickWinner,showOwnFighter}) => {
 				
 
 				<div className='generic'>
-					<GenericBtn text ='Pick your own fighter' color='teal' functionality={showOwnFighter} />
+					
+						<GenericBtn text ='Pick your own fighter' color='teal' functionality={showOwnFighter} />
+	
 				</div>
 			
 			</div>

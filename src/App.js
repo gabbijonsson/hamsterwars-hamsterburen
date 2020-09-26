@@ -7,6 +7,8 @@ import StatisticsView from './components/StatisticsView';
 import StartHeader from './components/StartHeader';
 import HeaderGeneric from './components/HeaderGeneric';
 import {BrowserRouter, Route} from 'react-router-dom';
+import PickFightersView from './components/PickFightersView';
+import ResultView from './components/ResultView';
 
 function App() {
 
@@ -22,6 +24,10 @@ function App() {
               <HeaderGeneric/>
               <BattlePage/>
             </Route>
+            <Route path="/battle/:id1/:id2" exact>
+              <HeaderGeneric/>
+              <PickFightersView/>
+            </Route>
             <Route path="/stats" exact>
               <HeaderGeneric/>
               <StatisticsView/>
@@ -29,6 +35,10 @@ function App() {
             <Route path="/upload" exact>
               <HeaderGeneric/>
               <CreateHamsterView/>
+            </Route>
+            <Route path="/result/:id" exact>
+              <HeaderGeneric/>
+              <ResultView/>
             </Route>
           </BrowserRouter>
 
