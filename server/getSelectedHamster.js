@@ -1,5 +1,5 @@
 const { MongoClient } = require("mongodb");
-const { url, dbName, collectionName } = require("./database.js");
+const { url, dbName, hamsterCollectionName } = require("./database.js");
 
 function getSelectedHamster(req, cb) {
 	MongoClient.connect(
@@ -10,7 +10,7 @@ function getSelectedHamster(req, cb) {
 				cb("An error occured. Could not connect. " + error);
 				return;
 			}
-			const col = client.db(dbName).collection(collectionName);
+			const col = client.db(dbName).collection(hamsterCollectionName);
 			try {
 				let hamsterID = Number(req.query.id);
 				const hamster = await col.findOne( {id: hamsterID} );

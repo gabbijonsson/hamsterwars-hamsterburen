@@ -87,3 +87,15 @@ Använd id för att specificera hamster.
 
 Skicka obligatorisk information i request body (name, age, favFood, loves, imgName).
 Se [Datamodell - Hamster](#-datamodell---hamster) för mer info.
+
+|Resurs    |Metod   |Förväntat svar|
+|----------|--------|---|
+|/api/addmatch | POST | Lägger till en ny match och uppdaterar inblandade hamstrar |
+
+Skicka id på vinnare och förlorare i request body.
+```
+{
+    "winner": id,
+    "loser": id
+}
+```

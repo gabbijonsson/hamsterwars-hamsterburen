@@ -5,8 +5,8 @@ const cors = require('cors');
 const { getRandomHamsters } = require("./getRandomHamsters.js");
 const { getSelectedHamster } = require('./getSelectedHamster.js');
 const { addHamster } = require('./addHamster.js');
-const fs = require('fs');
-const path = require('path');
+const { addMatch } = require('./addMatch.js');
+const { updateCombatant } = require('./updateCombatant.js')
 
 const PORT = process.env.PORT || 1234;
 
@@ -56,6 +56,14 @@ app.post("/api/addhamster", (req, res) => {
 	});
 });
 
+app.post("/api/addmatch", (req, res) => {
+    addMatch(req.body, () => {
+        console.log('Match added');
+    })
+    updateCombatant(req.body, () => {
+        res.send({ message: "Hamsters and match updated." })
+    })
+})
 
 
 // START SERVER

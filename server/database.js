@@ -16,7 +16,8 @@ if (!dbPW) {
 
 const url = `mongodb+srv://hamsterburen-user:${dbPW}@hamsterburen.lmwyp.mongodb.net/test?authSource=admin&replicaSet=atlas-hyrfxy-shard-0&readPreference=primary&appname=MongoDB%20Compass%20Community&ssl=true`
 const dbName = 'hamsterdata';
-const collectionName = 'hamsters';
+const hamsterCollectionName = 'hamsters';
+const matchCollectionName = 'matches';
 
 
 // function connectToDB() {
@@ -41,5 +42,6 @@ const collectionName = 'hamsters';
 module.exports = {
     url,
     dbName,
-    collectionName
+    hamsterCollectionName,
+    matchCollectionName
 }

@@ -1,5 +1,5 @@
 const { MongoClient } = require("mongodb");
-const { url, dbName, collectionName } = require("./database.js");
+const { url, dbName, hamsterCollectionName } = require("./database.js");
 const { newHamsterId } = require("./newHamsterId.js")
 
 function addHamster(newHamster, cb) {
@@ -13,7 +13,7 @@ function addHamster(newHamster, cb) {
 				return;
 			}
             newHamsterId((nextId) => {
-			    const col = client.db(dbName).collection(collectionName);
+			    const col = client.db(dbName).collection(hamsterCollectionName);
 			    try {
                     newHamster.id = nextId;
                     newHamster.wins = 0;
