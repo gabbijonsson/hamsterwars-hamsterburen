@@ -19,7 +19,7 @@ const BattlePage = ({showResult,pickWinner,showOwnFighter}) => {
 		let mounted = true;
 		function getRandomHamsters(callback) {
 			fetch(
-				"api/gethamsters/random?count=2"
+				" https://hamsterwars-hamsterburen.herokuapp.com/api/gethamsters/random?count=2"
 			)
 				.then((res) => res.json())
 				.then( 
@@ -78,7 +78,7 @@ const BattlePage = ({showResult,pickWinner,showOwnFighter}) => {
 
 				<div className='generic'>
 					
-						<GenericBtn text ='Pick your own fighter' color='teal' />
+						<GenericBtn text ='Pick your own fighter' color='teal' link="/battle/:id1/:id2" />
 	
 				</div>
 			

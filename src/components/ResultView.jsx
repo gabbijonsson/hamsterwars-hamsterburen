@@ -28,7 +28,7 @@ function ResultView({id}) {
 		
 	function getHamster(callback) {
 		fetch(
-			`/api/gethamster?id=${id}`
+			` https://hamsterwars-hamsterburen.herokuapp.com/api/gethamster?id=${id}`
 		)
 			.then((res) => res.json())
 			.then(
