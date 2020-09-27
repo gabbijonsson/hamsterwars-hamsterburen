@@ -9,6 +9,8 @@ import HeaderGeneric from './components/HeaderGeneric';
 import ResultView from './components/ResultView';
 import PickFightersView from './components/PickFightersView';
 import {BrowserRouter, Route} from 'react-router-dom';
+import PickFightersView from './components/PickFightersView';
+import ResultView from './components/ResultView';
 
 function App() {
 
@@ -24,6 +26,10 @@ function App() {
               <HeaderGeneric/>
               <BattlePage/>
             </Route>
+            <Route path="/battle/:id1/:id2" exact>
+              <HeaderGeneric/>
+              <PickFightersView/>
+            </Route>
             <Route path="/stats" exact>
               <HeaderGeneric/>
               <StatisticsView/>
@@ -32,13 +38,9 @@ function App() {
               <HeaderGeneric/>
               <CreateHamsterView/>
             </Route>
-			<Route path="/result/:id" exact>
+            <Route path="/result/:id" exact>
               <HeaderGeneric/>
               <ResultView/>
-            </Route>
-			<Route path="/battle/:yourfighter" exact>
-              <HeaderGeneric/>
-              <PickFightersView/>
             </Route>
           </BrowserRouter>
 
