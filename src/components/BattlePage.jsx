@@ -59,7 +59,7 @@ const BattlePage = ({showResult,pickWinner,showOwnFighter}) => {
 		<div className="battlepage">
                 
 				<div className="stack-up1">
-					<PickWinnerBtn id={id1}/>
+					<PickWinnerBtn pickWinner={()=>pickWinner(id1)}/>
 				</div>
 				<div className="stack-up2">
 					<PickWinnerBtn id={id2}/>

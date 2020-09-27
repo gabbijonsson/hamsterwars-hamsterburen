@@ -13,6 +13,8 @@ import {BrowserRouter, Route} from 'react-router-dom';
 
 function App() {
 
+	const [winnerId, setWinnerId] = useState('');
+
   return (
     <div className="App">
         <div className="splash-container">
@@ -23,7 +25,7 @@ function App() {
             </Route>
             <Route path="/battle" exact>
               <HeaderGeneric/>
-              <BattlePage/>
+              <BattlePage  pickWinner ={(ID) => setWinnerId(ID)}/>
             </Route>
             <Route path="/battle/:id1/:id2" exact>
               <HeaderGeneric/>
