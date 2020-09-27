@@ -5,6 +5,7 @@ import ScrollContainer from './ScrollContainer'
 import CombatantInfoCard from './CombatantInfoCard'
 import TestHamsterPic from '../assets/frontend/JoyfulHamster.svg'
 import './ResultView.css'
+import {Link} from 'react-router-dom';
 let hamster = 
 		{
 			name:"Sixten",
@@ -63,7 +64,9 @@ function ResultView({id,showBattle}) {
 				</ScrollContainer>
 			</div>
 			<div className="resultView-mobile-btn">
-			<GenericBtn color="peach" text="BATTLE" page="result" functionality={showBattle} />
+			<Link to="/battle">
+				<GenericBtn color="peach" text="BATTLE" page="result" functionality={showBattle} />
+			</Link>
 
 			</div>
 		</div>
