@@ -25,10 +25,12 @@
 	.select-fighter-form{
 		display: flex;
 		margin-top: 0em;
+	
 		
 	}
+	
 	#select-fighter-1,#select-fighter-2{
-		width: 25vw;
+		width: 20vw;
 		margin-left: 5%;
 		margin-right: 0;
 	}

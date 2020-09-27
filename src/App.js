@@ -6,11 +6,14 @@ import BattlePage from './components/BattlePage';
 import StatisticsView from './components/StatisticsView';
 import StartHeader from './components/StartHeader';
 import HeaderGeneric from './components/HeaderGeneric';
-import {BrowserRouter, Route} from 'react-router-dom';
-import PickFightersView from './components/PickFightersView';
 import ResultView from './components/ResultView';
+import PickFightersView from './components/PickFightersView';
+import {BrowserRouter, Route} from 'react-router-dom';
+
 
 function App() {
+
+	const [winnerId, setWinnerId] = useState('');
 
   return (
     <div className="App">
@@ -22,7 +25,7 @@ function App() {
             </Route>
             <Route path="/battle" exact>
               <HeaderGeneric/>
-              <BattlePage/>
+              <BattlePage  pickWinner ={(ID) => setWinnerId(ID)}/>
             </Route>
             <Route path="/battle/:id1/:id2" exact>
               <HeaderGeneric/>
@@ -33,12 +36,12 @@ function App() {
               <StatisticsView/>
             </Route>
             <Route path="/upload" exact>
-              <HeaderGeneric/>
+              <HeaderGeneric/>¢
               <CreateHamsterView/>
             </Route>
             <Route path="/result/:id" exact>
               <HeaderGeneric/>
-              <ResultView/>
+              <ResultView id={winnerId}/>
             </Route>
           </BrowserRouter>
 

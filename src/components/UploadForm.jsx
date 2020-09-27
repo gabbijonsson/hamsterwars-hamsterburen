@@ -1,76 +1,131 @@
-import React, { useState } from "react";
-import "./UploadForm.css";
-import GenericBtn from "./GenericBtn";
+import React, {useState} from 'react';
+import './UploadForm.css';
+import GenericBtn from './GenericBtn';
+import dotenv from 'dotenv'
+dotenv.config()
 
-const UploadForm = ({ hamster }) => {
-	const [name, setName] = useState("");
-	const [age, setAge] = useState(Number());
-	const [favFood, setfavFood] = useState("");
-	const [loves, setLoves] = useState("");
-	const [nameTouched, setNameTouched] = useState(false);
-	const [ageTouched, setAgeTouched] = useState(false);
-	const [favFoodTouched, setFavFoodTouched] = useState(false);
-	const [lovesTouched, setLovesTouched] = useState(false);
-	const [broadcastMsg, setBroadcastMsg] = useState("");
-	const [imgName, setImgName] = useState("");
+
+const UploadForm = ({hamster}) => {
+	
+	const [name, setName] = useState('')
+	const [age, setAge] = useState(Number())
+	const [favFood, setfavFood] = useState('')
+	const [loves, setLoves] = useState('')
+	
+	const [nameTouched, setNameTouched] = useState(false)
+	const [ageTouched, setAgeTouched] = useState(false)
+	const [favFoodTouched, setFavFoodTouched] = useState(false)
+	const [lovesTouched, setLovesTouched] = useState(false)
+	
+	const [broadcastMsg, setBroadcastMsg] = useState('add')
+	const [userSetImg, setUserSetImg] = useState({})
+	const [loading, setLoading] = useState(false)
+	let cloudianyData;
+
+	const maxSize = 3000000; 
+	const cloudName = process.env.REACT_APP_CLOUDINARY_NAME
+	const cloudinaryURL = `https://api.cloudinary.com/v1_1/${cloudName}/image/upload`
 
 	const addImg = (e) => {
 		let impFile = e.target.files;
-		console.log(impFile);
-		for (let file of impFile) {
-			if (file.size > 3000000) {
-				console.log("size too large");
-				impFile = undefined;
-				console.log(impFile);
-			} else {
-				let fileReader = new FileReader();
+		let allowedExtensions = ['jpeg', 'jpg', 'gif', 'tiff', 'psd', 'eps', 'ai', 'indd', 'raw'];
+		for(let file of impFile){
+			let Extension = file.name.substring(file.name.lastIndexOf('.') + 1).toLowerCase();
+			console.log(Extension);
+			if(allowedExtensions.indexOf(Extension) === -1){
+				console.log('This filetype is not accepted');
+				impFile = undefined
+				//TODO add message
+			}
+			else if(file.size > maxSize ){
+				console.log('File too large, max 3MB, choese another one');
+				impFile = undefined
+				//TODO add message that file is not accepted
+			}
+			else{
+				
 
-				fileReader.onload = function (event) {
-					let imgData = event.target.result;
-					console.log(imgData);
-					setImgName(imgData);
-					console.log(imgName + "this is the image");
-				};
-				fileReader.readAsDataURL(file);
+				console.log('File accepted');
+				console.log(file); //objektet användaren ladda upp ligger i "file"
+				setUserSetImg(file)
+				
+				
+				//TODO add message that file is accepted
 			}
 		}
 	};
 
-	const onSubmit = (e) => {
+	const onSubmit = async (e) => {
 		e.preventDefault();
-		if (
-			!name.trim("") ||
-			!age.trim("") ||
-			!favFood.trim("") ||
-			!loves.trim("") ||
-			name.length > 15 ||
-			favFood.length > 15 ||
-			loves.length > 40 ||
-			Number.isInteger(age) ||
-			age < 0
-		) {
-			console.log("inside if");
-			setBroadcastMsg(
-				"You made a misstake filling in the fields! Luckily you can easily fix this by following the instructions given"
-			);
-		} else {
-			console.log("inside else");
+		setLoading(true)
+		if(
+			!name.trim('') || !age.trim('') ||
+			!favFood.trim('') || !loves.trim('') ||
+			name.length > 15 || favFood.length > 15 ||
+			loves.length > 40 || Number.isInteger(age) || age < 0
+			){
+				console.log('inside if');
+				setBroadcastMsg('Error - Did you forgot a field?')
+				
+			}
+			else{
+				
+				console.log(hamster);
+				console.log('inside else, ALL OK');
+				
+				
+				const formData = new FormData();
+				formData.append('file', userSetImg)
+				formData.append('upload_preset', 'dev_hamster')
+				await fetch(cloudinaryURL, {
+					method: 'POST',
+					body: formData
+				})
+				.then(response => response.json())
+				.then(data => {
+					console.log('Success:', data);
+					console.log('Img URL: ', data.secure_url);
+					cloudianyData = data
+				})
+				.catch(error => console.log('error ', error))
+				
+				let myHeaders = new Headers();
+				myHeaders.append('Content-Type', 'application/x-www-form-urlencoded')
 
-			hamster = {
-				name: name,
-				age: age,
-				favFood: favFood,
-				loves: loves,
-				imgName: imgName,
-			};
-			console.log(imgName);
-		}
+				let urlencoded = new URLSearchParams();
+				urlencoded.append('name', name)
+				urlencoded.append('age', age)
+				urlencoded.append('favFood', favFood)
+				urlencoded.append('loves', loves)
+				urlencoded.append('imgName', cloudianyData.secure_url)
+
+				let requestOptions = {
+					method: 'POST',
+					headers: myHeaders,
+					body: urlencoded,
+					redirect: 'follow'
+				}
+				await fetch('https://hamsterwars-hamsterburen.herokuapp.com/api/addhamste', requestOptions)
+				.then(response => response.text())
+				.then(result => {
+					console.log(result)
+					setBroadcastMsg('Success!')
+					setTimeout(setLoading(false), 4000)
+				})
+				.catch(error => console.log('error ', error), setBroadcastMsg('Oops! Try again!'), setTimeout(() => {
+					setLoading(false)
+				}, 4000))
+			}
+
+			
+			
+		
 	};
 
 	return (
 		<>
-			<form method="POST" encType="multipart/form-data">
-				<h2>Make your own hamster...</h2>
+		<form>
+		<h2>Make your own hamster...</h2>
 				<div className="inputs">
 					<label style={{ position: "relative" }} htmlFor="formName">
 						Name:
@@ -200,7 +255,7 @@ const UploadForm = ({ hamster }) => {
 						onBlur={() => setLovesTouched(true)}
 					/>
 				</div>
-
+			<div>
 				<label htmlFor="fileReader" className="fileReader">
 					Press to upload image
 				</label>
@@ -212,13 +267,20 @@ const UploadForm = ({ hamster }) => {
 					onChange={(e) => addImg(e)}
 				/>
 
-				<div className="errorsection"></div>
-
-				<div className="genericBtn-form" onClick={(e) => onSubmit(e)}>
-					<GenericBtn page={"result"} text={"add"} color={"peach"} />
-				</div>
-			</form>
-		</>
+			</div>
+			
+			
+			
+			<div className="genericBtn-form" onClick={(e) => onSubmit(e)}>
+			<svg class="checkmark" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 52 52">
+			<circle class="checkmark__circle" cx="26" cy="26" r="25" fill="none"/>
+			<path class="checkmark__check" fill="none" d="M14.1 27.2l7.1 7.2 16.7-16.8"/>
+			</svg>
+				<GenericBtn page={"result"} text={loading ? broadcastMsg : 'add'} color={"peach"}/>
+			</div>
+		
+		</form>
+	</>
 	);
-};
+}
 export default UploadForm;

@@ -1,17 +1,13 @@
 import React from 'react';
 import './PickWinnerBtn.css';
+import {Link} from 'react-router-dom';
 
-const PickWinnerBtn = ({pickWinner,showResult}) => {
+const PickWinnerBtn = ({pickWinner}) => {
 
-	// const PickWinnerFunction = () => {
-	// 	pickWinner
-	// 	showResult
-        
-	// }
 	return(
-		<div>
-			<button className="pick-button" onClick={() => { pickWinner(); showResult(); }}><h1>Pick as winner</h1></button>
-		</div>
+		<Link to="/result/:id">
+			<button className="pick-button" onClick={() =>  pickWinner() }><h1>Pick as winner</h1></button>
+		</Link>
 	)
 }
 

@@ -3,6 +3,7 @@ import './BattlePage.css';
 import GenericBtn from '../components/GenericBtn';
 import CombatantCard from '../components/CombatantCard';
 import PickWinnerBtn from '../components/PickWinnerBtn';
+import {Link} from 'react-router-dom';
 
 const BattlePage = ({showResult,pickWinner,showOwnFighter}) => {
 	
@@ -19,7 +20,7 @@ const BattlePage = ({showResult,pickWinner,showOwnFighter}) => {
 		let mounted = true;
 		function getRandomHamsters(callback) {
 			fetch(
-				"/gethamsters/random?count=2"
+				"api/gethamsters/random?count=2"
 			)
 				.then((res) => res.json())
 				.then( 
@@ -59,10 +60,10 @@ const BattlePage = ({showResult,pickWinner,showOwnFighter}) => {
 		<div className="battlepage">
                 
 				<div className="stack-up1">
-					<PickWinnerBtn pickWinner={()=>pickWinner(id1)}  showResult={showResult} />
+					<PickWinnerBtn pickWinner={()=>pickWinner(id1)}/>
 				</div>
 				<div className="stack-up2">
-					<PickWinnerBtn pickWinner={()=>pickWinner(id2)} showResult={showResult} />
+					<PickWinnerBtn id={id2}/>
 				</div>
 			    
             <div className="battlepage-main">
@@ -77,8 +78,10 @@ const BattlePage = ({showResult,pickWinner,showOwnFighter}) => {
 				
 
 				<div className='generic'>
-					
-						<GenericBtn text ='Pick your own fighter' color='teal' functionality={showOwnFighter} />
+						<Link to="/battle/:id1/:id2">
+							<GenericBtn text ='Pick your own fighter' color='teal' />	
+						</Link>
+
 	
 				</div>
 			
@@ -90,3 +93,4 @@ const BattlePage = ({showResult,pickWinner,showOwnFighter}) => {
 }
 
 export default BattlePage;
+

@@ -1,7 +1,8 @@
 .hamburger-content {
 	border: 1px solid;
+	padding: 0.5em;
 	text-align: right;
-	width: 60vw;
+	width: 80vw;
 	height: 35vh;
 	opacity: 0.9;
 	background-color: rgb(175,161,140,0.8);
@@ -10,8 +11,8 @@
 	right: 0;
 	z-index: 99;
 }
-.hamburger-content > h2 {
-	padding: 2vh;
+.hamburger-content  h2 {
+	padding: 5px;
 	font-family: Arial, Helvetica, sans-serif;
 }
 .hamburger-content h2:hover::after{

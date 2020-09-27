@@ -1,22 +1,20 @@
 import React from 'react';
 import './PickFightersView.css';
-import HeaderGeneric from './HeaderGeneric';
-import selectFighter from './SelectFighter';
 import DescriptionText from './DescriptionText';
 import CombatantCard from './CombatantCard';
 import PickWinnerBtn from './PickWinnerBtn';
 import SelectFighter from './SelectFighter';
 import GenericBtn from './GenericBtn';
-
+import {Link} from 'react-router-dom';
 
 const PickFightersView = ({img1,img2,showBattle}) => {
 	return(
 		<div>
-			{/* <HeaderGeneric /> */}
+			
 			<div className="selectFighter-form">
 				<SelectFighter />
 				<div className="choose-fightersBtn">
-					<button ><h1>choose!</h1></button>
+					<button><h1>choose!</h1></button>
 				</div>
 				
 			</div>
@@ -27,12 +25,19 @@ const PickFightersView = ({img1,img2,showBattle}) => {
 				<CombatantCard CombatantImg={img2} borderColor='purple' />
 			</div>
 			<div className ="pickWinnerBtns">
+				<Link to="/result/:id">
 					<PickWinnerBtn />
+				</Link>
+				<Link to="/result/:id">
 					<PickWinnerBtn />
+				</Link>
 			</div>
 
 			<div className="generic-btn">
-				<GenericBtn text='Battle' color='teal' functionality={showBattle} />
+				<Link to="/battle">
+					<GenericBtn text='Battle' color='teal'/>	
+				</Link>
+
 			</div>	
 			
 			

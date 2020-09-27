@@ -6,7 +6,7 @@ function SelectFighter() {
 	let text = 'If you only pick one fighter, and leave the other one empty, your combatant will meet a random other fighter.'
 	return (
 		<div>
-			<form className="select-fighter-form" method="get">
+			<div className="select-fighter-form" method="get">
 				<label className="select-fighter-label" htmlFor="select-fighter-1">Pick your first fighter</label> <br/>
 				<input placeholder="Write hamsters name..." type="text" id="select-fighter-1" name="fighter-1"></input>
 				<br/>
@@ -15,7 +15,7 @@ function SelectFighter() {
 				<div className="description-text-desktop">
 					<DescriptionText text={text}/>
 				</div>
-			</form>
+			</div>
 			
 			<div className="description-text-mobile">
 				
