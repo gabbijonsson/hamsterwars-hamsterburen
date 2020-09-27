@@ -1,7 +1,8 @@
 import React, {useState} from 'react';
 import './UploadForm.css';
 import GenericBtn from './GenericBtn';
-import { json } from 'body-parser';
+import dotenv from 'dotenv'
+dotenv.config()
 
 
 const UploadForm = ({hamster}) => {
@@ -10,34 +11,44 @@ const UploadForm = ({hamster}) => {
 	const [age, setAge] = useState(Number())
 	const [favFood, setfavFood] = useState('')
 	const [loves, setLoves] = useState('')
+	
 	const [nameTouched, setNameTouched] = useState(false)
 	const [ageTouched, setAgeTouched] = useState(false)
 	const [favFoodTouched, setFavFoodTouched] = useState(false)
 	const [lovesTouched, setLovesTouched] = useState(false)
-	const [broadcastMsg, setBroadcastMsg] = useState('')
-	const [imgName, setImgName] = useState({})
+	
+	const [broadcastMsg, setBroadcastMsg] = useState('add')
+	const [userSetImg, setUserSetImg] = useState({})
+	const [loading, setLoading] = useState(false)
+	let cloudianyData;
+
 	const maxSize = 3000000; 
-	const URL = 'https://hamsterwars-hamsterburen.herokuapp.com/'
-	const addURL = '/api/addhamster'
+	const cloudName = process.env.REACT_APP_CLOUDINARY_NAME
+	const cloudinaryURL = `https://api.cloudinary.com/v1_1/${cloudName}/image/upload`
 
 	const addImg = (e) => {
 		let impFile = e.target.files;
+		let allowedExtensions = ['jpeg', 'jpg', 'gif', 'tiff', 'psd', 'eps', 'ai', 'indd', 'raw'];
 		for(let file of impFile){
-			if(file.size > maxSize && file.type === 'image/*'){
+			let Extension = file.name.substring(file.name.lastIndexOf('.') + 1).toLowerCase();
+			console.log(Extension);
+			if(allowedExtensions.indexOf(Extension) === -1){
+				console.log('This filetype is not accepted');
+				impFile = undefined
+				//TODO add message
+			}
+			else if(file.size > maxSize ){
 				console.log('File too large, max 3MB, choese another one');
 				impFile = undefined
 				//TODO add message that file is not accepted
 			}
 			else{
+				
+
 				console.log('File accepted');
 				console.log(file); //objektet användaren ladda upp ligger i "file"
-				const reader = new FileReader();
-				reader.readAsDataURL(file)	//FileReader gör om bilden till base64 sträng
-				reader.onloadend = () => {
-					console.log(reader.result);
-					setImgName(reader.result) //Bilden läggs här i base64 format
-
-				}
+				setUserSetImg(file)
+				
 				
 				//TODO add message that file is accepted
 			}
@@ -46,6 +57,7 @@ const UploadForm = ({hamster}) => {
 
 	const onSubmit = async (e) => {
 		e.preventDefault();
+		setLoading(true)
 		if(
 			!name.trim('') || !age.trim('') ||
 			!favFood.trim('') || !loves.trim('') ||
@@ -57,25 +69,52 @@ const UploadForm = ({hamster}) => {
 				
 			}
 			else{
-				hamster = 
-				{
-					name: name,
-					age: age,
-					favFood: favFood,
-					loves: loves,
-					imgName: imgName
-				}
+				
 				console.log(hamster);
 				console.log('inside else, ALL OK');
-				try {
-					await fetch('/api/addhamster', {
-						method: 'POST',
-						body: JSON.stringify({data: hamster}),
-						headers: {'Content-type': 'application/json'}
-					})
-				} catch (error) {
-					console.error(error)
+				
+				
+				const formData = new FormData();
+				formData.append('file', userSetImg)
+				formData.append('upload_preset', 'dev_hamster')
+				await fetch(cloudinaryURL, {
+					method: 'POST',
+					body: formData
+				})
+				.then(response => response.json())
+				.then(data => {
+					console.log('Success:', data);
+					console.log('Img URL: ', data.secure_url);
+					cloudianyData = data
+				})
+				.catch(error => console.log('error ', error))
+				
+				let myHeaders = new Headers();
+				myHeaders.append('Content-Type', 'application/x-www-form-urlencoded')
+
+				let urlencoded = new URLSearchParams();
+				urlencoded.append('name', name)
+				urlencoded.append('age', age)
+				urlencoded.append('favFood', favFood)
+				urlencoded.append('loves', loves)
+				urlencoded.append('imgName', cloudianyData.secure_url)
+
+				let requestOptions = {
+					method: 'POST',
+					headers: myHeaders,
+					body: urlencoded,
+					redirect: 'follow'
 				}
+				await fetch('https://hamsterwars-hamsterburen.herokuapp.com/api/addhamste', requestOptions)
+				.then(response => response.text())
+				.then(result => {
+					console.log(result)
+					setBroadcastMsg('Success!')
+					setTimeout(setLoading(false), 4000)
+				})
+				.catch(error => console.log('error ', error), setBroadcastMsg('Oops! Try again!'), setTimeout(() => {
+					setLoading(false)
+				}, 4000))
 			}
 
 			
@@ -232,8 +271,12 @@ const UploadForm = ({hamster}) => {
 			
 			
 			
-			<div className="genericBtn-form" onClick={(e) => onSubmit(e)}><div className="did-it-upload">{broadcastMsg}</div>
-				<GenericBtn page={"result"} text={"add"} color={"peach"}/>
+			<div className="genericBtn-form" onClick={(e) => onSubmit(e)}>
+			<svg class="checkmark" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 52 52">
+			<circle class="checkmark__circle" cx="26" cy="26" r="25" fill="none"/>
+			<path class="checkmark__check" fill="none" d="M14.1 27.2l7.1 7.2 16.7-16.8"/>
+			</svg>
+				<GenericBtn page={"result"} text={loading ? broadcastMsg : 'add'} color={"peach"}/>
 			</div>
 		
 		</form>
