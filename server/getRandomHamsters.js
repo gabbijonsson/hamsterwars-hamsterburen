@@ -1,5 +1,5 @@
 const { MongoClient } = require("mongodb");
-const { url, dbName, collectionName } = require("./database.js");
+const { url, dbName, hamsterCollectionName } = require("./database.js");
 
 
 function getRandomHamsters(query, cb) {
@@ -11,7 +11,7 @@ function getRandomHamsters(query, cb) {
 				cb("An error occured. Could not connect. " + error);
 				return;
 			}
-			const col = client.db(dbName).collection(collectionName);
+			const col = client.db(dbName).collection(hamsterCollectionName);
 			try {
 				const cursor = await col.aggregate([
 					{ $sample: { size: Number(query.count) } },
