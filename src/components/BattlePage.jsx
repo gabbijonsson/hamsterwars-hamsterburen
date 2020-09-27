@@ -59,10 +59,10 @@ const BattlePage = ({showResult,pickWinner,showOwnFighter}) => {
 		<div className="battlepage">
                 
 				<div className="stack-up1">
-					<PickWinnerBtn pickWinner={()=>pickWinner(id1)}  showResult={showResult} />
+					<PickWinnerBtn id={id1}/>
 				</div>
 				<div className="stack-up2">
-					<PickWinnerBtn pickWinner={()=>pickWinner(id2)} showResult={showResult} />
+					<PickWinnerBtn id={id2}/>
 				</div>
 			    
             <div className="battlepage-main">
@@ -77,7 +77,7 @@ const BattlePage = ({showResult,pickWinner,showOwnFighter}) => {
 				
 
 				<div className='generic'>
-					<GenericBtn text ='Pick your own fighter' color='teal' functionality={showOwnFighter} />
+					<GenericBtn text ='Pick your own fighter' color='teal' link="/battle/:yourfighter"/>
 				</div>
 			
 			</div>
@@ -88,3 +88,4 @@ const BattlePage = ({showResult,pickWinner,showOwnFighter}) => {
 }
 
 export default BattlePage;
+

@@ -6,6 +6,8 @@ import BattlePage from './components/BattlePage';
 import StatisticsView from './components/StatisticsView';
 import StartHeader from './components/StartHeader';
 import HeaderGeneric from './components/HeaderGeneric';
+import ResultView from './components/ResultView';
+import PickFightersView from './components/PickFightersView';
 import {BrowserRouter, Route} from 'react-router-dom';
 
 function App() {
@@ -29,6 +31,14 @@ function App() {
             <Route path="/upload" exact>
               <HeaderGeneric/>
               <CreateHamsterView/>
+            </Route>
+			<Route path="/result/:id" exact>
+              <HeaderGeneric/>
+              <ResultView/>
+            </Route>
+			<Route path="/battle/:yourfighter" exact>
+              <HeaderGeneric/>
+              <PickFightersView/>
             </Route>
           </BrowserRouter>
 

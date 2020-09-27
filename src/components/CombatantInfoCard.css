@@ -1,11 +1,9 @@
 .combatant-info {
 	width: 77vw;
 	height: 50vh;
-	/* margin-top: 1em; */
 	display: flex;
 	flex-direction: column;
 	padding-bottom: 1em;
-	overflow: auto;
 	justify-content: space-between;
 	margin-bottom: 2em;
 }
@@ -16,29 +14,7 @@
 .combatant-info > div span{
 		margin-right: 4%;
 	}
-/* Scrollbar CSS */
-/* width */
-::-webkit-scrollbar {
-	width: 10px;
-  }
-  
-  /* Track */
-  ::-webkit-scrollbar-track {
-	background: #f1f1f1; 
-	border-radius: 10px;
-	border: 1px solid #A4036F;
-  }
-   
-  /* Handle */
-  ::-webkit-scrollbar-thumb {
-	background: #888; 
-	border-radius: 10px;
-  }
-  
-  /* Handle on hover */
-  ::-webkit-scrollbar-thumb:hover {
-	background: #555; 
-  }
+
 @media only screen and (min-width: 1025px){
 	.combatant-info > div{
 		padding-bottom: 2em;
@@ -47,7 +23,6 @@
 	}
 	.combatant-info{
 		height: 65vh;
-		overflow: hidden;
 		margin-bottom: 0;
 		width: 50vw;
 	}
