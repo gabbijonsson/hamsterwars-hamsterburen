@@ -1,17 +1,15 @@
 const express = require('express');
 const bodyParser = require('body-parser');
-const fs = require('fs');
 const app = express();
 const cors = require('cors');
 const { getRandomHamsters } = require("./getRandomHamsters.js");
 const { getSelectedHamster } = require('./getSelectedHamster.js');
 const { addHamster } = require('./addHamster.js');
-const fileUpload = require('express-fileupload');
-const path = require('path');
+const { addMatch } = require('./addMatch.js');
+const { updateCombatant } = require('./updateCombatant.js')
+const { getMatchCount } = require('./getMatchCount.js')
 
 const PORT = process.env.PORT || 1234;
-
-
 
 // Middleware
 
@@ -27,12 +25,9 @@ app.use(
         );
 app.use(express.static(__dirname + "/../build/"));
 app.use(express.static(__dirname + "/../src/assets/"));
-app.use(express.static(path.join(__dirname, "../assets")));
-app.use(express.static(path.join(__dirname, "/assets")));
 // app.use(express.static(__dirname + "/../public/"));
-app.use(bodyParser.urlencoded({ limit: '50mb', extended: true }));
-app.use(bodyParser.json({ limit: '50mb'}));
-app.use(fileUpload());
+app.use(bodyParser.urlencoded({ extended: false }));
+app.use(bodyParser.json());
 
     
 // TODO: ROUTES HERE
@@ -55,13 +50,6 @@ app.get("/api/gethamster", (req, res) => {
 
 // Add a new hamster
 app.post("/api/addhamster", (req, res) => {
-    console.log('req before writefile is ', req);
-    try {
-		const fileStr = req.body.data;
-		console.log('file in server.js' ,fileStr);
-	} catch (error) {
-		console.error(error)
-	}
 	addHamster(req.body, (addedHamster) => {
 		console.log("Adding hamster.");
 		console.log(req.body);
@@ -69,6 +57,20 @@ app.post("/api/addhamster", (req, res) => {
 	});
 });
 
+app.post("/api/addmatch", (req, res) => {
+    addMatch(req.body, () => {
+        console.log('Match added');
+    })
+    updateCombatant(req.body, () => {
+        res.send({ message: "Hamsters and match updated." })
+    })
+})
+
+app.get("/api/getmatchcount", (req, res) => {
+    getMatchCount((matchCount) => {
+        res.send(matchCount)
+    })
+})
 
 
 // START SERVER
