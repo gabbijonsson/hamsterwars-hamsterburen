@@ -12,7 +12,7 @@ import GenericBtn from './GenericBtn';
 const PickFightersView = ({img1,img2,showBattle}) => {
 	return(
 		<div>
-			{/* <HeaderGeneric /> */}
+			
 			<div className="selectFighter-form">
 				<SelectFighter />
 				<div className="choose-fightersBtn">

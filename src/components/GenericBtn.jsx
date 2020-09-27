@@ -2,15 +2,13 @@ import React from 'react';
 import './GenericBtn.css';
 import {Link} from 'react-router-dom';
 
-const GenericBtn = ({text, color,link}) => {
+const GenericBtn = ({text, color}) => {
     return(
-		
+		<Link to="/battle/own">
 			<button className={'generic ' + color} >
-				<Link to="/result/:id">
-					{text}
-				</Link>
+				{text}	
 			</button>
-        
+		</Link>
     )
 }
 

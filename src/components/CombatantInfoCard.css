@@ -6,6 +6,7 @@
 	padding-bottom: 1em;
 	justify-content: space-between;
 	margin-bottom: 2em;
+
 }
 .combatant-info > div {
 	padding: 0.3em;
@@ -18,8 +19,9 @@
 @media only screen and (min-width: 1025px){
 	.combatant-info > div{
 		padding-bottom: 2em;
-		width: 70vw;
-		height: 230px;
+		width: 50vw;
+		/* height: 230px; */
+		height: 10vh;
 	}
 	.combatant-info{
 		height: 65vh;

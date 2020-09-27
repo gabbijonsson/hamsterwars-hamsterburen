@@ -9,8 +9,7 @@ import HeaderGeneric from './components/HeaderGeneric';
 import ResultView from './components/ResultView';
 import PickFightersView from './components/PickFightersView';
 import {BrowserRouter, Route} from 'react-router-dom';
-import PickFightersView from './components/PickFightersView';
-import ResultView from './components/ResultView';
+
 
 function App() {
 
@@ -41,6 +40,10 @@ function App() {
             <Route path="/result/:id" exact>
               <HeaderGeneric/>
               <ResultView/>
+            </Route>
+			<Route path="/battle/own" exact>
+              <HeaderGeneric/>
+              <PickFightersView/>
             </Route>
           </BrowserRouter>
 
