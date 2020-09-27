@@ -41,11 +41,7 @@ function App() {
             </Route>
             <Route path="/result/:id" exact>
               <HeaderGeneric/>
-              <ResultView/>
-            </Route>
-			<Route path="/battle/own" exact>
-              <HeaderGeneric/>
-              <PickFightersView/>
+              <ResultView id={winnerId}/>
             </Route>
           </BrowserRouter>
 

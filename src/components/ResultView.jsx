@@ -18,7 +18,7 @@ let hamster =
 		}
 
 let hamsterImg = TestHamsterPic;
-function ResultView({id,showBattle}) {
+function ResultView({id}) {
 	console.log('id is:', id);
 	const [winnerHamster, setWinnerHamster] = useState();
 
@@ -28,7 +28,7 @@ function ResultView({id,showBattle}) {
 		
 	function getHamster(callback) {
 		fetch(
-			`/gethamster?id=${id}`
+			`/api/gethamster?id=${id}`
 		)
 			.then((res) => res.json())
 			.then(
@@ -63,7 +63,7 @@ function ResultView({id,showBattle}) {
 				</ScrollContainer>
 			</div>
 			<div className="resultView-mobile-btn">
-			<GenericBtn color="peach" text="BATTLE" page="result" functionality={showBattle} />
+			<GenericBtn color="peach" text="BATTLE" page="result" />
 
 			</div>
 		</div>
