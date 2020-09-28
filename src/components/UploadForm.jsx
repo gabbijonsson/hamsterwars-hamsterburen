@@ -297,7 +297,7 @@ const UploadForm = ({hamster}) => {
 			</svg>
 			
 			<div className="genericBtn-form" onClick={(e) => onSubmit(e)}>		
-				<GenericBtn page={"result"} text={loading ? broadcastMsg : 'add'} color={"peach"}/>
+				<GenericBtn link={"result"} text={loading ? broadcastMsg : 'add'} color={"peach"}/>
 			</div>
 		
 		</form>
