@@ -6,10 +6,7 @@ import './PickWinnerBtn.css';
 const PickWinnerBtn = ({pickWinner,id}) => {
 	const history = useHistory();
 
-	const switchToResult = ()=>{
-		pickWinner();
-		history.push('/result/:id');
-	}
+	
 
 	
     async function addMatch() {
@@ -25,7 +22,10 @@ const PickWinnerBtn = ({pickWinner,id}) => {
 	}
 	
        
-       
+	const switchToResult = ()=>{
+		pickWinner();
+		history.push('/result/:id');
+	}
   
 			
 	
