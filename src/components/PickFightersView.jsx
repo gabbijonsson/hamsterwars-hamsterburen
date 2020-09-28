@@ -1,12 +1,15 @@
-import React from 'react';
+import React, { useState } from 'react';
 import './PickFightersView.css';
 import CombatantCard from './CombatantCard';
 import PickWinnerBtn from './PickWinnerBtn';
 import SelectFighter from './SelectFighter';
 import GenericBtn from './GenericBtn';
-import {Link} from 'react-router-dom';
+import img1 from '../assets/frontend/GrinningHamster.svg';
+import img2 from '../assets/frontend/HappyHamster.svg';
 
-const PickFightersView = ({img1,img2}) => {
+
+const PickFightersView = () => {
+	
 	return(
 		<div>
 			
@@ -23,16 +26,16 @@ const PickFightersView = ({img1,img2}) => {
 				<h1>VS.</h1>
 				<CombatantCard CombatantImg={img2} borderColor='purple' />
 			</div>
-			<div className ="pickWinnerBtns">
+			<div className = "pickWinnerBtns" >
+				
 					<PickWinnerBtn />
 					<PickWinnerBtn />
+				
+					
 			</div>
 
 			<div className="generic-btn">
-				<Link to="/battle">
-					<GenericBtn text='Battle' color='teal'/>	
-				</Link>
-
+				<GenericBtn text='Battle' color='teal' link="/battle" />
 			</div>	
 			
 			

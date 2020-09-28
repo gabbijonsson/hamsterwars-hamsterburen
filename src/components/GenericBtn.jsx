@@ -9,9 +9,9 @@ const GenericBtn = ({text, color, link}) => {
 	const sendTo = (link) =>{
 		history.push(link);
 	}
-
+	
     return(
-			<button onClick={sendTo} className={'generic ' + color} >
+			<button onClick={sendTo(link)} className={'generic ' + color}>
 				{text}	
 			</button>
     )

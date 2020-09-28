@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import './HamburgerMenuBtn.css';
 import HamburgerMenu from './HamburgerMenu';
 
-const HamburgerMenuBtn = ({showHome, showBattle, showStats, showCreate}) => {
+const HamburgerMenuBtn = () => {
   const [myclass, setMyClass] = useState(true);
 	
 
@@ -18,7 +18,7 @@ const HamburgerMenuBtn = ({showHome, showBattle, showStats, showCreate}) => {
 			</div>
 		
 			<div className = { (!myclass) ? 'visible-content' : 'invisible-content'}>
-				<HamburgerMenu showHome={showHome} showBattle={showBattle} showStats={showStats} showCreate={showCreate} />
+				<HamburgerMenu  />
 			</div>
 			
 		</div>

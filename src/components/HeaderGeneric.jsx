@@ -6,7 +6,7 @@ import HamburgerMenuBtn from './HamburgerMenuBtn'
 import DesktopHeaderBtn from './DesktopHeaderBtn'
 import {Link} from 'react-router-dom';
 
-function HeaderGeneric({showHome,showStats,showBattle,showCreate,showOwnFighter}) {
+function HeaderGeneric({content}) {
 	return (
 		<header id='HeaderGeneric'>
 			<div className="header-item-1">
@@ -16,18 +16,16 @@ function HeaderGeneric({showHome,showStats,showBattle,showCreate,showOwnFighter}
 
 				
 				<div className="desktop-nav">
-					<HamburgerMenu showHome={showHome} showBattle={showBattle} showStats={showStats} showCreate={showCreate} />
+					<HamburgerMenu />
 				</div>
 			</div>
 			<div className="header-item-2">
 
 			</div>
 			<div className="header-item-3">
-				<HamburgerMenuBtn showHome={showHome} showBattle={showBattle} showStats={showStats} showCreate={showCreate} />
-				<div className="desktop-header-btn">
-					<Link to="battle/:id1/:id2">
-					<DesktopHeaderBtn text="PICK YOUR OWN FIGHTERS" color="teal" functionality={showOwnFighter} />
-					</Link>
+				<HamburgerMenuBtn />
+				<div className={'desktop-header-btn ' + content}>
+					<DesktopHeaderBtn text="PICK YOUR OWN FIGHTERS" color="teal" link="/battle/:id1/:id2"  />
 				</div>
 			</div>
 			

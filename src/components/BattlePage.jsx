@@ -3,9 +3,9 @@ import './BattlePage.css';
 import GenericBtn from '../components/GenericBtn';
 import CombatantCard from '../components/CombatantCard';
 import PickWinnerBtn from '../components/PickWinnerBtn';
-import {Link} from 'react-router-dom';
 
-const BattlePage = ({showResult,pickWinner,showOwnFighter}) => {
+
+const BattlePage = ({pickWinner}) => {
 	
 	const [hamsters, setHamsters] = useState([]);
 	let image1 = '';
@@ -17,13 +17,12 @@ const BattlePage = ({showResult,pickWinner,showOwnFighter}) => {
 		let mounted = true;
 		function getRandomHamsters(callback) {
 			fetch(
-				"api/gethamsters/random?count=2"
+				" https://hamsterwars-hamsterburen.herokuapp.com/api/gethamsters/random?count=2"
 			)
 				.then((res) => res.json())
 				.then( 
 					(result) => {
 						if(mounted){
-							console.log('1');
 							callback(result);
 						}
 				},
@@ -45,6 +44,7 @@ const BattlePage = ({showResult,pickWinner,showOwnFighter}) => {
 		 id1 = hamsters[0].id;
 		 id2 = hamsters[1].id;
 	 }
+		
 
 	return(
 		<div className="battlepage">
@@ -53,7 +53,7 @@ const BattlePage = ({showResult,pickWinner,showOwnFighter}) => {
 					<PickWinnerBtn pickWinner={()=>pickWinner(id1)}/>
 				</div>
 				<div className="stack-up2">
-					<PickWinnerBtn id={id2}/>
+					<PickWinnerBtn pickWinner={()=>pickWinner(id2)}/>
 				</div>
 			    
             <div className="battlepage-main">
@@ -68,7 +68,9 @@ const BattlePage = ({showResult,pickWinner,showOwnFighter}) => {
 				
 
 				<div className='generic'>
-							<GenericBtn text ='Pick your own fighter' color='teal' />	
+					
+						<GenericBtn text ='Pick your own fighter' color='teal' link="/battle/:id1/:id2" />
+	
 				</div>
 			</div>
 		</div>
