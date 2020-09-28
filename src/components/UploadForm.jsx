@@ -215,7 +215,7 @@ const UploadForm = ({ hamster }) => {
 				<div className="errorsection"></div>
 
 				<div className="genericBtn-form" onClick={(e) => onSubmit(e)}>
-					<GenericBtn page={"result"} text={"add"} color={"peach"} />
+					<GenericBtn  text={"add"} color={"peach"} link="result/:id"/>
 				</div>
 			</form>
 		</>

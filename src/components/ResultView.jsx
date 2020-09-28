@@ -62,7 +62,7 @@ function ResultView({id}) {
 				</ScrollContainer>
 			</div>
 			<div className="resultView-mobile-btn">
-			<GenericBtn color="peach" text="BATTLE" page="result" link="/battle"/>
+				<GenericBtn color="peach" text="BATTLE"  link="/battle"/>
 
 			</div>
 		</div>
