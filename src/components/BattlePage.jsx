@@ -4,7 +4,7 @@ import GenericBtn from '../components/GenericBtn';
 import CombatantCard from '../components/CombatantCard';
 import PickWinnerBtn from '../components/PickWinnerBtn';
 
-const BattlePage = ({pickWinner}) => {
+const BattlePage = ({pickWinner,id}) => {
 	
 	const [hamsters, setHamsters] = useState([]);
 	let image1 = '';
@@ -53,10 +53,10 @@ const BattlePage = ({pickWinner}) => {
 		<div className="battlepage">
                 
 				<div className="stack-up1">
-					<PickWinnerBtn pickWinner={()=>pickWinner(id1)}/>
+					<PickWinnerBtn id={id1} pickWinner={()=>pickWinner(id1)}/>
 				</div>
 				<div className="stack-up2">
-					<PickWinnerBtn pickWinner={()=>pickWinner(id2)}/>
+					<PickWinnerBtn id={id2} pickWinner={()=>pickWinner(id2)}/>
 				</div>
 			    
             <div className="battlepage-main">
