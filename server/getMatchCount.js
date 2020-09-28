@@ -16,10 +16,9 @@ function getMatchCount(cb) {
                 const cursor = await col.find().sort({ matchID: -1 }).limit(1);
 				let response = await cursor.toArray();
                 let currentId = response[0].matchID;
-                console.log("currentid is ", currentId);
 				cb(currentId);
             } catch (err) {
-				console.log("Invalid query in getMatchCount! " + err);
+				console.error("Invalid query in getMatchCount! " + err);
 			} finally {
 				client.close();
 			}

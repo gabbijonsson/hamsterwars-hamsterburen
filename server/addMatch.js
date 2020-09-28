@@ -18,8 +18,8 @@ function addMatch(newMatch, cb) {
 			    try {
                     newMatch.matchID = nextId;
                     col.insertOne(newMatch).catch((err) => {
-                        console.log('Could not add match ', newMatch)
-                        console.log(err);
+                        console.error('Could not add match ', newMatch)
+                        console.error(err);
                     });
                     
                 } finally {

@@ -43,7 +43,7 @@ function getStats(query, cb) {
 				let response = await cursor.toArray();
 				cb(response);
 			} catch (err) {
-				console.log("Invalid query in getStats! " + err);
+				console.error("Invalid query in getStats! " + err);
 			} finally {
 				client.close();
 			}

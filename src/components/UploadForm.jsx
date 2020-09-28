@@ -89,7 +89,7 @@ const UploadForm = ({hamster}) => {
 					// console.log('Img URL: ', data.secure_url);
 					cloudianyData = data
 				})
-				.catch(error => console.log('error ', error))
+				.catch(error => console.error('error ', error))
 				
 				let myHeaders = new Headers();
 				myHeaders.append('Content-Type', 'application/x-www-form-urlencoded')
@@ -131,7 +131,7 @@ const UploadForm = ({hamster}) => {
 
 				})
 				.then(result => {console.log(result)})
-				.catch(error => console.log('error ', error))
+				.catch(error => console.error('error ', error))
 			}
 
 			

@@ -36,14 +36,14 @@ function ResultView({id}) {
 					callback(result)
 				},
 				(error) => {
-					console.log("error", error);
+					console.error("error", error);
 				}
 			);
 	}
 
 		getHamster(setWinnerHamster);
 		
-	}, []);
+	}, [id]);
 
 	if(winnerHamster){
 		

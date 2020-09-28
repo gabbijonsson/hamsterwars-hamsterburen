@@ -16,7 +16,7 @@ function getSelectedHamster(req, cb) {
 				const hamster = await col.findOne( {id: hamsterID} );
 				cb(hamster);
 			} catch (err) {
-				console.log("Invalid query! " + err);
+				console.error("Invalid query! " + err);
 			} finally {
 				client.close();
 			}

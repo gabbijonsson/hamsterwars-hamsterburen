@@ -20,7 +20,7 @@ function newMatchId(cb) {
                 let newId = currentId + 1;
 				cb(newId);
 			} catch (err) {
-				console.log("Invalid query in newMatchId! " + err);
+				console.error("Invalid query in newMatchId! " + err);
 			} finally {
 				client.close();
 			}

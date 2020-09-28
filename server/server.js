@@ -43,7 +43,6 @@ app.get("/api/gethamsters/random", (req, res) => {
 
 // Get specified hamsters based on request query
 app.get("/api/gethamster", (req, res) => {
-	console.log("Query ", req.query);
 	getSelectedHamster(req, (response) => {
 		res.send(response);
 	});
@@ -52,8 +51,6 @@ app.get("/api/gethamster", (req, res) => {
 // Add a new hamster
 app.post("/api/addhamster", (req, res) => {
 	addHamster(req.body, (addedHamster) => {
-		console.log("Adding hamster.");
-		console.log(req.body);
 		res.send(addedHamster);
 	});
 });
@@ -61,7 +58,6 @@ app.post("/api/addhamster", (req, res) => {
 // Add a new matchresult and update the winner / loser hamsters
 app.post("/api/addmatch", (req, res) => {
     addMatch(req.body, () => {
-        console.log('Match added');
     })
     updateCombatant(req.body, () => {
         res.send({ message: "Hamsters and match updated." })

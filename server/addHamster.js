@@ -20,8 +20,8 @@ function addHamster(newHamster, cb) {
                     newHamster.defeats = 0;
                     newHamster.games = 0;
                     col.insertOne(newHamster).catch((err) => {
-                        console.log('Could not add hamster ', newHamster)
-                        console.log(err);
+                        console.error('Could not add hamster ', newHamster)
+                        console.error(err);
                     });
                     
                     cb(newHamster);
