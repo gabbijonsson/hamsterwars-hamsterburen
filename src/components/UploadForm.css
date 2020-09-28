@@ -1,23 +1,16 @@
 form {
     padding: 2rem 1.5rem;
-    /* display: flex;
-    flex-direction: column;
-    align-items: center; */
     font-size: 1.5rem;
     height: calc(100vh - 60px - 1.8rem - .6em);
-    /* Höjden är hela sidan minus header minus generic knappen*/
     width: 100vw;
     position: relative;
-
 }
 
 form h2 {
     font-size: 1.5rem;
     padding-bottom: 2rem;
     text-align: center;
-
 }
-
 form label {
     font-size: 1.2rem;
     color: #AFA18C;
@@ -25,14 +18,12 @@ form label {
     display: inline-block;
     margin-bottom: .3rem;
 }
-
 form input {
     padding: 1rem .4rem .4rem;
     font-size: 1.2rem;
     border: none;
     margin-bottom: .5rem;
 }
-
 div.inputs {
     display: grid;
     grid-template-rows: repeat(3, 2rem 1fr);
@@ -255,7 +246,6 @@ label.fileReader {
         margin-top: 7rem;
         width: 30%;
         font-size: 1.2rem;
-
     }
     /* Validering text */
     .name-error-message>span {
