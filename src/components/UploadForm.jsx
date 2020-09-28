@@ -113,6 +113,8 @@ const UploadForm = ({hamster}) => {
 					response.text()
 					if( response.status === 200 ){
 						document.getElementById('checkMark').style.display = 'block'
+						document.getElementsByTagName('input').value = ''
+						document.getElementById('fileReader').value = ''
 						setBroadcastMsg('Success!')
 						setTimeout(() => {
 							setLoading(false)
