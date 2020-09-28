@@ -19,9 +19,8 @@ let hamster =
 
 let hamsterImg = TestHamsterPic;
 function ResultView({id}) {
-	console.log('id is:', id);
 	const [winnerHamster, setWinnerHamster] = useState();
-
+	
 	
     useEffect(() => {
     
@@ -33,7 +32,7 @@ function ResultView({id}) {
 			.then((res) => res.json())
 			.then(
 				(result) => {
-					console.log('1 winner is:',result);
+					
 					callback(result)
 				},
 				(error) => {
@@ -47,9 +46,9 @@ function ResultView({id}) {
 	}, []);
 
 	if(winnerHamster){
-		console.log('2 winner is:', winnerHamster);
+		
 		hamster = winnerHamster;
-		// hamsterImg = winnerHamster.imgName;
+		hamsterImg = winnerHamster.imgName;
 	}
 
 	return (
@@ -63,7 +62,7 @@ function ResultView({id}) {
 				</ScrollContainer>
 			</div>
 			<div className="resultView-mobile-btn">
-			<GenericBtn color="peach" text="BATTLE" page="result" />
+			<GenericBtn color="peach" text="BATTLE" page="result" link="/battle"/>
 
 			</div>
 		</div>

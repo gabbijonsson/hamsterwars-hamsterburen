@@ -1,15 +1,12 @@
 import React from 'react';
 import './PickFightersView.css';
-import HeaderGeneric from './HeaderGeneric';
-import selectFighter from './SelectFighter';
-import DescriptionText from './DescriptionText';
 import CombatantCard from './CombatantCard';
 import PickWinnerBtn from './PickWinnerBtn';
 import SelectFighter from './SelectFighter';
 import GenericBtn from './GenericBtn';
 
 
-const PickFightersView = ({img1,img2,showBattle}) => {
+const PickFightersView = ({img1,img2}) => {
 	return(
 		<div>
 			
@@ -32,7 +29,7 @@ const PickFightersView = ({img1,img2,showBattle}) => {
 			</div>
 
 			<div className="generic-btn">
-				<GenericBtn text='Battle' color='teal' functionality={showBattle} />
+				<GenericBtn text='Battle' color='teal' link="/battle" />
 			</div>	
 			
 			

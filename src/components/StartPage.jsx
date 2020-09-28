@@ -6,7 +6,7 @@ import StatisticsImg from '../assets/frontend/NutHamster.svg';
 import AddImg from '../assets/frontend/JoyfulHamster.svg';
 import {Link} from 'react-router-dom';
 
-const StartPage = ({showBattle, showStats, showCreate}) => {
+const StartPage = () => {
 	return(
 		<>
 
