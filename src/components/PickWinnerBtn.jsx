@@ -1,8 +1,15 @@
 import React from 'react';
+import { useHistory } from 'react-router-dom';
 import './PickWinnerBtn.css';
-import {Link} from 'react-router-dom';
+
 
 const PickWinnerBtn = ({pickWinner,id}) => {
+	const history = useHistory();
+
+	const switchToResult = ()=>{
+		pickWinner();
+		history.push('/result/:id');
+	}
 
 	
     async function addMatch() {
@@ -25,9 +32,8 @@ const PickWinnerBtn = ({pickWinner,id}) => {
 
 		
 	return(
-		<Link to="/result/:id">
-			<button className="pick-button" onClick={() =>  {pickWinner(); addMatch();} }><h1>Pick as winner</h1></button>
-		</Link>
+		
+			<button className="pick-button" onClick={() => {pickWinner(); addMatch();switchToResult()} }><h1>Pick as winner</h1></button>
 	)
 }
 

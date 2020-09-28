@@ -15,13 +15,10 @@ function newHamsterId(cb) {
 			try {
 				const cursor = await col.find().sort({ id: -1 }).limit(1);
 				let response = await cursor.toArray();
-				console.log("Response is: ");
-				console.log(response);
 				let currentId = response[0].id;
-				console.log("Current ID = ", currentId);
 				cb(currentId + 1);
 			} catch (err) {
-				console.log("Invalid query in newHamsterId! " + err);
+				console.error("Invalid query in newHamsterId! " + err);
 			} finally {
 				client.close();
 			}

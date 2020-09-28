@@ -1,4 +1,4 @@
-    const express = require('express');
+const express = require('express');
 const bodyParser = require('body-parser');
 const app = express();
 const cors = require('cors');
@@ -8,6 +8,7 @@ const { addHamster } = require('./addHamster.js');
 const { addMatch } = require('./addMatch.js');
 const { updateCombatant } = require('./updateCombatant.js')
 const { getMatchCount } = require('./getMatchCount.js')
+const { getStats } = require('./getStats.js')
 
 const PORT = process.env.PORT || 1234;
 
@@ -42,7 +43,6 @@ app.get("/api/gethamsters/random", (req, res) => {
 
 // Get specified hamsters based on request query
 app.get("/api/gethamster", (req, res) => {
-	console.log("Query ", req.query);
 	getSelectedHamster(req, (response) => {
 		res.send(response);
 	});
@@ -51,24 +51,30 @@ app.get("/api/gethamster", (req, res) => {
 // Add a new hamster
 app.post("/api/addhamster", (req, res) => {
 	addHamster(req.body, (addedHamster) => {
-		console.log("Adding hamster.");
-		console.log(req.body);
 		res.send(addedHamster);
 	});
 });
 
+// Add a new matchresult and update the winner / loser hamsters
 app.post("/api/addmatch", (req, res) => {
     addMatch(req.body, () => {
-        console.log('Match added');
     })
     updateCombatant(req.body, () => {
         res.send({ message: "Hamsters and match updated." })
     })
 })
 
+// Returns the highest MatchID, which is also the number of matches in the database
 app.get("/api/getmatchcount", (req, res) => {
     getMatchCount((matchCount) => {
         res.send(matchCount)
+    })
+})
+
+// Get statistics from the database based on order param
+app.get("/api/getstats", (req, res) => {
+    getStats(req.query, (response) => {
+        res.send(response);
     })
 })
 

@@ -15,16 +15,16 @@ function updateCombatant(newStats, cb) {
             try {
                 let winner = Number(newStats.winner)
                 let loser = Number(newStats.loser)
-                const winnerDoc = await col.updateOne(
+                await col.updateOne(
                     { "id": winner },
                     { $inc: {"wins": 1, "games": 1 } }
                 )
-                const loserDoc = await col.updateOne(
+                await col.updateOne(
                     { "id": loser },
                     { $inc: {"defeats": 1, "games": 1 } }
                 )
             } catch (err) {
-                console.log("Could not update hamsters");
+                console.error("Could not update hamsters");
             } finally {
                 cb();
                 client.close();

@@ -103,3 +103,17 @@ Skicka id på vinnare och förlorare i request body.
 |Resurs    |Metod   |Förväntat svar|
 |----------|--------|---|
 |/api/getmatchcount | GET | Hämtar totala antalet matcher registrerade |
+
+
+|Resurs    |Metod   |Förväntat svar|
+|----------|--------|---|
+|/api/getstats | GET | Returnerar statistik baserat på angiven kategori |
+
+Använd category för att efterfråga önskad statistik.
+```
+/api/getstats?category=winners Returnerar 5 hamstrar sorterat på högst antal vinster
+/api/getstats?category=losers Returnerar 5 hamstrar sorterat på högst antal förluster
+/api/getstats?category=oldest Returnerar 5 hamstrar sorterat på högst ålder
+/api/getstats?category=youngest Returnerar 5 hamstrar sorterat på lägst ålder
+```
+

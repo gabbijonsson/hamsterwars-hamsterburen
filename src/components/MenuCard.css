@@ -1,94 +1,97 @@
-.menuCard{
-	border: 3px solid black;
+.menuCard {
+  border: 3px solid black;
   width: 85vw;
-  height: 24vh;
+  height: calc((100vh - 200px)/3.8);
   background-color: #FFFFFF;
   display: flex;
   flex-direction: row;
   justify-content: center;
   align-items: center;
 }
- .menuCard > img {
-	 opacity: 0;
-	 
-	 
- }
-.menuCard:hover{
+
+.menuCard>img {
+  opacity: 0;
+
+
+}
+
+.menuCard:hover {
   cursor: pointer;
 
 }
 
-.menuCard h2{
-  font-size: 2.3em;
-  
+.menuCard h2 {
+  font-size: 2.8em;
+
   position: absolute;
   transition: 1s;
 }
 
 
 
-.menuCard:hover h2{
+.menuCard:hover h2 {
   transform: scale(0.5);
   transition: .2s ease-in-out;
   position: relative;
   text-align: left;
- 
-  
+
+
 }
 
-.menuCard:hover img{
-	
-	opacity: 1;
-	transition-property: opacity;
-	transition-duration: 2s;
-	width: 100%;
-	height: 90%;
-	
+.menuCard:hover img {
+
+  opacity: 1;
+  transition-property: opacity;
+  transition-duration: 2s;
+  width: 100%;
+  height: 90%;
+
 }
 
-article.peach{
+article.peach {
   border: 5px solid #FCA795;
 }
 
-article.teal{
+article.teal {
   border: 5px solid #048BA8;
 }
 
-article.pink{
+article.pink {
   border: 5px solid #A4036F;
 }
 
-@media(min-width: 1025px){
-  .menuCard{
+@media(min-width: 1025px) {
+  .menuCard {
     width: 30vw;
-	height: 60vh;
-	flex-direction: column;
+    height: 50vh;
+    flex-direction: column;
   }
 
-  .menuCard h2{
-	font-size: 3.7vw ;
-	transition: 1s;
-	
+  .menuCard h2 {
+    font-size: 3.7vw;
+    transition: 1s;
+
   }
+
   .menuCard:hover h2 {
-	transform: scale(0.9);
-	transition: .5s ease-in-out;
-	position: relative;
-	text-align: bottom;
-   
-	 
+    transform: scale(0.9);
+    transition: .5s ease-in-out;
+    position: relative;
+    text-align: bottom;
+
+
   }
 
-  article.peach{
-	border: 20px solid #FCA795;
+  article.peach {
+    border: 20px solid #FCA795;
   }
-  
-  article.teal{
-	border: 20px solid #048BA8;
+
+  article.teal {
+    border: 20px solid #048BA8;
   }
-  
-  article.pink{
-	border: 20px solid #A4036F;
+
+  article.pink {
+    border: 20px solid #A4036F;
   }
-  
+
 }

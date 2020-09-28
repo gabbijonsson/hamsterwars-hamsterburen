@@ -19,7 +19,7 @@ function getRandomHamsters(query, cb) {
 				const array = await cursor.toArray();
 				cb(array);
 			} catch (err) {
-				console.log("Invalid query! " + err);
+				console.error("Invalid query! " + err);
 			} finally {
 				client.close();
 			}

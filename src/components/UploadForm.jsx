@@ -89,7 +89,7 @@ const UploadForm = ({hamster}) => {
 					// console.log('Img URL: ', data.secure_url);
 					cloudianyData = data
 				})
-				.catch(error => console.log('error ', error))
+				.catch(error => console.error('error ', error))
 				
 				let myHeaders = new Headers();
 				myHeaders.append('Content-Type', 'application/x-www-form-urlencoded')
@@ -131,7 +131,7 @@ const UploadForm = ({hamster}) => {
 
 				})
 				.then(result => {console.log(result)})
-				.catch(error => console.log('error ', error))
+				.catch(error => console.error('error ', error))
 			}
 
 			
@@ -297,7 +297,7 @@ const UploadForm = ({hamster}) => {
 			</svg>
 			
 			<div className="genericBtn-form" onClick={(e) => onSubmit(e)}>		
-				<GenericBtn page={"result"} text={loading ? broadcastMsg : 'add'} color={"peach"}/>
+				<GenericBtn link={"result"} text={loading ? broadcastMsg : 'add'} color={"peach"}/>
 			</div>
 		
 		</form>
