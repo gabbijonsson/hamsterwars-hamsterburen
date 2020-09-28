@@ -1,22 +1,22 @@
-import React from 'react';
+import React, { useState } from 'react';
 import './PickFightersView.css';
-import HeaderGeneric from './HeaderGeneric';
-import selectFighter from './SelectFighter';
-import DescriptionText from './DescriptionText';
 import CombatantCard from './CombatantCard';
 import PickWinnerBtn from './PickWinnerBtn';
 import SelectFighter from './SelectFighter';
 import GenericBtn from './GenericBtn';
+import img1 from '../assets/frontend/GrinningHamster.svg';
+import img2 from '../assets/frontend/HappyHamster.svg';
 
 
-const PickFightersView = ({img1,img2,showBattle}) => {
+const PickFightersView = () => {
+	
 	return(
 		<div>
 			
 			<div className="selectFighter-form">
 				<SelectFighter />
 				<div className="choose-fightersBtn">
-					<button ><h1>choose!</h1></button>
+					<button><h1>choose!</h1></button>
 				</div>
 				
 			</div>
@@ -26,13 +26,16 @@ const PickFightersView = ({img1,img2,showBattle}) => {
 				<h1>VS.</h1>
 				<CombatantCard CombatantImg={img2} borderColor='purple' />
 			</div>
-			<div className ="pickWinnerBtns">
+			<div className = "pickWinnerBtns" >
+				
 					<PickWinnerBtn />
 					<PickWinnerBtn />
+				
+					
 			</div>
 
 			<div className="generic-btn">
-				<GenericBtn text='Battle' color='teal' functionality={showBattle} />
+				<GenericBtn text='Battle' color='teal' link="/battle" />
 			</div>	
 			
 			

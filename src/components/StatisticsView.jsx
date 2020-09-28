@@ -90,8 +90,10 @@ const StatisticsView = ({total}) => {
 				
 				
 			</ScrollContainer>	
-			
-	 		<GenericBtn text={buttonTxt} color='peach' functionality={lessOrMoreStats}/>
+			<div onClick={lessOrMoreStats}>
+				<GenericBtn text={buttonTxt} color='peach' link="/stats"/>
+			</div>
+	 		
 			
 			
 

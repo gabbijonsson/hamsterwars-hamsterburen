@@ -30,7 +30,11 @@
 	.desktop-nav{
 		display: block;
 	}
+	.header-item-3 > .desktop-header-btn.pickFightersView{
+		display: none;
+	}
 	.header-item-3 > .desktop-header-btn{
 		display: block;
 	}
+
 }
