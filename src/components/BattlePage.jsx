@@ -4,15 +4,13 @@ import GenericBtn from '../components/GenericBtn';
 import CombatantCard from '../components/CombatantCard';
 import PickWinnerBtn from '../components/PickWinnerBtn';
 
+
 const BattlePage = ({pickWinner}) => {
 	
 	const [hamsters, setHamsters] = useState([]);
 	let image1 = '';
 	let image2 = '';
 	let id1 = '', id2='';
-	
-	
-	
 	
 	
 	useEffect(() => {
@@ -40,7 +38,6 @@ const BattlePage = ({pickWinner}) => {
 		
 	}, []);
 	 
-
      if(hamsters.length > 0){
 		 image1 = hamsters[0].imgName;
 		 image2 = hamsters[1].imgName;
@@ -75,10 +72,7 @@ const BattlePage = ({pickWinner}) => {
 						<GenericBtn text ='Pick your own fighter' color='teal' link="/battle/:id1/:id2" />
 	
 				</div>
-			
 			</div>
-
-
 		</div>
 	)
 }

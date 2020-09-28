@@ -33,4 +33,4 @@ function HeaderGeneric({content}) {
 	)
 }
 
-export default HeaderGeneric
+export default HeaderGeneric;

@@ -1,20 +1,19 @@
 import React from 'react';
 import './GenericBtn.css';
-import {Link} from 'react-router-dom';
+import {useHistory} from 'react-router-dom';
 
-const GenericBtn = ({text, color,link}) => {
- 
-	let defaultLink = '/';
-	if(link){
-		defaultLink = link;
+const GenericBtn = ({text, color, link}) => {
+
+	const history = useHistory();
+
+	const sendTo = (link) =>{
+		history.push(link);
 	}
 	
     return(
-		<Link to={defaultLink}>
-			<button className={'generic ' + color}>
+			<button onClick={()=>sendTo(link)} className={'generic ' + color}>
 				{text}	
 			</button>
-		</Link>
     )
 }
 
