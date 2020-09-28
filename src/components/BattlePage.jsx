@@ -13,9 +13,6 @@ const BattlePage = ({showResult,pickWinner,showOwnFighter}) => {
 	let id1 = '', id2='';
 	
 	
-	
-	
-	
 	useEffect(() => {
 		let mounted = true;
 		function getRandomHamsters(callback) {
@@ -42,19 +39,12 @@ const BattlePage = ({showResult,pickWinner,showOwnFighter}) => {
 		
 	}, []);
 	 
-	console.log('2');
      if(hamsters.length > 0){
-		 console.log('hamsters is:', hamsters);
 		 image1 = hamsters[0].imgName;
 		 image2 = hamsters[1].imgName;
 		 id1 = hamsters[0].id;
 		 id2 = hamsters[1].id;
 	 }
-		
-		console.log(image1);
-		console.log(image2);
-		console.log('id1', id1);
-		console.log('id2', id2);
 
 	return(
 		<div className="battlepage">
@@ -81,13 +71,8 @@ const BattlePage = ({showResult,pickWinner,showOwnFighter}) => {
 						<Link to="/battle/:id1/:id2">
 							<GenericBtn text ='Pick your own fighter' color='teal' />	
 						</Link>
-
-	
 				</div>
-			
 			</div>
-
-
 		</div>
 	)
 }

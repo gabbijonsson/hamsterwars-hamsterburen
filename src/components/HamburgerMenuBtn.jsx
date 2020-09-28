@@ -1,8 +1,6 @@
 import React, { useState } from 'react';
 import './HamburgerMenuBtn.css';
-import menuIcon from '../assets/frontend/hamburger-menu.png';
 import HamburgerMenu from './HamburgerMenu';
-import menuClose from '../assets/frontend/CloseHamburger.svg';
 
 const HamburgerMenuBtn = ({showHome, showBattle, showStats, showCreate}) => {
   const [myclass, setMyClass] = useState(true);

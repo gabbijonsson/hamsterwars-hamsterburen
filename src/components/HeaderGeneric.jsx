@@ -25,7 +25,9 @@ function HeaderGeneric({showHome,showStats,showBattle,showCreate,showOwnFighter}
 			<div className="header-item-3">
 				<HamburgerMenuBtn showHome={showHome} showBattle={showBattle} showStats={showStats} showCreate={showCreate} />
 				<div className="desktop-header-btn">
+					<Link to="battle/:id1/:id2">
 					<DesktopHeaderBtn text="PICK YOUR OWN FIGHTERS" color="teal" functionality={showOwnFighter} />
+					</Link>
 				</div>
 			</div>
 			
@@ -33,4 +35,4 @@ function HeaderGeneric({showHome,showStats,showBattle,showCreate,showOwnFighter}
 	)
 }
 
-export default HeaderGeneric
+export default HeaderGeneric;
