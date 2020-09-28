@@ -34,21 +34,21 @@ const UploadForm = ({hamster}) => {
 			console.log(Extension);
 			if(allowedExtensions.indexOf(Extension) === -1){
 				document.getElementById('fileReader').textContent = 'Sorry - This file type is not supperted !'
-				console.log('This filetype is not accepted');
+				// console.log('This filetype is not accepted');
 				impFile = undefined
 				//TODO add message
 			}
 			else if(file.size > maxSize ){
 				document.getElementById('fileReader').textContent = 'Too large (MAX 3MB) - Select another one!'
-				console.log('File too large, max 3MB, choese another one');
+				// console.log('File too large, max 3MB, choese another one');
 				impFile = undefined
 				//TODO add message that file is not accepted
 			}
 			else{
 				
 				document.getElementById('fileReader').textContent = 'File Selected!'
-				console.log('File accepted');
-				console.log(file); //objektet användaren ladda upp ligger i "file"
+				// console.log('File accepted');
+				// console.log(file); //objektet användaren ladda upp ligger i "file"
 				setUserSetImg(file)
 				
 				
@@ -66,14 +66,14 @@ const UploadForm = ({hamster}) => {
 			name.length > 15 || favFood.length > 15 ||
 			loves.length > 40 || Number.isInteger(age) || age < 0
 			){
-				console.log('inside if');
+				// console.log('inside if');
 				setBroadcastMsg('Error - Did you forgot a field?')
 				
 			}
 			else{
 				
-				console.log(hamster);
-				console.log('inside else, ALL OK');
+				// console.log(hamster);
+				// console.log('inside else, ALL OK');
 				
 				
 				const formData = new FormData();
@@ -85,8 +85,8 @@ const UploadForm = ({hamster}) => {
 				})
 				.then(response => response.json())
 				.then(data => {
-					console.log('Success:', data); //!
-					console.log('Img URL: ', data.secure_url);
+					// console.log('Success:', data); //!
+					// console.log('Img URL: ', data.secure_url);
 					cloudianyData = data
 				})
 				.catch(error => console.log('error ', error))
@@ -109,7 +109,7 @@ const UploadForm = ({hamster}) => {
 				}
 				await fetch('https://hamsterwars-hamsterburen.herokuapp.com/api/addhamster', requestOptions)
 				.then(response => {
-					console.log(response.status);
+					// console.log(response.status);
 					response.text()
 					if( response.status === 200 ){
 						document.getElementById('checkMark').style.display = 'block'
