@@ -1,9 +1,17 @@
 import React from 'react';
 import './GenericBtn.css';
+import {useHistory} from 'react-router-dom';
 
-const GenericBtn = ({text, color}) => {
+const GenericBtn = ({text, color, link}) => {
+
+	const history = useHistory();
+
+	const sendTo = (link) =>{
+		history.push(link);
+	}
+
     return(
-			<button className={'generic ' + color} >
+			<button onClick={sendTo} className={'generic ' + color} >
 				{text}	
 			</button>
     )
