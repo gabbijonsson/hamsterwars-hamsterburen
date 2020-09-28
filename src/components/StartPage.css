@@ -7,8 +7,8 @@
 }
 
 .textpart3 {
-	text-align: center;
-} 
+    text-align: center;
+}
 
 .startpage-main {
     height: calc(100vh - 200px);
@@ -29,6 +29,7 @@
     .startpage-main {
         display: flex;
         flex-direction: row;
+        height: 60vh;
 
     }
 
