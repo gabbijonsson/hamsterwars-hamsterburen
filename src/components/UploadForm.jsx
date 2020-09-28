@@ -31,22 +31,22 @@ const UploadForm = ({hamster}) => {
 		let allowedExtensions = ['jpeg', 'jpg', 'gif', 'tiff', 'psd', 'eps', 'ai', 'indd', 'raw'];
 		for(let file of impFile){
 			let Extension = file.name.substring(file.name.lastIndexOf('.') + 1).toLowerCase();
-			console.log(Extension);
+			// console.log(Extension);
 			if(allowedExtensions.indexOf(Extension) === -1){
-				document.getElementById('fileReader').textContent = 'Sorry - This file type is not supperted !'
+				document.getElementById('fileReaderLabel').textContent = 'Sorry - This file type is not supperted !'
 				// console.log('This filetype is not accepted');
 				impFile = undefined
 				//TODO add message
 			}
 			else if(file.size > maxSize ){
-				document.getElementById('fileReader').textContent = 'Too large (MAX 3MB) - Select another one!'
+				document.getElementById('fileReaderLabel').textContent = 'Too large (MAX 3MB) - Select another one!'
 				// console.log('File too large, max 3MB, choese another one');
 				impFile = undefined
 				//TODO add message that file is not accepted
 			}
 			else{
 				
-				document.getElementById('fileReader').textContent = 'File Selected!'
+				document.getElementById('fileReaderLabel').textContent = 'File Selected!'
 				// console.log('File accepted');
 				// console.log(file); //objektet användaren ladda upp ligger i "file"
 				setUserSetImg(file)
@@ -271,7 +271,7 @@ const UploadForm = ({hamster}) => {
 					/>
 				</div>
 			<div>
-				<label htmlFor="fileReader" className="fileReader" id="fileReader">
+				<label htmlFor="fileReader" className="fileReader" id="fileReaderLabel">
 					Press to upload image
 				</label>
 				<input

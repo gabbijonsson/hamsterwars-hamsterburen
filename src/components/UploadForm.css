@@ -89,6 +89,7 @@ label.fileReader {
     text-align: center;
     padding: 1.2em;
     font-size: small;
+    cursor: pointer;
 }
 
 
