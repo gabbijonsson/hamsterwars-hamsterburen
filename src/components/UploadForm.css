@@ -89,6 +89,7 @@ label.fileReader {
     text-align: center;
     padding: 1.2em;
     font-size: small;
+    cursor: pointer;
 }
 
 
@@ -126,11 +127,11 @@ label.fileReader {
     right: 4%;
 }
 .genericBtn-form{
-    margin-top: 5em;
+    margin-top: 1em;
 }
-.did-it-upload{
-    font-size: 1rem;
-}
+
+/* Check-mark animation */
+
 .checkmark__circle {
     stroke-dasharray: 166;
     stroke-dashoffset: 166;
@@ -140,23 +141,26 @@ label.fileReader {
     fill: none;
     animation: stroke 0.6s cubic-bezier(0.65, 0, 0.45, 1) forwards;
   }
-  
+  .checkmark__circle.cross{
+    stroke: #ff0000;
+  }
   .checkmark {
-    position: absolute;
-    display: none;
-    right: 19%;
-    width: 32px;
-    height: 32px;
+    position: relative;
+    width: 50px;
+    height: 50px;
     border-radius: 50%;
-    display: block;
+    display: none;
     stroke-width: 2;
     stroke: #fff;
     stroke-miterlimit: 10;
-    margin: .7% auto;
+    margin: 0.5% auto;
     box-shadow: inset 0px 0px 0px #7ac142;
-    animation: fill .4s ease-in-out .4s forwards, scale .3s ease-in-out .9s both;
+    animation: check-fill .4s ease-in-out .4s forwards, scale .3s ease-in-out .9s both;
 }
-  
+  .checkmark.cross{
+      box-shadow: inset 0px 0px 0px #ff0000;
+      animation: cross-fill .4s ease-in-out .4s forwards, scale .3s ease-in-out .9s both;
+  }
   .checkmark__check {
     transform-origin: 50% 50%;
     stroke-dasharray: 48;
@@ -177,9 +181,14 @@ label.fileReader {
       transform: scale3d(1.1, 1.1, 1);
     }
   }
-  @keyframes fill {
+  @keyframes check-fill {
     100% {
       box-shadow: inset 0px 0px 0px 30px #7ac142;
+    }
+  }
+  @keyframes cross-fill {
+    100% {
+      box-shadow: inset 0px 0px 0px 30px #ff0000;
     }
   }
 
@@ -248,8 +257,6 @@ label.fileReader {
         font-size: 1.2rem;
 
     }
-
-
     /* Validering text */
     .name-error-message>span {
         top: 95.6%;
@@ -277,9 +284,5 @@ label.fileReader {
     .loves-error-massage>span {
         top: 83.6%;
         right: 1%;
-    }
-    .did-it-upload{
-        font-size: 1rem;
-        text-align: center;
     }
 }
