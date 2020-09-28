@@ -9,6 +9,7 @@
 
 .startpage-main > article {
 	margin: auto;
+	margin-top: 5%;
 }
 
 
@@ -17,6 +18,13 @@
 	  display: flex;
 	  flex-direction: row;
 
+	}
+	.text-start{
+		width: 80vw;
+		margin-left: auto;
+		margin-right: auto;
+		text-align: center;
+		margin-top: 3%;
 	}
 
 	
