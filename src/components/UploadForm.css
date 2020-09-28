@@ -256,14 +256,6 @@ label.fileReader {
         font-size: 1.2rem;
 
     }
-
-    /* Check-mark animation */
-    .checkmark{
-        left: 96%;
-        position: relative;
-    }
-
-
     /* Validering text */
     .name-error-message>span {
         top: 95.6%;
