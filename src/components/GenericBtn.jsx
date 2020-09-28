@@ -11,7 +11,7 @@ const GenericBtn = ({text, color, link}) => {
 	}
 	
     return(
-			<button onClick={sendTo(link)} className={'generic ' + color}>
+			<button onClick={()=>sendTo(link)} className={'generic ' + color}>
 				{text}	
 			</button>
     )
