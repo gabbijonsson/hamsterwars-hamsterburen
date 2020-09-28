@@ -3,11 +3,14 @@ import { useHistory } from 'react-router-dom';
 import './PickWinnerBtn.css';
 
 
-const PickWinnerBtn = ({pickWinner,id}) => {
+const PickWinnerBtn = ({pickWinner,winId,losId}) => {
 	const history = useHistory();
 
-	
-
+	const winLosId = {
+		"winner": winId,
+		"loser" : losId
+	}
+    
 	
     async function addMatch() {
 		const response = await fetch(" https://hamsterwars-hamsterburen.herokuapp.com/api/addmatch", {
@@ -15,14 +18,18 @@ const PickWinnerBtn = ({pickWinner,id}) => {
         headers: {
                 'Content-Type': 'application/json'
             },
-        body: JSON.stringify({id})
+        body: JSON.stringify(winLosId)
           })
        const result = await response.text();
-       console.log(result);
+	   console.log(result);
+	   if(result){
+		   switchToResult();
+	   }
 	}
 	
        
 	const switchToResult = ()=>{
+		// console.log('ids are:', winLosId);
 		pickWinner();
 		history.push('/result/:id');
 	}
@@ -33,7 +40,7 @@ const PickWinnerBtn = ({pickWinner,id}) => {
 		
 	return(
 		
-			<button className="pick-button" onClick={() => {pickWinner(); addMatch();switchToResult()} }><h1>Pick as winner</h1></button>
+			<button className="pick-button" onClick={() =>  addMatch() }><h1>Pick as winner</h1></button>
 	)
 }
 
