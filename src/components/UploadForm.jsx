@@ -33,18 +33,20 @@ const UploadForm = ({hamster}) => {
 			let Extension = file.name.substring(file.name.lastIndexOf('.') + 1).toLowerCase();
 			console.log(Extension);
 			if(allowedExtensions.indexOf(Extension) === -1){
+				document.getElementById('fileReader').textContent = 'Sorry - This file type is not supperted !'
 				console.log('This filetype is not accepted');
 				impFile = undefined
 				//TODO add message
 			}
 			else if(file.size > maxSize ){
+				document.getElementById('fileReader').textContent = 'Too large (MAX 3MB) - Select another one!'
 				console.log('File too large, max 3MB, choese another one');
 				impFile = undefined
 				//TODO add message that file is not accepted
 			}
 			else{
 				
-
+				document.getElementById('fileReader').textContent = 'File Selected!'
 				console.log('File accepted');
 				console.log(file); //objektet användaren ladda upp ligger i "file"
 				setUserSetImg(file)
@@ -83,7 +85,7 @@ const UploadForm = ({hamster}) => {
 				})
 				.then(response => response.json())
 				.then(data => {
-					console.log('Success:', data);
+					console.log('Success:', data); //!
 					console.log('Img URL: ', data.secure_url);
 					cloudianyData = data
 				})
@@ -105,16 +107,29 @@ const UploadForm = ({hamster}) => {
 					body: urlencoded,
 					redirect: 'follow'
 				}
-				await fetch('https://hamsterwars-hamsterburen.herokuapp.com/api/addhamste', requestOptions)
-				.then(response => response.text())
-				.then(result => {
-					console.log(result)
-					setBroadcastMsg('Success!')
-					setTimeout(setLoading(false), 4000)
+				await fetch('https://hamsterwars-hamsterburen.herokuapp.com/api/addhamster', requestOptions)
+				.then(response => {
+					console.log(response.status);
+					response.text()
+					if( response.status === 200 ){
+						document.getElementById('checkMark').style.display = 'block'
+						setBroadcastMsg('Success!')
+						setTimeout(() => {
+							setLoading(false)
+							document.getElementById('checkMark').style.display = 'none'
+						}, 5000)
+					}else{
+						setBroadcastMsg('Oops! Try again!')
+						document.getElementById('crossMark').style.display = 'block'
+						setTimeout(() => {
+							setLoading(false)
+							document.getElementById('crossMark').style.display = 'none'
+						}, 5000)
+					}
+
 				})
-				.catch(error => console.log('error ', error), setBroadcastMsg('Oops! Try again!'), setTimeout(() => {
-					setLoading(false)
-				}, 4000))
+				.then(result => {console.log(result)})
+				.catch(error => console.log('error ', error))
 			}
 
 			
@@ -256,7 +271,7 @@ const UploadForm = ({hamster}) => {
 					/>
 				</div>
 			<div>
-				<label htmlFor="fileReader" className="fileReader">
+				<label htmlFor="fileReader" className="fileReader" id="fileReader">
 					Press to upload image
 				</label>
 				<input
@@ -269,13 +284,17 @@ const UploadForm = ({hamster}) => {
 
 			</div>
 			
-			
-			
-			<div className="genericBtn-form" onClick={(e) => onSubmit(e)}>
-			<svg class="checkmark" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 52 52">
-			<circle class="checkmark__circle" cx="26" cy="26" r="25" fill="none"/>
-			<path class="checkmark__check" fill="none" d="M14.1 27.2l7.1 7.2 16.7-16.8"/>
+			<svg id="crossMark" className="checkmark cross" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 52 52">
+				<circle className="checkmark__circle cross" cx="26" cy="26" r="25" fill="none" />
+				<path className="checkmark__check" fill="none" d="M16 16 36 36 M36 16 16 36" />
 			</svg>
+				
+			<svg id="checkMark" className="checkmark" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 52 52">
+				<circle className="checkmark__circle" cx="26" cy="26" r="25" fill="none"/>
+				<path className="checkmark__check" fill="none" d="M14.1 27.2l7.1 7.2 16.7-16.8"/>
+			</svg>
+			
+			<div className="genericBtn-form" onClick={(e) => onSubmit(e)}>		
 				<GenericBtn page={"result"} text={loading ? broadcastMsg : 'add'} color={"peach"}/>
 			</div>
 		
