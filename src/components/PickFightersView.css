@@ -29,6 +29,16 @@
 		flex-direction: row;
 		justify-content: space-around;
 	}
+
+	.pickWinnerBtns.disable  * {
+		cursor: not-allowed;
+        pointer-events: none;
+
+        /*Button disabled - CSS color class*/
+        color: #c0c0c0;
+        background-color: #ffffff;
+
+	}
 	
 	.choose-fightersBtn{
 		display: block;	
