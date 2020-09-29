@@ -100,6 +100,18 @@ Skicka id på vinnare och förlorare i request body.
     "loser": id
 }
 ```
+Returnerar följande:
+```
+{
+    "message": "Added match and updated hamsters.",
+    "match": {
+        "winner": :winnerid,
+        "loser": :loserid,
+        "matchID": :matchid,
+        "_id": ":mongodb-created-id"
+    }
+}
+```
 
 |Resurs    |Metod   |Förväntat svar|
 |----------|--------|---|
