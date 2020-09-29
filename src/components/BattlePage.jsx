@@ -55,7 +55,7 @@ const BattlePage = ({pickWinner}) => {
 
 		return () => mounted = false;
 		
-	}, []);
+	}, [id1]);
 	 
      if(hamsters.length > 0){
 		 image1 = hamsters[0].imgName;
@@ -69,12 +69,11 @@ const BattlePage = ({pickWinner}) => {
 		<div className="battlepage">
                 
 				<div className="stack-up1">
-					<PickWinnerBtn  winId={hamster1} losId={hamster2} pickWinner={()=>pickWinner(hamster1)}/>
+					<PickWinnerBtn pickWinner={()=>pickWinner(hamster1)}/>
 				</div>
 				<div className="stack-up2">
-					<PickWinnerBtn winId={hamster2} losId={hamster1} pickWinner={()=>pickWinner(hamster2)}/>
+					<PickWinnerBtn pickWinner={()=>pickWinner(hamster2)}/>
 				</div>
-				
 			    
             <div className="battlepage-main">
 			    <CombatantCard CombatantImg={image1} borderColor='blue'/>

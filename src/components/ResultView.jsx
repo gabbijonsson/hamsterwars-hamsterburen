@@ -21,7 +21,7 @@ let hamster =
 let hamsterImg;
 function ResultView({id}) {
 	const [winnerHamster, setWinnerHamster] = useState();
-	
+	console.log('yees');
 	
     useEffect(() => {
 			
@@ -49,7 +49,7 @@ function ResultView({id}) {
 			
 			
 		
-	}, [id]);
+	}, []);
 
 	if(winnerHamster){
 		
