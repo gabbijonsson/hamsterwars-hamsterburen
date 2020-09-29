@@ -8,7 +8,8 @@ const { addHamster } = require('./addHamster.js');
 const { addMatch } = require('./addMatch.js');
 const { updateCombatant } = require('./updateCombatant.js')
 const { getMatchCount } = require('./getMatchCount.js')
-const { getStats } = require('./getStats.js')
+const { getStats } = require('./getStats.js');
+const { getSelectedMatch } = require('./getSelectedMatch.js');
 
 const PORT = process.env.PORT || 1234;
 
@@ -63,6 +64,12 @@ app.post("/api/addmatch", (req, res) => {
         res.send({ message: "Hamsters and match updated." })
     })
 })
+
+app.get("/api/getmatch", (req, res) => {
+    getSelectedMatch(req, (response) => {
+        res.send(response);
+    });
+});
 
 // Returns the highest MatchID, which is also the number of matches in the database
 app.get("/api/getmatchcount", (req, res) => {

@@ -5,6 +5,7 @@ button.teal{
 @media(min-width: 1025px){
     button.generic-desktop{
         width: 20rem;
+        height: 100%;
         font-size: 1.8em;
         float: right;
 		padding: .5em;

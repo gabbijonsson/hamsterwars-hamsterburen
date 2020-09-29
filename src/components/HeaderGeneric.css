@@ -22,6 +22,7 @@
 }
 .header-item-3 > .desktop-header-btn{
 	display: none;
+	height: 60px;
 }
 @media only screen and (min-width: 1025px){
 	.header-item-1 > a > img{
