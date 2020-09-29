@@ -6,6 +6,7 @@ import CombatantInfoCard from './CombatantInfoCard'
 import TestHamsterPic from '../assets/frontend/JoyfulHamster.svg'
 import './ResultView.css'
 
+
 let hamster = 
 		{
 			name:"Sixten",
@@ -17,32 +18,38 @@ let hamster =
 			defeats:0,
 			games:0
 		}
-
-let hamsterImg = TestHamsterPic;
+let hamsterImg = null;
+// let hamsterImg = TestHamsterPic;
 function ResultView({id}) {
 	const [winnerHamster, setWinnerHamster] = useState();
 	
 	
     useEffect(() => {
-    
-		
-	function getHamster(callback) {
-		fetch(
-			` https://hamsterwars-hamsterburen.herokuapp.com/api/gethamster?id=${id}`
-		)
-			.then((res) => res.json())
-			.then(
-				(result) => {
-					
-					callback(result)
-				},
-				(error) => {
-					console.error("error", error);
-				}
-			);
-	}
+		if(id){
+			
+			let mounted = true;
+			function getHamster(callback) {
+				fetch(
+					` https://hamsterwars-hamsterburen.herokuapp.com/api/gethamster?id=${id}`
+				)
+					.then((res) => res.json())
+					.then(
+						(result) => {
+							if(mounted){
+								callback(result)
+							}
+							
+						},
+						(error) => {
+							console.error("error", error);
+						}
+					);
+			}
 
-		getHamster(setWinnerHamster);
+				getHamster(setWinnerHamster);
+				return () => mounted = false;
+			}
+			
 		
 	}, [id]);
 

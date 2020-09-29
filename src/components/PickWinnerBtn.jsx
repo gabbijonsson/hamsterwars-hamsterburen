@@ -29,7 +29,6 @@ const PickWinnerBtn = ({pickWinner,winId,losId}) => {
 	
        
 	const switchToResult = ()=>{
-		// console.log('ids are:', winLosId);
 		pickWinner();
 		history.push('/result/:id');
 	}
@@ -46,4 +45,3 @@ const PickWinnerBtn = ({pickWinner,winId,losId}) => {
 
 export default PickWinnerBtn;
 
-// () => { f1(); f2(); }

@@ -10,14 +10,14 @@ import img2 from '../assets/frontend/HappyHamster.svg';
 
 const PickFightersView = () => {
 
-	const [buttonAbility, setButtonAbility] = useState(true);
+	const [btnAbility, setBtnAbility] = useState(true);
 	return(
 		<div>
 			
 			<div className="selectFighter-form">
 				<SelectFighter />
 				<div className="choose-fightersBtn">
-					<button onClick={()=>setButtonAbility(!buttonAbility)}><h1>choose!</h1></button>
+					<button onClick={()=>setBtnAbility(!btnAbility)}><h1>choose!</h1></button>
 				</div>
 				
 			</div>
@@ -28,7 +28,7 @@ const PickFightersView = () => {
 				<CombatantCard CombatantImg={img2} borderColor='purple' />
 			</div>
 			<div >
-				<div  className = { (buttonAbility === true) ? "pickWinnerBtns " + " disable" : "pickWinnerBtns" }>
+				<div  className = { (btnAbility === true) ? "pickWinnerBtns " + " disable" : "pickWinnerBtns" }>
 					<PickWinnerBtn />
 					<PickWinnerBtn />
 				</div>
