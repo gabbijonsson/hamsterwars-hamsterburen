@@ -17,20 +17,21 @@ const PickWinnerBtn = ({pickWinner,winId,losId}) => {
         method:"POST",
         headers: {
                 'Content-Type': 'application/json'
-            },
+        },
         body: JSON.stringify(winLosId)
           })
-       const result = await response.text();
+       const result = await response.json();
 	   console.log(result);
 	   if(result){
-		   switchToResult();
+		   let matchId = result.match.matchID
+		   switchToResult(matchId);
 	   }
 	}
 	
        
-	const switchToResult = ()=>{
+	const switchToResult = (matchID) =>{
 		pickWinner();
-		history.push('/result/:id');
+		history.push(`/result/${matchID}`);
 	}
   
 			
