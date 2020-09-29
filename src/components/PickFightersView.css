@@ -1,3 +1,10 @@
+h1.selectFighterH1{
+	margin: 0 auto;
+	display: block;
+	width: fit-content;
+	margin-top: 4rem;
+	margin-bottom: -3rem;
+}
 .desktop-view {
 	display: none;
 }
@@ -14,6 +21,10 @@
 	margin-top: 10vh;
 }
 @media(min-width: 1025px){
+
+	h1.selectFighterH1{
+		display: none;
+	}
 	.desktop-view {
 		display: block;
 		display: grid;
@@ -46,7 +57,6 @@
 		padding: 1em;
 		display: grid;
 		grid-template-columns: 90% 10%;
-		
 		
 	}
 	
