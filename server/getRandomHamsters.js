@@ -13,9 +13,13 @@ function getRandomHamsters(query, cb) {
 			}
 			const col = client.db(dbName).collection(hamsterCollectionName);
 			try {
-				const cursor = await col.aggregate([
-					{ $sample: { size: Number(query.count) } },
-				]);
+				let dbQuery = [{ $sample: { size: Number(query.count) } }];
+				if (query.excludeid && typeof Number(query.excludeid) === 'number') {
+					dbQuery.push({
+						$match: { id: { $ne: Number(query.excludeid)} },
+					});
+				}
+				const cursor = await col.aggregate(dbQuery);
 				const array = await cursor.toArray();
 				cb(array);
 			} catch (err) {
