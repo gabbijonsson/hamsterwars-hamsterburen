@@ -1,7 +1,7 @@
 .combatant-pic {
-	margin-top: 3em;
+	margin-top: 1em;
 	width: 80vw;
-	height: 40vh;
+	height: 30vh;
 }
 
 .combatant-pic > img {
@@ -12,6 +12,6 @@
 	.combatant-pic{
 		margin-left: 2em;
 		width: 40vw;
-		height: 70vh;
+		height: 60vh;
 	}
 }
