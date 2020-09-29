@@ -36,12 +36,12 @@ app.use(bodyParser.json());
 // Get # of randomized hamsters based on request query
 app.get("/api/gethamsters/random", (req, res) => {
     let query = req.query;
-    if(!isNaN(Number(query.count))) {
+    if(Number(query.count) <= 2 && Number(query.count) > 0) {
         getRandomHamsters(query, (response) => {
             res.send(response)
         })
     } else {
-        res.send('Invalid query. Count has to be a number.')
+        res.send('Invalid query. Count has to be the number 1 or 2.')
     }
 });
 
