@@ -11,7 +11,7 @@ import img2 from '../assets/frontend/HappyHamster.svg';
 const PickFightersView = () => {
 	
 	return(
-		<div>
+		<div className="pickFighterArea">
 			<h1 className="selectFighterH1">Pick fighters</h1>
 			<div className="selectFighter-form">
 				<SelectFighter />
