@@ -6,7 +6,6 @@ import StatsToplistCombatant from './StatsToplistCombatant';
 import GenericBtn from './GenericBtn';
 import TotalNoMatches from './TotalNoMatches';
 import hamster1 from '../assets/hamsters/hamster-1.jpg';
-import { response } from 'express';
 
 
 
@@ -19,14 +18,17 @@ const StatisticsView = ({total}) => {
 	useEffect(() => {
 		console.log('inside useEffect');
 		let fetchStats = async () => {
-			const winner = await fetch('https://hamsterwars-hamsterburen.herokuapp.com/api/getstats?category=winner')
-			.then(response => response.json()).then(winner => setWinner(winner))
-			const loser = await fetch('https://hamsterwars-hamsterburen.herokuapp.com/api/getstats?category=loser')
-			.then(response => response.json()).then(loser => setLoser(loser))
-			const youngest = await fetch('https://hamsterwars-hamsterburen.herokuapp.com/api/getstats?category=youngest')
-			.then(response => response.json()).then(youngest => setYoungest(youngest))
-			const oldest = await fetch('https://hamsterwars-hamsterburen.herokuapp.com/api/getstats?category=oldest')
-			.then(response => response.json()).then(oldest => setOldest(oldest))
+			await fetch('https://hamsterwars-hamsterburen.herokuapp.com/api/getstats?category=winner')
+			.then(response => {
+				let winners= response.json()
+				setWinner(winners)
+			})
+			await fetch('https://hamsterwars-hamsterburen.herokuapp.com/api/getstats?category=loser')
+			.then(response => response.json()).then(response => setLoser(response))
+			await fetch('https://hamsterwars-hamsterburen.herokuapp.com/api/getstats?category=youngest')
+			.then(response => response.json()).then(response => setYoungest(response))
+			await fetch('https://hamsterwars-hamsterburen.herokuapp.com/api/getstats?category=oldest')
+			.then(response => response.json()).then(response => setOldest(response))
 		}
 		fetchStats()
 	}, [])
