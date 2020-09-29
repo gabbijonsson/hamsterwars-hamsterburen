@@ -11,7 +11,7 @@ function SelectFighter() {
 					className="select-fighter-label"
 					htmlFor="select-fighter-1"
 				>
-					Select the first combatant
+					Select the first combatant:
 				</label>{" "}
 				<br />
 				<input
@@ -25,7 +25,7 @@ function SelectFighter() {
 					className="select-fighter-label"
 					htmlFor="select-fighter-2"
 				>
-					Select the second combatant
+					Select the second combatant:
 				</label>{" "}
 				<br />
 				<input
