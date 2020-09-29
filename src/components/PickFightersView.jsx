@@ -15,7 +15,7 @@ const PickFightersView = () => {
 	
 	return(
 		<div>
-			
+			<h1 className="selectFighterH1">Pick fighters</h1>
 			<div className="selectFighter-form">
 				<SelectFighter />
 				<div className="choose-fightersBtn">
