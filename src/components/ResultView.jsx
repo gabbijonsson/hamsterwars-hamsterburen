@@ -18,14 +18,13 @@ let hamster =
 			defeats:0,
 			games:0
 		}
-let hamsterImg = null;
-// let hamsterImg = TestHamsterPic;
+
+let hamsterImg = TestHamsterPic;
 function ResultView({id}) {
 	const [winnerHamster, setWinnerHamster] = useState();
 	
 	
     useEffect(() => {
-		if(id){
 			
 			let mounted = true;
 			function getHamster(callback) {
@@ -48,7 +47,7 @@ function ResultView({id}) {
 
 				getHamster(setWinnerHamster);
 				return () => mounted = false;
-			}
+			
 			
 		
 	}, [id]);
