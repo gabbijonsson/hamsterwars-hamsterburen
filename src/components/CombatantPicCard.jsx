@@ -1,5 +1,6 @@
 import React from 'react';
 import './CombatantPicCard.css';
+import GenericHamster from './GenericHamster';
 
 const CombatantPicCard = ({CombatantImg}) => {
 

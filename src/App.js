@@ -25,7 +25,7 @@ function App() {
             </Route>
             <Route path="/battle" exact>
               <HeaderGeneric/>
-              <BattlePage pickWinner ={(ID) => setWinnerId(ID)} id={winnerId}/>
+              <BattlePage pickWinner ={(ID) => setWinnerId(ID)}/>
             </Route>
             <Route path="/battle/:id1/:id2" >
               <HeaderGeneric/>
@@ -33,7 +33,7 @@ function App() {
             </Route>
             <Route path="/pickfighters">
               <HeaderGeneric content="pickFightersView"/>
-              <PickFightersView/>
+              <PickFightersView pickWinner ={(ID) => setWinnerId(ID)}/>
             </Route>
             <Route path="/stats" exact>
               <HeaderGeneric/>
