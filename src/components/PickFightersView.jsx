@@ -6,13 +6,9 @@ import SelectFighter from './SelectFighter';
 import GenericBtn from './GenericBtn';
 import img1 from '../assets/frontend/GrinningHamster.svg';
 import img2 from '../assets/frontend/HappyHamster.svg';
-import {useParams} from 'react-router-dom';
 
 
 const PickFightersView = () => {
-
-	const {id1, id2} = useParams();
-	console.log(id1, id2);
 	
 	return(
 		<div>
