@@ -67,24 +67,22 @@ const BattlePage = ({pickWinner}) => {
 
 	return(
 		<div className="battlepage">
-                
-				<div className="stack-up1">
-					<PickWinnerBtn pickWinner={()=>pickWinner(hamster1)}/>
-				</div>
-				<div className="stack-up2">
-					<PickWinnerBtn pickWinner={()=>pickWinner(hamster2)}/>
-				</div>
 			    
             <div className="battlepage-main">
-			    <CombatantCard CombatantImg={image1} borderColor='blue'/>
 
-				
-			
+
+				<div className="stack-up1">
+					<CombatantCard CombatantImg={image1} borderColor='blue'/>
+					<PickWinnerBtn pickWinner={()=>pickWinner(hamster1)}/>
+				</div>
+
 				<h1>VS.</h1>
 
-				<CombatantCard CombatantImg={image2} borderColor='purple'/>
-
-				
+				<div className="stack-up2">
+					<CombatantCard CombatantImg={image2} borderColor='purple'/>
+					<PickWinnerBtn pickWinner={()=>pickWinner(hamster2)}/>
+				</div>
+			
 
 				<div className='generic'>
 					
