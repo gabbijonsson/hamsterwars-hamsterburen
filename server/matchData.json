@@ -1,0 +1,29 @@
+[{
+  "_id": {
+    "$oid": "5f733438bd317c6b0493da38"
+  },
+  "winner": 1,
+  "loser": 2,
+  "matchID": 1
+},{
+  "_id": {
+    "$oid": "5f73349b27f7b9000470f6b3"
+  },
+  "winner": 25,
+  "loser": 21,
+  "matchID": 2
+},{
+  "_id": {
+    "$oid": "5f73356e27f7b9000470f6b4"
+  },
+  "winner": 17,
+  "loser": 32,
+  "matchID": 3
+},{
+  "_id": {
+    "$oid": "5f73359627f7b9000470f6b5"
+  },
+  "winner": 9,
+  "loser": 14,
+  "matchID": 4
+}]

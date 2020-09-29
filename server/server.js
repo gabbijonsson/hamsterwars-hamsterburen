@@ -65,18 +65,19 @@ app.post("/api/addmatch", (req, res) => {
     })
 })
 
+// Returns the highest MatchID, which is also the number of matches in the database
+app.get("/api/getmatchcount", (req, res) => {
+    getMatchCount((matchCount) => {
+        res.send(matchCount + '')
+    })
+})
+
+// Returns the match specified in reqeust query
 app.get("/api/getmatch", (req, res) => {
     getSelectedMatch(req, (response) => {
         res.send(response);
     });
 });
-
-// Returns the highest MatchID, which is also the number of matches in the database
-app.get("/api/getmatchcount", (req, res) => {
-    getMatchCount((matchCount) => {
-        res.send(matchCount)
-    })
-})
 
 // Get statistics from the database based on order param
 app.get("/api/getstats", (req, res) => {

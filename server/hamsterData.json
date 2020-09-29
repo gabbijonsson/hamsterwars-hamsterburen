@@ -1,442 +1,521 @@
-[
-   {
-      "id":1,
-      "name":"Sixten",
-      "age":1,
-      "favFood":"ostbollar",
-      "loves":"Running that wheeeeeeeeeeeeeeeel!",
-      "imgName":"hamster-1.jpg",
-      "wins":0,
-      "defeats":0,
-      "games":0
-   },
-   {
-      "id":2,
-      "name":"Sven",
-      "age":5,
-      "favFood":"morot",
-      "loves":"Running that wheeeeeeeeeeeeeeeel!",
-      "imgName":"hamster-2.jpg",
-      "wins":0,
-      "defeats":0,
-      "games":0
-   },
-   {
-      "id":3,
-      "name":"Ayla",
-      "age":2,
-      "favFood":"majs",
-      "loves":"Running that wheeeeeeeeeeeeeeeel!",
-      "imgName":"hamster-3.jpg",
-      "wins":0,
-      "defeats":0,
-      "games":0
-   },
-   {
-      "id":4,
-      "name":"Aleena",
-      "age":3,
-      "favFood":"rädisor",
-      "loves":"Running that wheeeeeeeeeeeeeeeel!",
-      "imgName":"hamster-4.jpg",
-      "wins":0,
-      "defeats":0,
-      "games":0
-   },
-   {
-      "id":5,
-      "name":"Tuss",
-      "age":1,
-      "favFood":"ananas",
-      "loves":"Running that wheeeeeeeeeeeeeeeel!",
-      "imgName":"hamster-5.jpg",
-      "wins":0,
-      "defeats":0,
-      "games":0
-   },
-   {
-      "id":6,
-      "name":"Zigge",
-      "age":5,
-      "favFood":"ananas",
-      "loves":"Running that wheeeeeeeeeeeeeeeel!",
-      "imgName":"hamster-6.jpg",
-      "wins":0,
-      "defeats":0,
-      "games":0
-   },
-   {
-      "id":7,
-      "name":"Mårten",
-      "age":4,
-      "favFood":"sallad",
-      "loves":"Running that wheeeeeeeeeeeeeeeel!",
-      "imgName":"hamster-7.jpg",
-      "wins":0,
-      "defeats":0,
-      "games":0
-   },
-   {
-      "id":8,
-      "name":"Frippe",
-      "age":6,
-      "favFood":"sallad",
-      "loves":"Running that wheeeeeeeeeeeeeeeel!",
-      "imgName":"hamster-8.jpg",
-      "wins":0,
-      "defeats":0,
-      "games":0
-   },
-   {
-      "id":9,
-      "name":"Bengt",
-      "age":5,
-      "favFood":"rädisor",
-      "loves":"Running that wheeeeeeeeeeeeeeeel!",
-      "imgName":"hamster-9.jpg",
-      "wins":0,
-      "defeats":0,
-      "games":0
-   },
-   {
-      "id":10,
-      "name":"Lelaah",
-      "age":5,
-      "favFood":"sallad",
-      "loves":"Running that wheeeeeeeeeeeeeeeel!",
-      "imgName":"hamster-10.jpg",
-      "wins":0,
-      "defeats":0,
-      "games":0
-   },
-   {
-      "id":11,
-      "name":"Kaylee",
-      "age":4,
-      "favFood":"ananas",
-      "loves":"Running that wheeeeeeeeeeeeeeeel!",
-      "imgName":"hamster-11.jpg",
-      "wins":0,
-      "defeats":0,
-      "games":0
-   },
-   {
-      "id":12,
-      "name":"Gnuggis",
-      "age":5,
-      "favFood":"äpple",
-      "loves":"Running that wheeeeeeeeeeeeeeeel!",
-      "imgName":"hamster-12.jpg",
-      "wins":0,
-      "defeats":0,
-      "games":0
-   },
-   {
-      "id":13,
-      "name":"Mumsan",
-      "age":5,
-      "favFood":"cornflakes",
-      "loves":"Running that wheeeeeeeeeeeeeeeel!",
-      "imgName":"hamster-13.jpg",
-      "wins":0,
-      "defeats":0,
-      "games":0
-   },
-   {
-      "id":14,
-      "name":"Loppan",
-      "age":3,
-      "favFood":"gurka",
-      "loves":"Running that wheeeeeeeeeeeeeeeel!",
-      "imgName":"hamster-14.jpg",
-      "wins":0,
-      "defeats":0,
-      "games":0
-   },
-   {
-      "id":15,
-      "name":"Wheelie",
-      "age":4,
-      "favFood":"gurka",
-      "loves":"Running that wheeeeeeeeeeeeeeeel!",
-      "imgName":"hamster-15.jpg",
-      "wins":0,
-      "defeats":0,
-      "games":0
-   },
-   {
-      "id":16,
-      "name":"Einar",
-      "age":4,
-      "favFood":"majs",
-      "loves":"Running that wheeeeeeeeeeeeeeeel!",
-      "imgName":"hamster-16.jpg",
-      "wins":0,
-      "defeats":0,
-      "games":0
-   },
-   {
-      "id":17,
-      "name":"Poppy",
-      "age":6,
-      "favFood":"ruccula",
-      "loves":"Running that wheeeeeeeeeeeeeeeel!",
-      "imgName":"hamster-17.jpg",
-      "wins":0,
-      "defeats":0,
-      "games":0
-   },
-   {
-      "id":18,
-      "name":"Bella",
-      "age":7,
-      "favFood":"nötter",
-      "loves":"Running that wheeeeeeeeeeeeeeeel!",
-      "imgName":"hamster-18.jpg",
-      "wins":0,
-      "defeats":0,
-      "games":0
-   },
-   {
-      "id":19,
-      "name":"Lola",
-      "age":1,
-      "favFood":"rädisor",
-      "loves":"Running that wheeeeeeeeeeeeeeeel!",
-      "imgName":"hamster-19.jpg",
-      "wins":0,
-      "defeats":0,
-      "games":0
-   },
-   {
-      "id":20,
-      "name":"Coco",
-      "age":2,
-      "favFood":"sågspån",
-      "loves":"Running that wheeeeeeeeeeeeeeeel!",
-      "imgName":"hamster-20.jpg",
-      "wins":0,
-      "defeats":0,
-      "games":0
-   },
-   {
-      "id":21,
-      "name":"Ajax",
-      "age":1,
-      "favFood":"popcorn",
-      "loves":"Running that wheeeeeeeeeeeeeeeel!",
-      "imgName":"hamster-21.jpg",
-      "wins":0,
-      "defeats":0,
-      "games":0
-   },
-   {
-      "id":22,
-      "name":"Skutte",
-      "age":1,
-      "favFood":"gräs",
-      "loves":"Running that wheeeeeeeeeeeeeeeel!",
-      "imgName":"hamster-22.jpg",
-      "wins":0,
-      "defeats":0,
-      "games":0
-   },
-   {
-      "id":23,
-      "name":"Norris",
-      "age":5,
-      "favFood":"morot",
-      "loves":"Running that wheeeeeeeeeeeeeeeel!",
-      "imgName":"hamster-23.jpg",
-      "wins":0,
-      "defeats":0,
-      "games":0
-   },
-   {
-      "id":24,
-      "name":"Pilen",
-      "age":4,
-      "favFood":"sågspån",
-      "loves":"Running that wheeeeeeeeeeeeeeeel!",
-      "imgName":"hamster-24.jpg",
-      "wins":0,
-      "defeats":0,
-      "games":0
-   },
-   {
-      "id":25,
-      "name":"Snurre",
-      "age":5,
-      "favFood":"morot",
-      "loves":"Running that wheeeeeeeeeeeeeeeel!",
-      "imgName":"hamster-25.jpg",
-      "wins":0,
-      "defeats":0,
-      "games":0
-   },
-   {
-      "id":26,
-      "name":"Bubblan",
-      "age":2,
-      "favFood":"skorpor",
-      "loves":"Running that wheeeeeeeeeeeeeeeel!",
-      "imgName":"hamster-26.jpg",
-      "wins":0,
-      "defeats":0,
-      "games":0
-   },
-   {
-      "id":27,
-      "name":"Felix",
-      "age":1,
-      "favFood":"gräs",
-      "loves":"Running that wheeeeeeeeeeeeeeeel!",
-      "imgName":"hamster-27.jpg",
-      "wins":0,
-      "defeats":0,
-      "games":0
-   },
-   {
-      "id":28,
-      "name":"Bixie",
-      "age":3,
-      "favFood":"sallad",
-      "loves":"Running that wheeeeeeeeeeeeeeeel!",
-      "imgName":"hamster-28.jpg",
-      "wins":0,
-      "defeats":0,
-      "games":0
-   },
-   {
-      "id":29,
-      "name":"Caoz",
-      "age":2,
-      "favFood":"persilja",
-      "loves":"Running that wheeeeeeeeeeeeeeeel!",
-      "imgName":"hamster-29.jpg",
-      "wins":0,
-      "defeats":0,
-      "games":0
-   },
-   {
-      "id":30,
-      "name":"Cirkus",
-      "age":3,
-      "favFood":"rädisor",
-      "loves":"Running that wheeeeeeeeeeeeeeeel!",
-      "imgName":"hamster-30.jpg",
-      "wins":0,
-      "defeats":0,
-      "games":0
-   },
-   {
-      "id":31,
-      "name":"Majsan",
-      "age":4,
-      "favFood":"cornflakes",
-      "loves":"Running that wheeeeeeeeeeeeeeeel!",
-      "imgName":"hamster-31.jpg",
-      "wins":0,
-      "defeats":0,
-      "games":0
-   },
-   {
-      "id":32,
-      "name":"Spånet",
-      "age":3,
-      "favFood":"sallad",
-      "loves":"Running that wheeeeeeeeeeeeeeeel!",
-      "imgName":"hamster-32.jpg",
-      "wins":0,
-      "defeats":0,
-      "games":0
-   },
-   {
-      "id":33,
-      "name":"Techno",
-      "age":6,
-      "favFood":"ruccula",
-      "loves":"Running that wheeeeeeeeeeeeeeeel!",
-      "imgName":"hamster-33.jpg",
-      "wins":0,
-      "defeats":0,
-      "games":0
-   },
-   {
-      "id":34,
-      "name":"Ninjah",
-      "age":7,
-      "favFood":"ruccula",
-      "loves":"Running that wheeeeeeeeeeeeeeeel!",
-      "imgName":"hamster-34.jpg",
-      "wins":0,
-      "defeats":0,
-      "games":0
-   },
-   {
-      "id":35,
-      "name":"Alma",
-      "age":5,
-      "favFood":"ananas",
-      "loves":"Running that wheeeeeeeeeeeeeeeel!",
-      "imgName":"hamster-35.jpg",
-      "wins":0,
-      "defeats":0,
-      "games":0
-   },
-   {
-      "id":36,
-      "name":"Molly",
-      "age":3,
-      "favFood":"ananas",
-      "loves":"Running that wheeeeeeeeeeeeeeeel!",
-      "imgName":"hamster-36.jpg",
-      "wins":0,
-      "defeats":0,
-      "games":0
-   },
-   {
-      "id":37,
-      "name":"Smulan",
-      "age":1,
-      "favFood":"gräs",
-      "loves":"Running that wheeeeeeeeeeeeeeeel!",
-      "imgName":"hamster-37.jpg",
-      "wins":0,
-      "defeats":0,
-      "games":0
-   },
-   {
-      "id":38,
-      "name":"Nisse",
-      "age":2,
-      "favFood":"majs",
-      "loves":"Running that wheeeeeeeeeeeeeeeel!",
-      "imgName":"hamster-38.jpg",
-      "wins":0,
-      "defeats":0,
-      "games":0
-   },
-   {
-      "id":39,
-      "name":"Fluffy",
-      "age":7,
-      "favFood":"sallad",
-      "loves":"Running that wheeeeeeeeeeeeeeeel!",
-      "imgName":"hamster-39.jpg",
-      "wins":0,
-      "defeats":0,
-      "games":0
-   },
-   {
-      "id":40,
-      "name":"Dart",
-      "age":3,
-      "favFood":"morot",
-      "loves":"Running that wheeeeeeeeeeeeeeeel!",
-      "imgName":"hamster-40.jpg",
-      "wins":0,
-      "defeats":0,
-      "games":0
-   }
-]
+[{
+  "_id": {
+    "$oid": "5f70ff4c973d861c5d6588be"
+  },
+  "id": 1,
+  "name": "Sixten",
+  "age": 1,
+  "favFood": "ostbollar",
+  "loves": "Running that wheeeeeeeeeeeeeeeel!",
+  "imgName": "https://res.cloudinary.com/allseeingeye/image/upload/v1601243928/hamsterburen/hamster-1_qwxrea.jpg",
+  "wins": 1,
+  "defeats": 0,
+  "games": 1
+},{
+  "_id": {
+    "$oid": "5f70ff4c973d861c5d6588bf"
+  },
+  "id": 2,
+  "name": "Sven",
+  "age": 5,
+  "favFood": "morot",
+  "loves": "Running that wheeeeeeeeeeeeeeeel!",
+  "imgName": "https://res.cloudinary.com/allseeingeye/image/upload/v1601243904/hamsterburen/hamster-2_pdcguy.jpg",
+  "wins": 0,
+  "defeats": 1,
+  "games": 1
+},{
+  "_id": {
+    "$oid": "5f70ff4c973d861c5d6588c0"
+  },
+  "id": 3,
+  "name": "Ayla",
+  "age": 2,
+  "favFood": "majs",
+  "loves": "Running that wheeeeeeeeeeeeeeeel!",
+  "imgName": "https://res.cloudinary.com/allseeingeye/image/upload/v1601243898/hamsterburen/hamster-3_zdbcte.jpg",
+  "wins": 0,
+  "defeats": 0,
+  "games": 0
+},{
+  "_id": {
+    "$oid": "5f70ff4c973d861c5d6588c1"
+  },
+  "id": 4,
+  "name": "Aleena",
+  "age": 3,
+  "favFood": "rädisor",
+  "loves": "Running that wheeeeeeeeeeeeeeeel!",
+  "imgName": "https://res.cloudinary.com/allseeingeye/image/upload/v1601243905/hamsterburen/hamster-4_tnlsuc.jpg",
+  "wins": 0,
+  "defeats": 0,
+  "games": 0
+},{
+  "_id": {
+    "$oid": "5f70ff4c973d861c5d6588c2"
+  },
+  "id": 5,
+  "name": "Tuss",
+  "age": 1,
+  "favFood": "ananas",
+  "loves": "Running that wheeeeeeeeeeeeeeeel!",
+  "imgName": "https://res.cloudinary.com/allseeingeye/image/upload/v1601243963/hamsterburen/hamster-5_dt8dax.jpg",
+  "wins": 0,
+  "defeats": 0,
+  "games": 0
+},{
+  "_id": {
+    "$oid": "5f70ff4c973d861c5d6588c3"
+  },
+  "id": 6,
+  "name": "Zigge",
+  "age": 5,
+  "favFood": "ananas",
+  "loves": "Running that wheeeeeeeeeeeeeeeel!",
+  "imgName": "https://res.cloudinary.com/allseeingeye/image/upload/v1601243900/hamsterburen/hamster-6_j6dfbr.jpg",
+  "wins": 0,
+  "defeats": 0,
+  "games": 0
+},{
+  "_id": {
+    "$oid": "5f70ff4c973d861c5d6588c4"
+  },
+  "id": 7,
+  "name": "Mårten",
+  "age": 4,
+  "favFood": "sallad",
+  "loves": "Running that wheeeeeeeeeeeeeeeel!",
+  "imgName": "https://res.cloudinary.com/allseeingeye/image/upload/v1601243891/hamsterburen/hamster-7_bds9an.jpg",
+  "wins": 0,
+  "defeats": 0,
+  "games": 0
+},{
+  "_id": {
+    "$oid": "5f70ff4c973d861c5d6588c5"
+  },
+  "id": 8,
+  "name": "Frippe",
+  "age": 6,
+  "favFood": "sallad",
+  "loves": "Running that wheeeeeeeeeeeeeeeel!",
+  "imgName": "https://res.cloudinary.com/allseeingeye/image/upload/v1601243952/hamsterburen/hamster-8_uz7cge.jpg",
+  "wins": 0,
+  "defeats": 0,
+  "games": 0
+},{
+  "_id": {
+    "$oid": "5f70ff4c973d861c5d6588c6"
+  },
+  "id": 9,
+  "name": "Bengt",
+  "age": 5,
+  "favFood": "rädisor",
+  "loves": "Running that wheeeeeeeeeeeeeeeel!",
+  "imgName": "https://res.cloudinary.com/allseeingeye/image/upload/v1601243932/hamsterburen/hamster-9_y5rt2k.jpg",
+  "wins": 1,
+  "defeats": 0,
+  "games": 1
+},{
+  "_id": {
+    "$oid": "5f70ff4c973d861c5d6588c7"
+  },
+  "id": 10,
+  "name": "Lelaah",
+  "age": 5,
+  "favFood": "sallad",
+  "loves": "Running that wheeeeeeeeeeeeeeeel!",
+  "imgName": "https://res.cloudinary.com/allseeingeye/image/upload/v1601243916/hamsterburen/hamster-10_n7u7xr.jpg",
+  "wins": 0,
+  "defeats": 0,
+  "games": 0
+},{
+  "_id": {
+    "$oid": "5f70ff4c973d861c5d6588c8"
+  },
+  "id": 11,
+  "name": "Kaylee",
+  "age": 4,
+  "favFood": "ananas",
+  "loves": "Running that wheeeeeeeeeeeeeeeel!",
+  "imgName": "https://res.cloudinary.com/allseeingeye/image/upload/v1601243915/hamsterburen/hamster-11_fsvwft.jpg",
+  "wins": 0,
+  "defeats": 0,
+  "games": 0
+},{
+  "_id": {
+    "$oid": "5f70ff4c973d861c5d6588c9"
+  },
+  "id": 12,
+  "name": "Gnuggis",
+  "age": 5,
+  "favFood": "äpple",
+  "loves": "Running that wheeeeeeeeeeeeeeeel!",
+  "imgName": "https://res.cloudinary.com/allseeingeye/image/upload/v1601243913/hamsterburen/hamster-12_gtr6kk.jpg",
+  "wins": 0,
+  "defeats": 0,
+  "games": 0
+},{
+  "_id": {
+    "$oid": "5f70ff4c973d861c5d6588ca"
+  },
+  "id": 13,
+  "name": "Mumsan",
+  "age": 5,
+  "favFood": "cornflakes",
+  "loves": "Running that wheeeeeeeeeeeeeeeel!",
+  "imgName": "https://res.cloudinary.com/allseeingeye/image/upload/v1601243917/hamsterburen/hamster-13_ihgnry.jpg",
+  "wins": 0,
+  "defeats": 0,
+  "games": 0
+},{
+  "_id": {
+    "$oid": "5f70ff4c973d861c5d6588cb"
+  },
+  "id": 14,
+  "name": "Loppan",
+  "age": 3,
+  "favFood": "gurka",
+  "loves": "Running that wheeeeeeeeeeeeeeeel!",
+  "imgName": "https://res.cloudinary.com/allseeingeye/image/upload/v1601243918/hamsterburen/hamster-14_gi3szc.jpg",
+  "wins": 0,
+  "defeats": 1,
+  "games": 1
+},{
+  "_id": {
+    "$oid": "5f70ff4c973d861c5d6588cc"
+  },
+  "id": 15,
+  "name": "Wheelie",
+  "age": 4,
+  "favFood": "gurka",
+  "loves": "Running that wheeeeeeeeeeeeeeeel!",
+  "imgName": "https://res.cloudinary.com/allseeingeye/image/upload/v1601243919/hamsterburen/hamster-15_br4l99.jpg",
+  "wins": 0,
+  "defeats": 0,
+  "games": 0
+},{
+  "_id": {
+    "$oid": "5f70ff4c973d861c5d6588cd"
+  },
+  "id": 16,
+  "name": "Einar",
+  "age": 4,
+  "favFood": "majs",
+  "loves": "Running that wheeeeeeeeeeeeeeeel!",
+  "imgName": "https://res.cloudinary.com/allseeingeye/image/upload/v1601243931/hamsterburen/hamster-16_rvkxlg.jpg",
+  "wins": 0,
+  "defeats": 0,
+  "games": 0
+},{
+  "_id": {
+    "$oid": "5f70ff4c973d861c5d6588ce"
+  },
+  "id": 17,
+  "name": "Poppy",
+  "age": 6,
+  "favFood": "ruccula",
+  "loves": "Running that wheeeeeeeeeeeeeeeel!",
+  "imgName": "https://res.cloudinary.com/allseeingeye/image/upload/v1601243919/hamsterburen/hamster-17_xxwspo.jpg",
+  "wins": 1,
+  "defeats": 0,
+  "games": 1
+},{
+  "_id": {
+    "$oid": "5f70ff4c973d861c5d6588cf"
+  },
+  "id": 18,
+  "name": "Bella",
+  "age": 7,
+  "favFood": "nötter",
+  "loves": "Running that wheeeeeeeeeeeeeeeel!",
+  "imgName": "https://res.cloudinary.com/allseeingeye/image/upload/v1601243933/hamsterburen/hamster-18_uqyqhi.jpg",
+  "wins": 0,
+  "defeats": 0,
+  "games": 0
+},{
+  "_id": {
+    "$oid": "5f70ff4c973d861c5d6588d0"
+  },
+  "id": 19,
+  "name": "Lola",
+  "age": 1,
+  "favFood": "rädisor",
+  "loves": "Running that wheeeeeeeeeeeeeeeel!",
+  "imgName": "https://res.cloudinary.com/allseeingeye/image/upload/v1601243937/hamsterburen/hamster-19_shcooa.jpg",
+  "wins": 0,
+  "defeats": 0,
+  "games": 0
+},{
+  "_id": {
+    "$oid": "5f70ff4c973d861c5d6588d1"
+  },
+  "id": 20,
+  "name": "Coco",
+  "age": 2,
+  "favFood": "sågspån",
+  "loves": "Running that wheeeeeeeeeeeeeeeel!",
+  "imgName": "https://res.cloudinary.com/allseeingeye/image/upload/v1601243934/hamsterburen/hamster-20_cxxy6b.jpg",
+  "wins": 0,
+  "defeats": 0,
+  "games": 0
+},{
+  "_id": {
+    "$oid": "5f70ff4c973d861c5d6588d2"
+  },
+  "id": 21,
+  "name": "Ajax",
+  "age": 1,
+  "favFood": "popcorn",
+  "loves": "Running that wheeeeeeeeeeeeeeeel!",
+  "imgName": "https://res.cloudinary.com/allseeingeye/image/upload/v1601243963/hamsterburen/hamster-21_p9mvcp.jpg",
+  "wins": 0,
+  "defeats": 1,
+  "games": 1
+},{
+  "_id": {
+    "$oid": "5f70ff4c973d861c5d6588d3"
+  },
+  "id": 22,
+  "name": "Skutte",
+  "age": 1,
+  "favFood": "gräs",
+  "loves": "Running that wheeeeeeeeeeeeeeeel!",
+  "imgName": "https://res.cloudinary.com/allseeingeye/image/upload/v1601243942/hamsterburen/hamster-22_i0jl68.jpg",
+  "wins": 0,
+  "defeats": 0,
+  "games": 0
+},{
+  "_id": {
+    "$oid": "5f70ff4c973d861c5d6588d4"
+  },
+  "id": 23,
+  "name": "Norris",
+  "age": 5,
+  "favFood": "morot",
+  "loves": "Running that wheeeeeeeeeeeeeeeel!",
+  "imgName": "https://res.cloudinary.com/allseeingeye/image/upload/v1601243936/hamsterburen/hamster-23_qkktkb.jpg",
+  "wins": 0,
+  "defeats": 0,
+  "games": 0
+},{
+  "_id": {
+    "$oid": "5f70ff4c973d861c5d6588d5"
+  },
+  "id": 24,
+  "name": "Pilen",
+  "age": 4,
+  "favFood": "sågspån",
+  "loves": "Running that wheeeeeeeeeeeeeeeel!",
+  "imgName": "https://res.cloudinary.com/allseeingeye/image/upload/v1601243976/hamsterburen/hamster-24_xta528.jpg",
+  "wins": 0,
+  "defeats": 0,
+  "games": 0
+},{
+  "_id": {
+    "$oid": "5f70ff4c973d861c5d6588d6"
+  },
+  "id": 25,
+  "name": "Snurre",
+  "age": 5,
+  "favFood": "morot",
+  "loves": "Running that wheeeeeeeeeeeeeeeel!",
+  "imgName": "https://res.cloudinary.com/allseeingeye/image/upload/v1601243952/hamsterburen/hamster-25_lyqicy.jpg",
+  "wins": 1,
+  "defeats": 0,
+  "games": 1
+},{
+  "_id": {
+    "$oid": "5f70ff4c973d861c5d6588d7"
+  },
+  "id": 26,
+  "name": "Bubblan",
+  "age": 2,
+  "favFood": "skorpor",
+  "loves": "Running that wheeeeeeeeeeeeeeeel!",
+  "imgName": "https://res.cloudinary.com/allseeingeye/image/upload/v1601243943/hamsterburen/hamster-26_muuit8.jpg",
+  "wins": 0,
+  "defeats": 0,
+  "games": 0
+},{
+  "_id": {
+    "$oid": "5f70ff4c973d861c5d6588d8"
+  },
+  "id": 27,
+  "name": "Felix",
+  "age": 1,
+  "favFood": "gräs",
+  "loves": "Running that wheeeeeeeeeeeeeeeel!",
+  "imgName": "https://res.cloudinary.com/allseeingeye/image/upload/v1601244339/hamsterburen/hamster-27_h9okd5.jpg",
+  "wins": 0,
+  "defeats": 0,
+  "games": 0
+},{
+  "_id": {
+    "$oid": "5f70ff4c973d861c5d6588d9"
+  },
+  "id": 28,
+  "name": "Bixie",
+  "age": 3,
+  "favFood": "sallad",
+  "loves": "Running that wheeeeeeeeeeeeeeeel!",
+  "imgName": "https://res.cloudinary.com/allseeingeye/image/upload/v1601243994/hamsterburen/hamster-28_qeaivl.jpg",
+  "wins": 0,
+  "defeats": 0,
+  "games": 0
+},{
+  "_id": {
+    "$oid": "5f70ff4c973d861c5d6588da"
+  },
+  "id": 29,
+  "name": "Caoz",
+  "age": 2,
+  "favFood": "persilja",
+  "loves": "Running that wheeeeeeeeeeeeeeeel!",
+  "imgName": "https://res.cloudinary.com/allseeingeye/image/upload/v1601243955/hamsterburen/hamster-29_t10abm.jpg",
+  "wins": 0,
+  "defeats": 0,
+  "games": 0
+},{
+  "_id": {
+    "$oid": "5f70ff4c973d861c5d6588db"
+  },
+  "id": 30,
+  "name": "Cirkus",
+  "age": 3,
+  "favFood": "rädisor",
+  "loves": "Running that wheeeeeeeeeeeeeeeel!",
+  "imgName": "https://res.cloudinary.com/allseeingeye/image/upload/v1601244017/hamsterburen/hamster-30_czdpda.jpg",
+  "wins": 0,
+  "defeats": 0,
+  "games": 0
+},{
+  "_id": {
+    "$oid": "5f70ff4c973d861c5d6588dc"
+  },
+  "id": 31,
+  "name": "Majsan",
+  "age": 4,
+  "favFood": "cornflakes",
+  "loves": "Running that wheeeeeeeeeeeeeeeel!",
+  "imgName": "https://res.cloudinary.com/allseeingeye/image/upload/v1601243993/hamsterburen/hamster-31_bylc8w.jpg",
+  "wins": 0,
+  "defeats": 0,
+  "games": 0
+},{
+  "_id": {
+    "$oid": "5f70ff4c973d861c5d6588dd"
+  },
+  "id": 32,
+  "name": "Spånet",
+  "age": 3,
+  "favFood": "sallad",
+  "loves": "Running that wheeeeeeeeeeeeeeeel!",
+  "imgName": "https://res.cloudinary.com/allseeingeye/image/upload/v1601243971/hamsterburen/hamster-32_cezeqk.jpg",
+  "wins": 0,
+  "defeats": 1,
+  "games": 1
+},{
+  "_id": {
+    "$oid": "5f70ff4c973d861c5d6588de"
+  },
+  "id": 33,
+  "name": "Techno",
+  "age": 6,
+  "favFood": "ruccula",
+  "loves": "Running that wheeeeeeeeeeeeeeeel!",
+  "imgName": "https://res.cloudinary.com/allseeingeye/image/upload/v1601244001/hamsterburen/hamster-33_ugbz1r.jpg",
+  "wins": 0,
+  "defeats": 0,
+  "games": 0
+},{
+  "_id": {
+    "$oid": "5f70ff4c973d861c5d6588df"
+  },
+  "id": 34,
+  "name": "Ninjah",
+  "age": 7,
+  "favFood": "ruccula",
+  "loves": "Running that wheeeeeeeeeeeeeeeel!",
+  "imgName": "https://res.cloudinary.com/allseeingeye/image/upload/v1601243984/hamsterburen/hamster-34_d6j3pg.jpg",
+  "wins": 0,
+  "defeats": 0,
+  "games": 0
+},{
+  "_id": {
+    "$oid": "5f70ff4c973d861c5d6588e0"
+  },
+  "id": 35,
+  "name": "Alma",
+  "age": 5,
+  "favFood": "ananas",
+  "loves": "Running that wheeeeeeeeeeeeeeeel!",
+  "imgName": "https://res.cloudinary.com/allseeingeye/image/upload/v1601244006/hamsterburen/hamster-35_yewkoa.jpg",
+  "wins": 0,
+  "defeats": 0,
+  "games": 0
+},{
+  "_id": {
+    "$oid": "5f70ff4c973d861c5d6588e1"
+  },
+  "id": 36,
+  "name": "Molly",
+  "age": 3,
+  "favFood": "ananas",
+  "loves": "Running that wheeeeeeeeeeeeeeeel!",
+  "imgName": "https://res.cloudinary.com/allseeingeye/image/upload/v1601244003/hamsterburen/hamster-36_gnvxat.jpg",
+  "wins": 0,
+  "defeats": 0,
+  "games": 0
+},{
+  "_id": {
+    "$oid": "5f70ff4c973d861c5d6588e2"
+  },
+  "id": 37,
+  "name": "Smulan",
+  "age": 1,
+  "favFood": "gräs",
+  "loves": "Running that wheeeeeeeeeeeeeeeel!",
+  "imgName": "https://res.cloudinary.com/allseeingeye/image/upload/v1601243998/hamsterburen/hamster-37_cvk3pw.jpg",
+  "wins": 0,
+  "defeats": 0,
+  "games": 0
+},{
+  "_id": {
+    "$oid": "5f70ff4c973d861c5d6588e3"
+  },
+  "id": 38,
+  "name": "Nisse",
+  "age": 2,
+  "favFood": "majs",
+  "loves": "Running that wheeeeeeeeeeeeeeeel!",
+  "imgName": "https://res.cloudinary.com/allseeingeye/image/upload/v1601244000/hamsterburen/hamster-38_musgx2.jpg",
+  "wins": 0,
+  "defeats": 0,
+  "games": 0
+},{
+  "_id": {
+    "$oid": "5f70ff4c973d861c5d6588e4"
+  },
+  "id": 39,
+  "name": "Fluffy",
+  "age": 7,
+  "favFood": "sallad",
+  "loves": "Running that wheeeeeeeeeeeeeeeel!",
+  "imgName": "https://res.cloudinary.com/allseeingeye/image/upload/v1601244005/hamsterburen/hamster-39_hjjcm9.jpg",
+  "wins": 0,
+  "defeats": 0,
+  "games": 0
+},{
+  "_id": {
+    "$oid": "5f70ff4c973d861c5d6588e5"
+  },
+  "id": 40,
+  "name": "Dart",
+  "age": 3,
+  "favFood": "morot",
+  "loves": "Running that wheeeeeeeeeeeeeeeel!",
+  "imgName": "https://res.cloudinary.com/allseeingeye/image/upload/v1601244003/hamsterburen/hamster-40_wpafzo.jpg",
+  "wins": 0,
+  "defeats": 0,
+  "games": 0
+}]
