@@ -18,17 +18,15 @@ const StatisticsView = ({total}) => {
 	useEffect(() => {
 		console.log('inside useEffect');
 		let fetchStats = async () => {
-			await fetch('https://hamsterwars-hamsterburen.herokuapp.com/api/getstats?category=winner')
-			.then(response => {
-				let winners= response.json()
-				setWinner(winners)
-			})
-			await fetch('https://hamsterwars-hamsterburen.herokuapp.com/api/getstats?category=loser')
-			.then(response => response.json()).then(response => setLoser(response))
+			
+			await fetch('https://hamsterwars-hamsterburen.herokuapp.com/api/getstats?category=winners')
+			.then(response => response.text()).then(result => setWinner(result))
+			await fetch('https://hamsterwars-hamsterburen.herokuapp.com/api/getstats?category=losers')
+			.then(response => response.text()).then(result => setLoser(result))
 			await fetch('https://hamsterwars-hamsterburen.herokuapp.com/api/getstats?category=youngest')
-			.then(response => response.json()).then(response => setYoungest(response))
+			.then(response => response.text()).then(result => setYoungest(result))
 			await fetch('https://hamsterwars-hamsterburen.herokuapp.com/api/getstats?category=oldest')
-			.then(response => response.json()).then(response => setOldest(response))
+			.then(response => response.text()).then(result => setOldest(result))
 		}
 		fetchStats()
 	}, [])
@@ -46,12 +44,12 @@ const StatisticsView = ({total}) => {
 	
 	
 
-	const combatant = [
-		{id:0, name: 'Sweetie', age:4, wins: 1, losts: 3, img:hamster1},
-		{id:1, name: 'Sweetie', age:4, wins: 1, losts: 3, img:hamster1},
-		{id:2, name: 'Sweetie', age:4, wins: 1, losts: 3, img:hamster1},
-		{id:3, name: 'Sweetie', age:4, wins: 1, losts: 3, img:hamster1},
-		{id:4, name: 'Sweetie', age:4, wins: 1, losts: 3, img:hamster1}]
+	// const combatant = [
+	// 	{id:0, name: 'Sweetie', age:4, wins: 1, losts: 3, img:hamster1},
+	// 	{id:1, name: 'Sweetie', age:4, wins: 1, losts: 3, img:hamster1},
+	// 	{id:2, name: 'Sweetie', age:4, wins: 1, losts: 3, img:hamster1},
+	// 	{id:3, name: 'Sweetie', age:4, wins: 1, losts: 3, img:hamster1},
+	// 	{id:4, name: 'Sweetie', age:4, wins: 1, losts: 3, img:hamster1}]
 
 		let topWinners = winner.map((hamster) => 
 		          
@@ -104,10 +102,7 @@ const StatisticsView = ({total}) => {
 								<div className="item2">{topYoungest}</div>
 
 							</StatsToplist>
-							<StatsToplist title="%">
-								<div className="item2">{topWinners}</div>
-
-							</StatsToplist>
+							
 
 						</section>
 				</div>
