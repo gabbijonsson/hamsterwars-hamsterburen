@@ -23,7 +23,7 @@ function getRandomHamsters(query, cb) {
 			// 	const array = await cursor.toArray();
 			// 	cb(array);
 			try {
-				let response = [];
+				let randomHamsters = [];
 				let dbQuery = {};
 				if(query.excludeid) {
 					dbQuery = { id: { $ne: Number(query.excludeid) } };
@@ -35,10 +35,10 @@ function getRandomHamsters(query, cb) {
 						Math.floor(Math.random() * arrayOfHamsters.length),
 						1
 					);
-					console.log('RH is ', randomHamster);
-					response.push(randomHamster)
+					randomHamsters.push(randomHamster[0]);
 				}
-				cb(response);
+				console.log(randomHamsters);
+				cb(randomHamsters);
 			} catch (err) {
 				console.error("Invalid query! " + err);
 				cb(err)
