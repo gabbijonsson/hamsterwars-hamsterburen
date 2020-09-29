@@ -25,7 +25,7 @@ function HeaderGeneric({content}) {
 			<div className="header-item-3">
 				<HamburgerMenuBtn />
 				<div className={'desktop-header-btn ' + content}>
-					<DesktopHeaderBtn text="PICK YOUR OWN FIGHTERS" color="teal" link="/battle/:id1/:id2"  />
+					<DesktopHeaderBtn text="PICK YOUR OWN FIGHTERS" color="teal" link="/pickfighters"  />
 				</div>
 			</div>
 			
