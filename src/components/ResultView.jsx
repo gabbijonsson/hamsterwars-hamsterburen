@@ -3,23 +3,22 @@ import CombatantPicCard from './CombatantPicCard'
 import GenericBtn from './GenericBtn'
 import ScrollContainer from './ScrollContainer'
 import CombatantInfoCard from './CombatantInfoCard'
-import TestHamsterPic from '../assets/frontend/JoyfulHamster.svg'
 import './ResultView.css'
 
 
 let hamster = 
 		{
-			name:"Sixten",
+			name:"",
 			age:1,
-			favFood:"ostbollar",
-			loves:"Running that wheeeeeeeeeeeeeeeel!",
-			imgName:"hamster-1.jpg",
+			favFood:"",
+			loves:"",
+			imgName:"",
 			wins:0,
 			defeats:0,
 			games:0
 		}
 
-let hamsterImg = TestHamsterPic;
+let hamsterImg;
 function ResultView({id}) {
 	const [winnerHamster, setWinnerHamster] = useState();
 	
