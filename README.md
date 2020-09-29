@@ -66,10 +66,11 @@ En hamster har följande egenskaper:
 |----------|--------|---|
 |/api/gethamsters/random | GET | Returnerar slumpmässig/a hamster/hamstrar |
 
-Använd count för att efterfråga önskat antal hamstrar.
+Använd count för att efterfråga önskat antal hamstrar. Använd excludeid för att utesluta ett ID från resultatet.
 ```
 /api/gethamsters/random?count=1 Returnerar 1 slumpmässigt utvald hamster
 /api/gethamsters/random?count=2 Returnerar 2 slumpmässigt utvalda hamstrar
+/api/gethamsters/random?count=1&excludeid=14 Returnerar 1 slumpmässigt utvald hamster som inte kan ha ID 14.
 ```
 
 |Resurs    |Metod   |Förväntat svar|

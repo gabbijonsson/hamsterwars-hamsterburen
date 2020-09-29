@@ -36,7 +36,7 @@ function App() {
               <StatisticsView/>
             </Route>
             <Route path="/upload" exact>
-              <HeaderGeneric/>¢
+              <HeaderGeneric/>
               <CreateHamsterView/>
             </Route>
             <Route path="/result/:id" exact>
