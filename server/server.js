@@ -36,24 +36,48 @@ app.use(bodyParser.json());
 
 // Get # of randomized hamsters based on request query
 app.get("/api/gethamsters/random", (req, res) => {
-	let query = req.query;
-    getRandomHamsters(query, (response) => {
-        res.send(response)
-    })
+    let query = req.query;
+    if(!isNaN(Number(query.count))) {
+        getRandomHamsters(query, (response) => {
+            res.send(response)
+        })
+    } else {
+        res.send('Invalid query. Count has to be a number.')
+    }
 });
 
 // Get specified hamsters based on request query
 app.get("/api/gethamster", (req, res) => {
-	getSelectedHamster(req, (response) => {
-		res.send(response);
-	});
+    if(!isNaN(Number(req.query.id))) {
+        getSelectedHamster(req, (response) => {
+            res.send(response);
+        })
+    } else {
+        res.send('Invalid query. ID has to be a number.')
+    }
 });
 
 // Add a new hamster
 app.post("/api/addhamster", (req, res) => {
-	addHamster(req.body, (addedHamster) => {
-		res.send(addedHamster);
-	});
+	let invalidKey;
+	if (typeof req.body.name !== "string") {
+		invalidKey = "Invalid request. Name has to be a string.";
+	} else if (isNaN(Number(req.body.age))) {
+		invalidKey = "Invalid request. Age has to be a number.";
+	} else if (typeof req.body.favFood !== "string") {
+		invalidKey = "Invalid request. Favourite food has to be a string.";
+	} else if (typeof req.body.loves !== "string") {
+		invalidKey = "Invalid request. Loves has to be a string.";
+	} else if (typeof req.body.imgName !== "string") {
+		invalidKey = "Invalid request. Imagename has to be a string.";
+    }
+    if (!invalidKey) {
+        addHamster(req.body, (addedHamster) => {
+            res.send(addedHamster);
+        });
+    } else {
+        res.send(invalidKey);
+    }
 });
 
 // Add a new matchresult and update the winner / loser hamsters
