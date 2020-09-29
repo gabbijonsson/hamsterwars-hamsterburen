@@ -1,8 +1,10 @@
 form {
+    margin: 0 auto;
     padding: 2rem 1.5rem;
     font-size: 1.5rem;
     height: calc(100vh - 60px - 1.8rem - .6em);
     width: 100vw;
+    max-width: 80rem;
     position: relative;
 }
 
@@ -192,10 +194,10 @@ label.fileReader {
 
     }
 
-    form h2 {
+    form h1 {
         font-size: 3rem;
-        text-align: left;
-
+        margin-top: 1rem;
+        padding-bottom: 2rem;
     }
 
     form label {
