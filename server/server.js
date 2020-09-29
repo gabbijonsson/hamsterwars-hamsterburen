@@ -31,7 +31,6 @@ app.use(express.static(__dirname + "/../src/assets/"));
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
 
-    
 // TODO: ROUTES HERE
 
 // Get # of randomized hamsters based on request query
@@ -85,10 +84,13 @@ app.post("/api/addmatch", (req, res) => {
     if (isNaN(Number(req.body.winner)) || isNaN(Number(req.body.loser))) {
         res.send('Invalid request. Winner and loser ID has to be numbers.')
     } else {
-        addMatch(req.body, () => {
-        })
         updateCombatant(req.body, () => {
-            res.send({ message: "Hamsters and match updated." })
+        })
+        addMatch(req.body, (newMatchInfo) => {
+            res.send({
+				message: "Added match and updated hamsters.",
+				match: newMatchInfo
+			});
         })
     }
 })
@@ -102,17 +104,28 @@ app.get("/api/getmatchcount", (req, res) => {
 
 // Returns the match specified in reqeust query
 app.get("/api/getmatch", (req, res) => {
-    getSelectedMatch(req, (response) => {
-        res.send(response);
-    });
+    if(isNaN(Number(req.query.id))) {
+        res.send('Invalid query. ID has to be a number.');
+    } else {
+        getSelectedMatch(req, (response) => {
+            res.send(response);
+        });
+    }
 });
 
 // Get statistics from the database based on order param
 app.get("/api/getstats", (req, res) => {
-    getStats(req.query, (response) => {
-        res.send(response);
-    })
-})
+    if(req.query.category === 'winners'
+        || req.query.category === 'losers'
+        || req.query.category === 'oldest'
+        || req.query.category === 'youngest') {
+        getStats(req.query, (response) => {
+            res.send(response);
+        })
+    } else {
+        res.send('Invalid query. Category has to be winners, losers, oldest or youngest.')
+    }
+});
 
 
 // START SERVER

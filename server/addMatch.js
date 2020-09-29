@@ -23,7 +23,7 @@ function addMatch(newMatch, cb) {
                     });
                     
                 } finally {
-                    cb();
+                    cb(newMatch);
                     client.close();
                 }
             });
