@@ -2,6 +2,7 @@ const express = require('express');
 const bodyParser = require('body-parser');
 const app = express();
 const cors = require('cors');
+const path = require('path');
 const { getRandomHamsters } = require("./getRandomHamsters.js");
 const { getSelectedHamster } = require('./getSelectedHamster.js');
 const { addHamster } = require('./addHamster.js');
@@ -27,6 +28,7 @@ app.use(
         );
 app.use(express.static(__dirname + "/../build/"));
 app.use(express.static(__dirname + "/../src/assets/"));
+app.get('*', (req, res) => res.sendFile(path.resolve('build', 'index.html')));
 // app.use(express.static(__dirname + "/../public/"));
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
