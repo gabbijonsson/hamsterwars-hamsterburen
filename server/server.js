@@ -82,11 +82,15 @@ app.post("/api/addhamster", (req, res) => {
 
 // Add a new matchresult and update the winner / loser hamsters
 app.post("/api/addmatch", (req, res) => {
-    addMatch(req.body, () => {
-    })
-    updateCombatant(req.body, () => {
-        res.send({ message: "Hamsters and match updated." })
-    })
+    if (isNaN(Number(req.body.winner)) || isNaN(Number(req.body.loser))) {
+        res.send('Invalid request. Winner and loser ID has to be numbers.')
+    } else {
+        addMatch(req.body, () => {
+        })
+        updateCombatant(req.body, () => {
+            res.send({ message: "Hamsters and match updated." })
+        })
+    }
 })
 
 // Returns the highest MatchID, which is also the number of matches in the database
