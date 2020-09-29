@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import React, {useState, useEffect} from 'react';
 import './StatisticsView.css';
 import ScrollContainer from './ScrollContainer';
 import StatsToplist from './StatsToplist';
@@ -6,9 +6,29 @@ import StatsToplistCombatant from './StatsToplistCombatant';
 import GenericBtn from './GenericBtn';
 import TotalNoMatches from './TotalNoMatches';
 import hamster1 from '../assets/hamsters/hamster-1.jpg';
+import { response } from 'express';
+
+
+
 
 const StatisticsView = ({total}) => {
-	
+	const [winner, setWinner] = useState([]);
+	const [loser, setLoser] = useState([])
+	const [youngest, setYoungest] = useState([])
+	const [oldest, setOldest] = useState([])
+	useEffect(() => {
+		console.log('inside useEffect');
+		let fetchStats = async () => {
+			const winner = await fetch('https://hamsterwars-hamsterburen.herokuapp.com/api/getstats?category=winner')
+			.then(response => response.json()).then(winner => setWinner(winner))
+			const loser = await fetch('https://hamsterwars-hamsterburen.herokuapp.com/api/getstats?category=loser')
+			.then(response => response.json()).then(loser => setLoser(loser))
+			const youngest = await fetch('https://hamsterwars-hamsterburen.herokuapp.com/api/getstats?category=youngest')
+			.then(response => response.json()).then(youngest => setYoungest(youngest))
+			const oldest = await fetch('https://hamsterwars-hamsterburen.herokuapp.com/api/getstats?category=oldest')
+			.then(response => response.json()).then(oldest => setOldest(oldest))
+		}
+	}, [])
 	const [moreStats, setMoreStats] = useState(false);
     const [buttonTxt,setButtonTxt] = useState('more stats');
 	
@@ -20,6 +40,7 @@ const StatisticsView = ({total}) => {
 		else
 		setButtonTxt('more stats');
 	}
+	
 	
 
 	const combatant = [
@@ -53,7 +74,7 @@ const StatisticsView = ({total}) => {
 
 	return(
 		<div className="stats-view">
-			
+			{}
 			<ScrollContainer content='stats'>
 				<div>
 					   <section className="main-stats">
