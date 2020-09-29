@@ -26,15 +26,9 @@ app.use(
             next()
         }
         );
-if (process.env.NODE_ENV === "production") {
-    app.use(express.static("build"));
-}
-app.get("*", (request, response) => {
-	response.sendFile(path.join(__dirname, "build", "index.html"));
-});
 // app.use(express.static(__dirname + "/../build/"));
 // app.use(express.static(__dirname + "/../src/assets/"));
-// app.get('*', (req, res) => res.sendFile(path.resolve('build', 'index.html')));
+app.get('*', (req, res) => res.sendFile(path.resolve('build', 'index.html')));
 // app.use(express.static(__dirname + "/../public/"));
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
