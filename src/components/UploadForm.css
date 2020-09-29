@@ -6,9 +6,9 @@ form {
     position: relative;
 }
 
-form h2 {
-    font-size: 1.5rem;
-    padding-bottom: 2rem;
+form h1 {
+    font-size: 2.5rem;
+    padding-bottom: 1rem;
     text-align: center;
 }
 form label {

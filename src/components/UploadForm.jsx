@@ -122,7 +122,7 @@ const UploadForm = () => {
 	return (
 		<>
 		<form>
-		<h2>Make your own hamster...</h2>
+		<h1>Create Hamster</h1>
 				<div className="inputs">
 					<label style={{ position: "relative" }} htmlFor="formName">
 						Name:
