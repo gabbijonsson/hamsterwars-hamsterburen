@@ -80,10 +80,6 @@ const StatisticsView = ({total}) => {
 								<div className="item2">{youngest}</div>
 
 							</StatsToplist>
-							<StatsToplist title="%">
-								<div className="item2">{topWinners}</div>
-
-							</StatsToplist>
 
 						</section>
 				</div>
