@@ -105,6 +105,13 @@ Skicka id på vinnare och förlorare i request body.
 |----------|--------|---|
 |/api/getmatchcount | GET | Hämtar totala antalet matcher registrerade |
 
+|Resurs    |Metod   |Förväntat svar|
+|----------|--------|---|
+|/api/getmatch | GET | Hämtar match baserat på angivet ID |
+
+```
+/api/getmatch?id=:id Returnerar match med valt ID.
+```
 
 |Resurs    |Metod   |Förväntat svar|
 |----------|--------|---|
