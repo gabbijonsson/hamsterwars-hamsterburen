@@ -28,6 +28,7 @@ const StatisticsView = ({total}) => {
 			const oldest = await fetch('https://hamsterwars-hamsterburen.herokuapp.com/api/getstats?category=oldest')
 			.then(response => response.json()).then(oldest => setOldest(oldest))
 		}
+		fetchStats()
 	}, [])
 	const [moreStats, setMoreStats] = useState(false);
     const [buttonTxt,setButtonTxt] = useState('more stats');
@@ -50,24 +51,24 @@ const StatisticsView = ({total}) => {
 		{id:3, name: 'Sweetie', age:4, wins: 1, losts: 3, img:hamster1},
 		{id:4, name: 'Sweetie', age:4, wins: 1, losts: 3, img:hamster1}]
 
-		let topWinners = combatant.map((hamster) => 
+		let topWinners = winner.map((hamster) => 
 		          
 						<div key={hamster.id}> 
 							<StatsToplistCombatant combatant={hamster} combatantInfo='WINS' />
 						</div>)
 
-		let topLosers = combatant.map((hamster) => 
+		let topLosers = loser.map((hamster) => 
 						<div key={hamster.id}> 
 							<StatsToplistCombatant combatant={hamster} combatantInfo='LOSTS' />
 						</div>)
 						
 
-		let oldest = combatant.map((hamster) =>
+		let topOldest = oldest.map((hamster) =>
 						<div className="item1" key={hamster.id}> 
 							<StatsToplistCombatant combatant={hamster} combatantInfo='AGE' />
 						</div>)
 
-		let youngest = combatant.map((hamster) =>
+		let topYoungest = youngest.map((hamster) =>
 						<div className="item1" key={hamster.id}> 
 							<StatsToplistCombatant combatant={hamster} combatantInfo='AGE' />
 						</div>)
@@ -93,12 +94,12 @@ const StatisticsView = ({total}) => {
 						<section className={ moreStats===true ? 'visible' : 'invisible'}>
 							
 								<StatsToplist title="oldest">
-									<div className="item2">{oldest}</div>
+									<div className="item2">{topOldest}</div>
 								</StatsToplist>
 							
 							
 							<StatsToplist title="youngest">
-								<div className="item2">{youngest}</div>
+								<div className="item2">{topYoungest}</div>
 
 							</StatsToplist>
 							<StatsToplist title="%">
