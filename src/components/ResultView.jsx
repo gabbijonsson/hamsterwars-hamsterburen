@@ -1,9 +1,11 @@
-import React, { useState,useEffect} from 'react'
+import React, { useState} from 'react'
 import CombatantPicCard from './CombatantPicCard'
 import GenericBtn from './GenericBtn'
 import ScrollContainer from './ScrollContainer'
 import CombatantInfoCard from './CombatantInfoCard'
 import './ResultView.css'
+import LoserHamster from '../assets/frontend/CryingHamster.svg';
+
 import {useParams} from 'react-router-dom';
 
 let hamster = 
@@ -17,11 +19,13 @@ let hamster =
 			defeats:0,
 			games:0
 		}
+	let loser = '';
 
 let hamsterImg;
 function ResultView({fromOther}) {
 	const {id} = useParams();
 	const [winnerHamster, setWinnerHamster] = useState();
+	const [loserHamster, setLoserHamster] = useState();
 
 	if(!winnerHamster && !isNaN(Number(id))){
 		getHamster(id);
@@ -35,8 +39,13 @@ function ResultView({fromOther}) {
 		
 		let res2 = await fetch( `https://hamsterwars-hamsterburen.herokuapp.com/api/gethamster?id=${match.winner}`)
 		let winner = await res2.json();
+
+		let res3 = await fetch( `https://hamsterwars-hamsterburen.herokuapp.com/api/gethamster?id=${match.loser}`)
+		let loser = await res3.json();
+		
 		
 		setWinnerHamster(winner);
+		setLoserHamster(loser);
 
 	}
 	
@@ -44,6 +53,10 @@ function ResultView({fromOther}) {
 		
 		hamster = winnerHamster;
 		hamsterImg = winnerHamster.imgName;
+		
+	}
+	if(loserHamster){
+		loser = loserHamster;
 	}
 
 	return (
@@ -56,7 +69,11 @@ function ResultView({fromOther}) {
 					<CombatantInfoCard hamster={hamster}/>
 				</ScrollContainer>
 			</div>
-			<div className="resultView-mobile-btn">
+			<div className="loser-hamster">
+                <img src={LoserHamster} alt="LoserHamster"></img>
+				<span className="loser-info">{loser.name} lost this match... </span>
+			</div>
+			<div className="resultView-mobile-btn"> 
 				<GenericBtn color="peach" text="BATTLE"  link="/battle"/>
 			</div>
 		</div>

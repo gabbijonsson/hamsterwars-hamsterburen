@@ -12,11 +12,10 @@ import {BrowserRouter, Route} from 'react-router-dom';
 
 
 function App() {
-
-  const [winnerId, setWinnerId] = useState('');
-  const [newHamster, setNewHamster] = useState('');
   
+  const [newHamster, setNewHamster] = useState();
   const createHamster = (hamster) =>{
+    setNewHamster(hamster);
     console.log(hamster);
   }
 
@@ -30,11 +29,11 @@ function App() {
             </Route>
             <Route path="/battle" exact>
               <HeaderGeneric/>
-              <BattlePage pickWinner ={(ID) => setWinnerId(ID)} id={winnerId}/>
+              <BattlePage/>
             </Route>
             <Route path="/battle/:id1/:id2" >
               <HeaderGeneric/>
-              <BattlePage pickWinner ={(ID) => setWinnerId(ID)}/>
+              <BattlePage/>
             </Route>
             <Route path="/pickfighters">
               <HeaderGeneric content="pickFightersView"/>
@@ -51,7 +50,7 @@ function App() {
             </Route>
             <Route path="/result/:id" exact>
               <HeaderGeneric/>
-              <ResultView id={winnerId}/>
+              <ResultView/>
             </Route>
             <Route path="/new-fighter-added" exact>
               <HeaderGeneric/>

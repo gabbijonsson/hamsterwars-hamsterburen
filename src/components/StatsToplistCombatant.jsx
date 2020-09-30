@@ -14,8 +14,8 @@ const StatsToplistCombatant = ({combatant, combatantInfo}) => {
 			info = combatant.wins;
 			text = 'wins';
 			 break;
-		 case 'LOSTS':
-			 text = 'losts';
+		 case 'LOSSES':
+			 text = "losses";
 			 info = combatant.defeats;
 			 break;
 		 default:

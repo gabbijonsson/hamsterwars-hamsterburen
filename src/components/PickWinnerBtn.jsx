@@ -3,7 +3,7 @@ import { useHistory } from 'react-router-dom';
 import './PickWinnerBtn.css';
 
 
-const PickWinnerBtn = ({pickWinner,winId,losId}) => {
+const PickWinnerBtn = ({winId,losId}) => {
 	const history = useHistory();
 
 	const winLosId = {
@@ -29,7 +29,6 @@ const PickWinnerBtn = ({pickWinner,winId,losId}) => {
 	
        
 	const switchToResult = (matchID) =>{
-		pickWinner();
 		history.push(`/result/${matchID}`);
 	}
   

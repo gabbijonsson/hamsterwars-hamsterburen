@@ -7,11 +7,11 @@ const StatsToplist = ({title, children}) => {
 
 	switch(title){
 		case 'oldest':
-		   header = 'Oldest';
+		   header = 'OLDEST';
 		   color = 'pink'
 			break;
 		case 'youngest' :
-		   header = 'Youngest';
+		   header = 'YOUNGEST';
            color = 'blue';
 			break;
 		case '%':
@@ -19,11 +19,11 @@ const StatsToplist = ({title, children}) => {
 			color = 'purple';
 			break;
 		case 'winners':
-			header = 'Top winners';
+			header = "MOST WINS";
 			color = 'pink';
 			break;
 		default :
-			header = 'Top losers';
+			header = "MOST LOSSES";
 			color = 'blue'
 		    break;
 	}
