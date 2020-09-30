@@ -42,7 +42,7 @@ app.get("/api/gethamsters/random", (req, res) => {
             res.send(response)
         })
     } else {
-        res.send('Invalid query. Count has to be the number 1 or 2.')
+        res.status(400).send('Invalid query. Count has to be the number 1 or 2.')
     }
 });
 
@@ -72,14 +72,14 @@ app.post("/api/addhamster", (req, res) => {
             res.status(200).send(addedHamster);
         });
     } else {
-        res.send(invalidKey);
+        res.status(400).send(invalidKey);
     }
 });
 
 // Add a new matchresult and update the winner / loser hamsters
 app.post("/api/addmatch", (req, res) => {
     if (isNaN(Number(req.body.winner)) || isNaN(Number(req.body.loser))) {
-        res.send('Invalid request. Winner and loser ID has to be numbers.')
+        res.status(400).send('Invalid request. Winner and loser ID has to be numbers.')
     } else {
         updateCombatant(req.body, () => {
         })
@@ -102,7 +102,7 @@ app.get("/api/getmatchcount", (req, res) => {
 // Returns the match specified in reqeust query
 app.get("/api/getmatch", (req, res) => {
     if(isNaN(Number(req.query.id))) {
-        res.sendStatus(400).send({
+        res.status(400).send({
 			message: "Invalid query. ID has to be a number."
 		});
     } else {
@@ -126,7 +126,7 @@ app.get("/api/getstats", (req, res) => {
             res.send(response);
         })
     } else {
-        res.send('Invalid query. Category has to be winners, losers, oldest or youngest.')
+        res.status(400).send('Invalid query. Category has to be winners, losers, oldest or youngest.')
     }
 });
 
