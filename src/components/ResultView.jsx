@@ -6,6 +6,7 @@ import CombatantInfoCard from './CombatantInfoCard'
 import './ResultView.css'
 
 
+
 import {useParams} from 'react-router-dom';
 
 let hamster = 
@@ -70,7 +71,8 @@ function ResultView({fromOther}) {
 				</ScrollContainer>
 			</div>
 			<div className="loser-hamster">
-				<span className="loser-info">{loser.name} is loser </span>
+                <img src={LoserHamster} alt="LoserHamster"></img>
+				<span className="loser-info">{loser.name} lost this match... </span>
 			</div>
 			<div className="resultView-mobile-btn"> 
 				<GenericBtn color="peach" text="BATTLE"  link="/battle"/>

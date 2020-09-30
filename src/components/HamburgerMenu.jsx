@@ -3,22 +3,22 @@ import './HamburgerMenu.css';
 import {Link} from 'react-router-dom';
 const HamburgerMenu = () => {
 
-	return(
+	return (
 		<nav role="navigation" className="hamburger-content">
-			<Link to='/'>
+			<Link to="/">
 				<h2 role="link">Home</h2>
 			</Link>
-			<Link to='/battle'>
+			<Link to="/battle">
 				<h2 role="link">Battle</h2>
 			</Link>
-			<Link to='/stats'>
+			<Link to="/stats">
 				<h2 role="link">Statistics</h2>
 			</Link>
-			<Link to='/upload'>
-				<h2 role="link">Add your hamster</h2>
+			<Link to="/upload">
+				<h2 role="link">Create hamster</h2>
 			</Link>
 		</nav>
-	)
+	);
 }
 
 export default HamburgerMenu;

@@ -65,7 +65,7 @@ const StatisticsView = ({total}) => {
 
 		let topLosers = loser.map((hamster) => 
 						<div key={hamster.id}> 
-							<StatsToplistCombatant combatant={hamster} combatantInfo='LOSTS' />
+							<StatsToplistCombatant combatant={hamster} combatantInfo='LOSSES' />
 						</div>)
 						
 
