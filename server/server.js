@@ -49,7 +49,7 @@ app.get("/api/gethamsters/random", (req, res) => {
 // Get specified hamsters based on request query
 app.get("/api/gethamster", (req, res) => {
     getSelectedHamster(req, (response) => {
-            res.send(response);
+        res.send(response);
     })
 });
 
@@ -69,7 +69,7 @@ app.post("/api/addhamster", (req, res) => {
     }
     if (!invalidKey) {
         addHamster(req.body, (addedHamster) => {
-            res.send(addedHamster);
+            res.status(200).send(addedHamster);
         });
     } else {
         res.send(invalidKey);
