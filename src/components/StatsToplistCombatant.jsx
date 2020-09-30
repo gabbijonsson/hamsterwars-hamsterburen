@@ -16,7 +16,7 @@ const StatsToplistCombatant = ({combatant, combatantInfo}) => {
 			 break;
 		 case 'LOSTS':
 			 text = 'losts';
-			 info = combatant.losts;
+			 info = combatant.defeats;
 			 break;
 		 default:
 			 text = '%';
@@ -26,7 +26,7 @@ const StatsToplistCombatant = ({combatant, combatantInfo}) => {
 	return(
 		<div className="stats-combatant">
 			 <div>
-				<img src={combatant.img} alt="combatant" />
+				<img src={combatant.imgName} alt="combatant" />
 			 </div>
 			<div>
 				{combatant.name}
