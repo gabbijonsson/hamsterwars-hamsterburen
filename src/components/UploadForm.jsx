@@ -7,7 +7,7 @@ dotenv.config()
 
 
 
-const UploadForm = () => {
+const UploadForm = ({createHamster}) => {
 	
 	const history = useHistory();
 
@@ -97,8 +97,9 @@ const UploadForm = () => {
 					redirect: 'follow'
 				}
 				await fetch('https://hamsterwars-hamsterburen.herokuapp.com/api/addhamster', requestOptions)
-				.then(response => {
-					response.text()
+				.then(async response => {
+					let hamster = await response.json();
+					console.log(hamster , response.status);
 					if( response.status === 200 ){
 						document.getElementById('checkMark').style.display = 'block'
 						document.getElementsByTagName('input').value = ''
@@ -108,6 +109,7 @@ const UploadForm = () => {
 							setLoading(false)
 							document.getElementById('checkMark').style.display = 'none'
 						}, 5000)
+						createHamster(hamster);
 					}else{
 						setBroadcastMsg('Oops! Try again!')
 						document.getElementById('crossMark').style.display = 'block'
@@ -121,7 +123,7 @@ const UploadForm = () => {
 				.then(result => {console.log(result)})
 				.catch(error => console.error('error ', error))
 
-				history.push('/new-fighter-added');
+				// history.push('/new-fighter-added');
 			}
 
 			
@@ -288,7 +290,7 @@ const UploadForm = () => {
 			</svg>
 			
 			<div className="genericBtn-form" onClick={(e) => onSubmit(e)}>		
-				<GenericBtn link={"result"} text={loading ? broadcastMsg : 'add'} color={"peach"}/>
+				<GenericBtn text={loading ? broadcastMsg : 'add'} color={"peach"}/>
 			</div>
 		
 		</form>

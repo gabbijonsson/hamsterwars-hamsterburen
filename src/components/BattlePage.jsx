@@ -19,10 +19,10 @@ const BattlePage = ({pickWinner}) => {
 
 	async function getChosenHamsters(id1, id2){
 		let res1 = await fetch(`https://hamsterwars-hamsterburen.herokuapp.com/api/gethamster?id=${id1}`)
-		let userHamster1 = await res1.json()
+		let userHamster1 = await res1.json();
 		
 		let res2 = await fetch(`https://hamsterwars-hamsterburen.herokuapp.com/api/gethamster?id=${id2}`)
-		let userHamster2 = await res2.json()
+		let userHamster2 = await res2.json();
 
 		setHamsters([userHamster1 , userHamster2]);
 	}
@@ -73,14 +73,14 @@ const BattlePage = ({pickWinner}) => {
 
 				<div className="stack-up1">
 					<CombatantCard CombatantImg={image1} borderColor='blue'/>
-					<PickWinnerBtn  winId={hamster1} losId={hamster2} pickWinner={()=>pickWinner(hamster1)}/>
+					<PickWinnerBtn  winId={hamster1} losId={hamster2}/>
 				</div>
 
 				<h1>VS.</h1>
 
 				<div className="stack-up2">
 					<CombatantCard CombatantImg={image2} borderColor='purple'/>
-					<PickWinnerBtn winId={hamster2} losId={hamster1} pickWinner={()=>pickWinner(hamster2)}/>
+					<PickWinnerBtn winId={hamster2} losId={hamster1}/>
 				</div>
 			
 				<div className='generic'>
