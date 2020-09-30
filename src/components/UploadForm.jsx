@@ -12,7 +12,7 @@ const UploadForm = ({createHamster}) => {
 	const history = useHistory();
 
 	const [name, setName] = useState('')
-	const [age, setAge] = useState()
+	const [age, setAge] = useState('')
 	const [favFood, setfavFood] = useState('')
 	const [loves, setLoves] = useState('')
 	
@@ -38,15 +38,21 @@ const UploadForm = ({createHamster}) => {
 			
 			if(allowedExtensions.indexOf(Extension) === -1){
 				document.getElementById('fileReaderLabel').textContent = 'Sorry - This file type is not supperted !'
-				impFile = undefined
+				file = {}
+				setUserSetImg({})
+				console.log(userSetImg);
 			}
 			else if(file.size > maxSize ){
 				document.getElementById('fileReaderLabel').textContent = 'Too large (MAX 3MB) - Select another one!'
-				impFile = undefined
+				file = {}
+				setUserSetImg({})
+				console.log(userSetImg);
 			}
-			else{	
+			else{
+				document.getElementById('genericBtn-form').disabled = false
 				document.getElementById('fileReaderLabel').textContent = 'File Selected!'
 				setUserSetImg(file)
+				console.log(userSetImg);
 			}
 		}
 	};
@@ -61,12 +67,15 @@ const UploadForm = ({createHamster}) => {
 			loves.length > 40 || Number.isInteger(age) || age < 0 ||
 			isNaN(age)
 			){
-				setBroadcastMsg('Error - Did you forgot a field?')				
+				setBroadcastMsg('Error - Did you forgot a field?')	
+				console.log('Nu gör du fel igen... men jag rädda dig och skickade inget!');			
 			}
-			else if(!userSetImg){
+			else if(Object.keys(userSetImg).length === 0 || userSetImg.constructor === Object || userSetImg === null || userSetImg === undefined ){
+				console.log('Nu gör du fel igen... men jag rädda dig och skickade inget!');
 				setBroadcastMsg('Error - you must select a image')
 			}
 			else{	
+				console.log('Hahaha! Jag skiter i att du gjort fel, Jag skickar iväg detta ändå!');
 				const formData = new FormData();
 				formData.append('file', userSetImg)
 				formData.append('upload_preset', 'dev_hamster')
@@ -290,7 +299,7 @@ const UploadForm = ({createHamster}) => {
 				<path className="checkmark__check" fill="none" d="M14.1 27.2l7.1 7.2 16.7-16.8"/>
 			</svg>
 			
-			<div className="genericBtn-form" onClick={(e) => onSubmit(e)}>		
+			<div id="genericBtn-form" className="genericBtn-form" onClick={(e) => onSubmit(e)} disabled={true}>		
 				<GenericBtn text={loading ? broadcastMsg : 'add'} color={"peach"}/>
 			</div>
 		
