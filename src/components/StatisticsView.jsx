@@ -106,10 +106,12 @@ const StatisticsView = ({total}) => {
 							
 							
 							<StatsToplist title="youngest">
+
 								{/* <div className="item2">{topYoungest}</div> */}
 								{topYoungest}
 							</StatsToplist>
 							
+
 
 						</section>
 						<span id="scroll-down"></span>

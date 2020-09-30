@@ -1,12 +1,13 @@
 	.combatant-card {
 		width: 75vw;
-		height: 25vh;
+		height: 26vh;
 		
 	}
 	
 	.combatant-card > :nth-child(1) {
 		width: 100%;
 		height: 100%;
+		object-fit: cover;
 	}
 
 	.border-blue {

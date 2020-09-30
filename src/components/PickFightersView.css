@@ -1,3 +1,14 @@
+div.pickFighterArea{
+	padding-top: 0rem;
+}
+
+h1.selectFighterH1{
+	margin: 0 auto;
+	display: block;
+	width: fit-content;
+	margin-top: 4rem;
+	margin-bottom: -3rem;
+}
 .desktop-view {
 	display: none;
 }
@@ -14,12 +25,21 @@
 	margin-top: 10vh;
 }
 @media(min-width: 1025px){
+
+	div.pickFighterArea{
+		padding-top: 1rem;
+	}
+
+	h1.selectFighterH1{
+		display: none;
+	}
 	.desktop-view {
 		display: block;
 		display: grid;
 		grid-template-columns: 1fr 10% 1fr;
 	    justify-items: center;
 		align-items: center;
+		margin-top: 2rem;
 	}
 	
 	.pickWinnerBtns {
@@ -28,6 +48,16 @@
 		display: flex;
 		flex-direction: row;
 		justify-content: space-around;
+	}
+
+	.pickWinnerBtns.disable  * {
+		cursor: not-allowed;
+        pointer-events: none;
+
+        /*Button disabled - CSS color class*/
+        color: #c0c0c0;
+        background-color: #ffffff;
+
 	}
 	
 	.choose-fightersBtn{
@@ -46,7 +76,6 @@
 		padding: 1em;
 		display: grid;
 		grid-template-columns: 90% 10%;
-		
 		
 	}
 	

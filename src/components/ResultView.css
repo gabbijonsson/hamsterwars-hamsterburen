@@ -1,16 +1,12 @@
 .resultView-container{
+	height: 85vh;
 	display: flex;
 	flex-direction: column;
 }
-.resultView-pic-card{
-	margin: auto;
+.resultView-container > * {
+    margin: auto;
 }
-.resultView-info-card{
-	margin: auto;
-}
-.resultView-mobile-btn{
-	margin: auto;
-}
+
 @media only screen and (min-width: 1025px){
 	.resultView-container{
 		display: flex;

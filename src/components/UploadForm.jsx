@@ -1,12 +1,16 @@
 import React, {useState} from 'react';
 import './UploadForm.css';
 import GenericBtn from './GenericBtn';
+import {useHistory} from 'react-router-dom';
 import dotenv from 'dotenv'
 dotenv.config()
 
 
+
 const UploadForm = () => {
 	
+	const history = useHistory();
+
 	const [name, setName] = useState('')
 	const [age, setAge] = useState(Number())
 	const [favFood, setfavFood] = useState('')
@@ -112,6 +116,8 @@ const UploadForm = () => {
 				})
 				.then(result => {console.log(result)})
 				.catch(error => console.error('error ', error))
+
+				history.push('/new-fighter-added');
 			}
 
 			
@@ -122,7 +128,7 @@ const UploadForm = () => {
 	return (
 		<>
 		<form>
-		<h2>Make your own hamster...</h2>
+		<h1>Create Hamster</h1>
 				<div className="inputs">
 					<label style={{ position: "relative" }} htmlFor="formName">
 						Name:

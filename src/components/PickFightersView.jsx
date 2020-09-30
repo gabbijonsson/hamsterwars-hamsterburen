@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React,{useState} from 'react';
 import './PickFightersView.css';
 import CombatantCard from './CombatantCard';
 import PickWinnerBtn from './PickWinnerBtn';
@@ -8,15 +8,18 @@ import img1 from '../assets/frontend/GrinningHamster.svg';
 import img2 from '../assets/frontend/HappyHamster.svg';
 
 
+
 const PickFightersView = () => {
+
+	const [btnAbility, setBtnAbility] = useState(true);
 	
 	return(
-		<div>
-			
+		<div className="pickFighterArea">
+			<h1 className="selectFighterH1">Pick fighters</h1>
 			<div className="selectFighter-form">
 				<SelectFighter />
 				<div className="choose-fightersBtn">
-					<button><h1>choose!</h1></button>
+					<button onClick={()=>setBtnAbility(!btnAbility)}><h1>choose!</h1></button>
 				</div>
 				
 			</div>
@@ -26,10 +29,12 @@ const PickFightersView = () => {
 				<h1>VS.</h1>
 				<CombatantCard CombatantImg={img2} borderColor='purple' />
 			</div>
-			<div className = "pickWinnerBtns" >
-				
+			<div >
+				<div  className = { (btnAbility === true) ? "pickWinnerBtns " + " disable" : "pickWinnerBtns" }>
 					<PickWinnerBtn />
 					<PickWinnerBtn />
+				</div>
+					
 				
 					
 			</div>

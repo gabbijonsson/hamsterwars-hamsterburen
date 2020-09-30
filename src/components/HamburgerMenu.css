@@ -1,11 +1,9 @@
 .hamburger-content {
-	border: 1px solid;
 	padding: 0.5em;
 	text-align: right;
-	width: 80vw;
-	height: 35vh;
-	opacity: 0.9;
-	background-color: rgb(175,161,140,0.8);
+	width: 100vw;
+	height: 100vh;
+	background-color: #AFA18C;
 	border: none;
 	position: absolute;		
 	right: 0;

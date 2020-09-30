@@ -3,49 +3,43 @@ import CombatantPicCard from './CombatantPicCard'
 import GenericBtn from './GenericBtn'
 import ScrollContainer from './ScrollContainer'
 import CombatantInfoCard from './CombatantInfoCard'
-import TestHamsterPic from '../assets/frontend/JoyfulHamster.svg'
 import './ResultView.css'
+import {useParams} from 'react-router-dom';
 
 let hamster = 
 		{
-			name:"Sixten",
+			name:"",
 			age:1,
-			favFood:"ostbollar",
-			loves:"Running that wheeeeeeeeeeeeeeeel!",
-			imgName:"hamster-1.jpg",
+			favFood:"",
+			loves:"",
+			imgName:"",
 			wins:0,
 			defeats:0,
 			games:0
 		}
 
-let hamsterImg = TestHamsterPic;
-function ResultView({id}) {
+let hamsterImg;
+function ResultView({fromOther}) {
+	const {id} = useParams();
 	const [winnerHamster, setWinnerHamster] = useState();
-	
-	
-    useEffect(() => {
-    
-		
-	function getHamster(callback) {
-		fetch(
-			` https://hamsterwars-hamsterburen.herokuapp.com/api/gethamster?id=${id}`
-		)
-			.then((res) => res.json())
-			.then(
-				(result) => {
-					
-					callback(result)
-				},
-				(error) => {
-					console.error("error", error);
-				}
-			);
+
+	if(!winnerHamster && !isNaN(Number(id))){
+		getHamster(id);
 	}
+	
+	
+	async function getHamster(id) {
 
-		getHamster(setWinnerHamster);
+		let res = await fetch( `https://hamsterwars-hamsterburen.herokuapp.com/api/getmatch?id=${id}`);
+		let match = await res.json();
 		
-	}, [id]);
+		let res2 = await fetch( `https://hamsterwars-hamsterburen.herokuapp.com/api/gethamster?id=${match.winner}`)
+		let winner = await res2.json();
+		
+		setWinnerHamster(winner);
 
+	}
+	
 	if(winnerHamster){
 		
 		hamster = winnerHamster;

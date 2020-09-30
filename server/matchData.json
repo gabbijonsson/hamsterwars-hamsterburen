@@ -1,0 +1,239 @@
+[{
+  "_id": {
+    "$oid": "5f733438bd317c6b0493da38"
+  },
+  "winner": 1,
+  "loser": 2,
+  "matchID": 1
+},{
+  "_id": {
+    "$oid": "5f73349b27f7b9000470f6b3"
+  },
+  "winner": 25,
+  "loser": 21,
+  "matchID": 2
+},{
+  "_id": {
+    "$oid": "5f73356e27f7b9000470f6b4"
+  },
+  "winner": 17,
+  "loser": 32,
+  "matchID": 3
+},{
+  "_id": {
+    "$oid": "5f73359627f7b9000470f6b5"
+  },
+  "winner": 9,
+  "loser": 14,
+  "matchID": 4
+},{
+  "_id": {
+    "$oid": "5f733fe3f1aade00048d7201"
+  },
+  "winner": 1,
+  "loser": 30,
+  "matchID": 5
+},{
+  "_id": {
+    "$oid": "5f733fe8f1aade00048d7202"
+  },
+  "winner": 27,
+  "loser": 30,
+  "matchID": 6
+},{
+  "_id": {
+    "$oid": "5f733feaf1aade00048d7203"
+  },
+  "winner": 36,
+  "loser": 23,
+  "matchID": 7
+},{
+  "_id": {
+    "$oid": "5f733fecf1aade00048d7204"
+  },
+  "winner": 4,
+  "loser": 34,
+  "matchID": 8
+},{
+  "_id": {
+    "$oid": "5f733feff1aade00048d7205"
+  },
+  "winner": 1,
+  "loser": 10,
+  "matchID": 9
+},{
+  "_id": {
+    "$oid": "5f73642fb71a030004b03f21"
+  },
+  "winner": 13,
+  "loser": 22,
+  "matchID": 10
+},{
+  "_id": {
+    "$oid": "5f736441b71a030004b03f22"
+  },
+  "winner": 26,
+  "loser": 20,
+  "matchID": 11
+},{
+  "_id": {
+    "$oid": "5f736450b71a030004b03f23"
+  },
+  "winner": 23,
+  "loser": 12,
+  "matchID": 12
+},{
+  "_id": {
+    "$oid": "5f73645bb71a030004b03f24"
+  },
+  "winner": 2,
+  "loser": 23,
+  "matchID": 13
+},{
+  "_id": {
+    "$oid": "5f736467b71a030004b03f25"
+  },
+  "winner": 24,
+  "loser": 32,
+  "matchID": 14
+},{
+  "_id": {
+    "$oid": "5f7364d4b71a030004b03f26"
+  },
+  "winner": 5,
+  "loser": 32,
+  "matchID": 15
+},{
+  "_id": {
+    "$oid": "5f737451b71a030004b03f27"
+  },
+  "winner": 17,
+  "loser": 39,
+  "matchID": 16
+},{
+  "_id": {
+    "$oid": "5f737565b71a030004b03f28"
+  },
+  "winner": 11,
+  "loser": 28,
+  "matchID": 17
+},{
+  "_id": {
+    "$oid": "5f737566b71a030004b03f29"
+  },
+  "winner": 11,
+  "loser": 28,
+  "matchID": 18
+},{
+  "_id": {
+    "$oid": "5f73756ab71a030004b03f2a"
+  },
+  "winner": 37,
+  "loser": 7,
+  "matchID": 19
+},{
+  "_id": {
+    "$oid": "5f737b9de249e20004417f20"
+  },
+  "winner": 1,
+  "loser": 2,
+  "matchID": 20
+},{
+  "_id": {
+    "$oid": "5f737e8246e4e00004e756ab"
+  },
+  "winner": 22,
+  "loser": 7,
+  "matchID": 21
+},{
+  "_id": {
+    "$oid": "5f737e8c46e4e00004e756ac"
+  },
+  "winner": 32,
+  "loser": 22,
+  "matchID": 22
+},{
+  "_id": {
+    "$oid": "5f737ec946e4e00004e756ad"
+  },
+  "winner": 1,
+  "loser": 2,
+  "matchID": 23
+},{
+  "_id": {
+    "$oid": "5f737fb846e4e00004e756ae"
+  },
+  "winner": 9,
+  "loser": 26,
+  "matchID": 24
+},{
+  "_id": {
+    "$oid": "5f737fed46e4e00004e756af"
+  },
+  "winner": 40,
+  "loser": 10,
+  "matchID": 25
+},{
+  "_id": {
+    "$oid": "5f737ffe46e4e00004e756b0"
+  },
+  "winner": 1,
+  "loser": 2,
+  "matchID": 26
+},{
+  "_id": {
+    "$oid": "5f73801546e4e00004e756b1"
+  },
+  "winner": 2,
+  "loser": 1,
+  "matchID": 27
+},{
+  "_id": {
+    "$oid": "5f73821746e4e00004e756b2"
+  },
+  "winner": 25,
+  "loser": 8,
+  "matchID": 28
+},{
+  "_id": {
+    "$oid": "5f73822846e4e00004e756b3"
+  },
+  "winner": 1,
+  "loser": 2,
+  "matchID": 29
+},{
+  "_id": {
+    "$oid": "5f73870546e4e00004e756bb"
+  },
+  "winner": 5,
+  "loser": 38,
+  "matchID": 30
+},{
+  "_id": {
+    "$oid": "5f73870f46e4e00004e756bc"
+  },
+  "winner": 15,
+  "loser": 40,
+  "matchID": 31
+},{
+  "_id": {
+    "$oid": "5f73871e46e4e00004e756bd"
+  },
+  "winner": 1,
+  "loser": 2,
+  "matchID": 32
+},{
+  "_id": {
+    "$oid": "5f73874746e4e00004e756be"
+  },
+  "winner": 28,
+  "loser": 24,
+  "matchID": 33
+},{
+  "_id": {
+    "$oid": "5f7387d546e4e00004e756bf"
+  },
+  "winner": 25,
+  "loser": 16,
+  "matchID": 34
+}]
