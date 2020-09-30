@@ -23,13 +23,16 @@ let hamster =
 	let loser = '';
 
 let hamsterImg;
-function ResultView({fromOther}) {
+function ResultView({newHamster}) {
 	const {id} = useParams();
 	const [winnerHamster, setWinnerHamster] = useState();
 	const [loserHamster, setLoserHamster] = useState();
 
 	if(!winnerHamster && !isNaN(Number(id))){
 		getHamster(id);
+	}
+	if(!id){
+		console.log(newHamster);
 	}
 	
 	

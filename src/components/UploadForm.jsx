@@ -101,6 +101,8 @@ const UploadForm = ({createHamster}) => {
 					let hamster = await response.json();
 					console.log(hamster , response.status);
 					if( response.status === 200 ){
+						createHamster(hamster);
+						
 						document.getElementById('checkMark').style.display = 'block'
 						document.getElementsByTagName('input').value = ''
 						document.getElementById('fileReader').value = ''
@@ -109,7 +111,6 @@ const UploadForm = ({createHamster}) => {
 							setLoading(false)
 							document.getElementById('checkMark').style.display = 'none'
 						}, 5000)
-						createHamster(hamster);
 					}else{
 						setBroadcastMsg('Oops! Try again!')
 						document.getElementById('crossMark').style.display = 'block'
@@ -123,7 +124,7 @@ const UploadForm = ({createHamster}) => {
 				.then(result => {console.log(result)})
 				.catch(error => console.error('error ', error))
 
-				// history.push('/new-fighter-added');
+				history.push('/new-fighter-added');
 			}
 
 			
