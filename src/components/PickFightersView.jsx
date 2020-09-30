@@ -13,7 +13,7 @@ import img2 from '../assets/frontend/HappyHamster.svg';
 
 const PickFightersView = ({pickWinner}) => {
 
-	const [btnAbility, setBtnAbility] = useState(true);
+	const [btnClicked, setbtnClicked] = useState(false);
 	const [hamsters, setHamsters] = useState([]);
 
 	let image1 = '';
@@ -31,9 +31,11 @@ const PickFightersView = ({pickWinner}) => {
 		<div className="pickFighterArea">
 			<h1 className="selectFighterH1">SELECT COMBATANTS</h1>
 			<div className="selectFighter-form">
-				<SelectFighter />
+				<SelectFighter 
+				setHamsters={(hamsters)=>setHamsters(hamsters)} 
+				btnClicked={btnClicked} />
 				<div className="choose-fightersBtn">
-					<button onClick={() => setBtnAbility(!btnAbility)}>
+					<button onClick={() => setbtnClicked(true)}>
 						<h1>choose!</h1>
 					</button>
 				</div>
@@ -56,7 +58,7 @@ const PickFightersView = ({pickWinner}) => {
 			<div>
 				<div
 					className={
-						btnAbility === true
+						btnClicked !== true
 							? "pickWinnerBtns " + " disable"
 							: "pickWinnerBtns"
 					}
