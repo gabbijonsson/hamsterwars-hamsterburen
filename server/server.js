@@ -102,10 +102,16 @@ app.get("/api/getmatchcount", (req, res) => {
 // Returns the match specified in reqeust query
 app.get("/api/getmatch", (req, res) => {
     if(isNaN(Number(req.query.id))) {
-        res.send('Invalid query. ID has to be a number.');
+        res.sendStatus(400).send({
+			message: "Invalid query. ID has to be a number."
+		});
     } else {
         getSelectedMatch(req, (response) => {
-            res.send(response);
+            if(response) {
+                res.send(response);
+            } else {
+                res.send('Match was not found');
+            }
         });
     }
 });
