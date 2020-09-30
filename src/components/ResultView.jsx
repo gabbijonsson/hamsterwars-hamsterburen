@@ -72,7 +72,7 @@ function ResultView({fromOther}) {
 			</div>
 			<div className="loser-hamster">
                 <img src={LoserHamster} alt="LoserHamster"></img>
-				<span className="loser-info">{loser.name}, {loser.age} y/o is loser </span>
+				<span className="loser-info">{loser.name} lost this match... </span>
 			</div>
 			<div className="resultView-mobile-btn"> 
 				<GenericBtn color="peach" text="BATTLE"  link="/battle"/>
