@@ -13,8 +13,8 @@ import {BrowserRouter, Route} from 'react-router-dom';
 
 function App() {
   
-  const [newHamster, setNewHamster] = useState({});
-  console.log(newHamster);
+  const [newHamsterID, setNewHamsterID] = useState({});
+  console.log(newHamsterID);
 
   return (
     <div className="App">
@@ -43,7 +43,7 @@ function App() {
             <Route path="/upload" exact>
               <HeaderGeneric/>
               <CreateHamsterView 
-              createHamster={(hamster) => setNewHamster(hamster)}/>
+              createHamster={(hamster) => setNewHamsterID(hamster)}/>
             </Route>
             <Route path="/result/:id" exact>
               <HeaderGeneric/>
@@ -51,7 +51,7 @@ function App() {
             </Route>
             <Route path="/new-fighter-added/" exact>
               <HeaderGeneric/>
-              <ResultView newHamster={newHamster}/>
+              <ResultView newHamsterID={newHamsterID}/>
             </Route>
           </BrowserRouter>
 

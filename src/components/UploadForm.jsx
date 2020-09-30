@@ -101,16 +101,16 @@ const UploadForm = ({createHamster}) => {
 					let hamster = await response.json();
 					console.log(hamster , response.status);
 					if( response.status === 200 ){
-						createHamster(hamster);
+						createHamster(hamster.id);
 						
 						document.getElementById('checkMark').style.display = 'block'
 						document.getElementsByTagName('input').value = ''
 						document.getElementById('fileReader').value = ''
 						setBroadcastMsg('Success!')
-						setTimeout(() => {
-							setLoading(false)
-							document.getElementById('checkMark').style.display = 'none'
-						}, 5000)
+						// setTimeout(() => {
+						// 	setLoading(false)
+						// 	document.getElementById('checkMark').style.display = 'none'
+						// }, 5000)
 					}else{
 						setBroadcastMsg('Oops! Try again!')
 						document.getElementById('crossMark').style.display = 'block'

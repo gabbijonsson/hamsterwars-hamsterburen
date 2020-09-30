@@ -20,19 +20,23 @@ let hamster =
 			defeats:0,
 			games:0
 		}
-	let loser = '';
-
+let loser = '';
 let hamsterImg;
-function ResultView({newHamster}) {
+
+let hideLoser = '';
+
+function ResultView({newHamsterID}) {
 	const {id} = useParams();
 	const [winnerHamster, setWinnerHamster] = useState();
 	const [loserHamster, setLoserHamster] = useState();
 
 	if(!winnerHamster && !isNaN(Number(id))){
 		getHamster(id);
+		hideLoser = '';
 	}
-	if(!id){
-		console.log(newHamster);
+	if(!winnerHamster && !id){
+		getNewHamster(newHamsterID);
+		hideLoser = 'hide';
 	}
 	
 	
@@ -51,6 +55,13 @@ function ResultView({newHamster}) {
 		setWinnerHamster(winner);
 		setLoserHamster(loser);
 
+	}
+
+	async function getNewHamster(id) {
+
+		let res = await fetch( `https://hamsterwars-hamsterburen.herokuapp.com/api/gethamster?id=${id}`);
+		let newlyCreatedHamster = await res.json();
+		setWinnerHamster(newlyCreatedHamster);
 	}
 	
 	if(winnerHamster){
@@ -73,7 +84,7 @@ function ResultView({newHamster}) {
 					<CombatantInfoCard hamster={hamster}/>
 				</ScrollContainer>
 			</div>
-			<div className="loser-hamster">
+			<div className={"loser-hamster "+hideLoser}>
 				<span className="loser-info">{loser.name} lost this match... </span>
 			</div>
 			<div className="resultView-mobile-btn"> 
