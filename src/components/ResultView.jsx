@@ -4,7 +4,7 @@ import GenericBtn from './GenericBtn'
 import ScrollContainer from './ScrollContainer'
 import CombatantInfoCard from './CombatantInfoCard'
 import './ResultView.css'
-import LoserHamster from '../assets/frontend/CryingHamster.svg';
+
 
 import {useParams} from 'react-router-dom';
 
@@ -71,8 +71,7 @@ function ResultView({fromOther}) {
 				</ScrollContainer>
 			</div>
 			<div className="loser-hamster">
-                <img src={LoserHamster} alt="LoserHamster"></img>
-				<span className="loser-info">{loser.name}, {loser.age} y/o is loser </span>
+				<span className="loser-info">{loser.name} lost this match...  </span>
 			</div>
 			<div className="resultView-mobile-btn"> 
 				<GenericBtn color="peach" text="BATTLE"  link="/battle"/>
