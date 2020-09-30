@@ -28,7 +28,6 @@ app.use(
         );
 app.use(express.static(__dirname + "/../build/"));
 // app.use(express.static(__dirname + "/../src/assets/"));
-
 // app.use(express.static(__dirname + "/../public/"));
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
@@ -49,13 +48,9 @@ app.get("/api/gethamsters/random", (req, res) => {
 
 // Get specified hamsters based on request query
 app.get("/api/gethamster", (req, res) => {
-    if(!isNaN(Number(req.query.id))) {
-        getSelectedHamster(req, (response) => {
+    getSelectedHamster(req, (response) => {
             res.send(response);
-        })
-    } else {
-        res.send('Invalid query. ID has to be a number.')
-    }
+    })
 });
 
 // Add a new hamster
