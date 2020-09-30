@@ -104,6 +104,7 @@ const UploadForm = () => {
 							setLoading(false)
 							document.getElementById('checkMark').style.display = 'none'
 						}, 5000)
+						console.log(response);
 					}else{
 						setBroadcastMsg('Oops! Try again!')
 						document.getElementById('crossMark').style.display = 'block'
@@ -117,7 +118,7 @@ const UploadForm = () => {
 				.then(result => {console.log(result)})
 				.catch(error => console.error('error ', error))
 
-				history.push('/new-fighter-added');
+				// history.push('/new-fighter-added');
 			}
 
 			
@@ -283,7 +284,7 @@ const UploadForm = () => {
 			</svg>
 			
 			<div className="genericBtn-form" onClick={(e) => onSubmit(e)}>		
-				<GenericBtn link={"result"} text={loading ? broadcastMsg : 'add'} color={"peach"}/>
+				<GenericBtn text={loading ? broadcastMsg : 'add'} color={"peach"}/>
 			</div>
 		
 		</form>
