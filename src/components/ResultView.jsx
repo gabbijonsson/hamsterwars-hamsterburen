@@ -71,7 +71,6 @@ function ResultView({fromOther}) {
 				</ScrollContainer>
 			</div>
 			<div className="loser-hamster">
-                <img src={LoserHamster} alt="LoserHamster"></img>
 				<span className="loser-info">{loser.name} lost this match... </span>
 			</div>
 			<div className="resultView-mobile-btn"> 
