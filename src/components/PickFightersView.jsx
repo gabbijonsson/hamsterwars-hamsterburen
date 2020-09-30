@@ -6,7 +6,7 @@ import SelectFighter from './SelectFighter';
 import GenericBtn from './GenericBtn';
 import img1 from '../assets/frontend/GrinningHamster.svg';
 import img2 from '../assets/frontend/HappyHamster.svg';
-import GenericHamster from './GenericHamster';
+
 
 
 
@@ -15,8 +15,7 @@ const PickFightersView = ({pickWinner}) => {
 
 	const [btnAbility, setBtnAbility] = useState(true);
 	const [hamsters, setHamsters] = useState([]);
-	let jsx1=null;
-	let jsx2=null;
+
 	let image1 = '';
 	let image2 = '';
 	let hamster1 = '', hamster2='';
@@ -26,9 +25,6 @@ const PickFightersView = ({pickWinner}) => {
 		image2 = hamsters[1].imgName;
 		hamster1 = hamsters[0].id;
 		hamster2 = hamsters[1].id;
-	}else {
-		jsx1 = <GenericHamster GenericImg={img1} />
-		jsx2 = <GenericHamster GenericImg={img2} />
 	}
 	
 	return(
