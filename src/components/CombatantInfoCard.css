@@ -4,11 +4,11 @@
 	display: flex;
 	flex-direction: column;
 	/* justify-content: space-between; */
-	font-size: 1.4rem;
+	font-size: 1.3rem;
 
 }
 .combatant-info > div {
-	padding: 0.3em;
+	padding: 0.1em;
 	
 }
 .combatant-info > div span{
@@ -28,14 +28,15 @@
 
 @media only screen and (max-height: 600px){
 	.combatant-info {
-		font-size: 1.1rem;
+		font-size: 1rem;
 	
 	}
 	.combatant-info > div {
-		padding: 0.2em;
+		padding: 0.1em;
 		
 	}
 }
+
 
 @media only screen and (min-width: 1025px){
 	.combatant-info > div{

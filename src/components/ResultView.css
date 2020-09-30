@@ -14,7 +14,7 @@
 .resultView-container{
 	display: flex;
 	flex-direction: column;
-	max-height: 80vh;
+	max-height: 90vh;
 }
 
 .resultView-container > :nth-child(1) {
