@@ -1,11 +1,46 @@
+.loser-hamster {
+	display: absolute;
+	bottom: 10vh;
+}
+.loser-hamster > img {
+	width: 10%;
+	/* margin-left: 1em; */
+
+}
 .resultView-container{
-	height: 85vh;
 	display: flex;
 	flex-direction: column;
+	max-height: 80vh;
 }
-.resultView-container > * {
+
+.resultView-container > :nth-child(1) {
+	
     margin: auto;
 }
+
+
+.loser-info{
+	background: none repeat scroll 0 0 #F8F8F8;
+	color: black;
+    font-size: 1em;
+    letter-spacing: 1px;
+    line-height: 30px;
+    text-align: center;
+    opacity: 0;
+    
+
+}
+
+.loser-hamster{
+    cursor:pointer;
+}
+
+.loser-hamster:hover > .loser-info{
+	/* display:block; */
+	opacity: 1;
+
+}
+
 
 @media only screen and (min-width: 1025px){
 	.resultView-container{
@@ -16,5 +51,24 @@
 		position: absolute;
 		bottom: 1%;
 		right: 5%;
+	}
+	.loser-hamster {
+		display: absolute;
+	}
+	.loser-hamster > img{
+		position: absolute;
+		bottom: 4%;
+		width: 10%;
+		right: 80%;
+	
+	}
+	.loser-hamster > .loser-info {
+		position: absolute;
+		height: 1em;
+		bottom: 4%;
+		width: 30vw;
+		right: 50%;
+		font-size: 2em;
+		
 	}
 }

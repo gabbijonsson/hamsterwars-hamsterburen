@@ -14,6 +14,7 @@ import {BrowserRouter, Route} from 'react-router-dom';
 function App() {
 
 	const [winnerId, setWinnerId] = useState('');
+	const [loserId, setLoserId] = useState('');
 
   return (
     <div className="App">
@@ -25,15 +26,15 @@ function App() {
             </Route>
             <Route path="/battle" exact>
               <HeaderGeneric/>
-              <BattlePage pickWinner ={(ID) => setWinnerId(ID)}/>
+              <BattlePage pickWinner ={(ID) => setWinnerId(ID)} pickLoser ={(ID) => setLoserId(ID)} />
             </Route>
             <Route path="/battle/:id1/:id2" >
               <HeaderGeneric/>
-              <BattlePage pickWinner ={(ID) => setWinnerId(ID)}/>
+              <BattlePage pickWinner ={(ID) => setWinnerId(ID)} pickLoser ={(ID) => setLoserId(ID)}/>
             </Route>
             <Route path="/pickfighters">
               <HeaderGeneric content="pickFightersView"/>
-              <PickFightersView pickWinner ={(ID) => setWinnerId(ID)}/>
+              <PickFightersView pickWinner ={(ID) => setWinnerId(ID)} pickLoser ={(ID) => setLoserId(ID)}/>
             </Route>
             <Route path="/stats" exact>
               <HeaderGeneric/>
@@ -45,7 +46,7 @@ function App() {
             </Route>
             <Route path="/result/:id" exact>
               <HeaderGeneric/>
-              <ResultView id={winnerId}/>
+              <ResultView winId={winnerId} losId={loserId} />
             </Route>
           </BrowserRouter>
 
