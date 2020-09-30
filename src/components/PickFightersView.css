@@ -26,6 +26,15 @@ h1.selectFighterH1{
 }
 @media(min-width: 1025px){
 
+	.selectFighter-form  button.disable{
+		cursor: not-allowed;
+		pointer-events: none;
+
+		/*Button disabled - CSS color class*/
+		color: #c0c0c0;
+		background-color: #ffffff;
+	}
+
 	div.pickFighterArea{
 		padding-top: 1rem;
 	}

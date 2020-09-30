@@ -14,7 +14,6 @@ import {BrowserRouter, Route} from 'react-router-dom';
 function App() {
   
   const [newHamsterID, setNewHamsterID] = useState({});
-  console.log(newHamsterID);
 
   return (
     <div className="App">
