@@ -13,7 +13,12 @@ import {BrowserRouter, Route} from 'react-router-dom';
 
 function App() {
 
-	const [winnerId, setWinnerId] = useState('');
+  const [winnerId, setWinnerId] = useState('');
+  const [newHamster, setNewHamster] = useState('');
+  
+  const createHamster = (hamster) =>{
+    console.log(hamster);
+  }
 
   return (
     <div className="App">
@@ -41,7 +46,8 @@ function App() {
             </Route>
             <Route path="/upload" exact>
               <HeaderGeneric/>
-              <CreateHamsterView/>
+              <CreateHamsterView 
+              createHamster={createHamster}/>
             </Route>
             <Route path="/result/:id" exact>
               <HeaderGeneric/>

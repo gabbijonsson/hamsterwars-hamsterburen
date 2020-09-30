@@ -7,7 +7,7 @@ dotenv.config()
 
 
 
-const UploadForm = () => {
+const UploadForm = ({createHamster}) => {
 	
 	const history = useHistory();
 
@@ -97,8 +97,9 @@ const UploadForm = () => {
 					redirect: 'follow'
 				}
 				await fetch('https://hamsterwars-hamsterburen.herokuapp.com/api/addhamster', requestOptions)
-				.then(response => {
-					response.text()
+				.then(async response => {
+					let hamster = await response.json();
+					console.log(hamster , response.status);
 					if( response.status === 200 ){
 						document.getElementById('checkMark').style.display = 'block'
 						document.getElementsByTagName('input').value = ''
@@ -108,7 +109,7 @@ const UploadForm = () => {
 							setLoading(false)
 							document.getElementById('checkMark').style.display = 'none'
 						}, 5000)
-						console.log(response);
+						createHamster(hamster);
 					}else{
 						setBroadcastMsg('Oops! Try again!')
 						document.getElementById('crossMark').style.display = 'block'
