@@ -32,7 +32,6 @@ app.use(express.static(__dirname + "/../build/"));
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
 
-// TODO: ROUTES HERE
 
 // Get # of randomized hamsters based on request query
 app.get("/api/gethamsters/random", (req, res) => {

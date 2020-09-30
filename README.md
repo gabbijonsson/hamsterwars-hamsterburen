@@ -75,11 +75,11 @@ Använd count för att efterfråga önskat antal hamstrar. Använd excludeid fö
 
 |Resurs    |Metod   |Förväntat svar|
 |----------|--------|---|
-|/api/gethamster | GET | Returnerar vald hamster baserad på angivet ID |
+|/api/gethamster | GET | Returnerar vald hamster baserad på angivet ID eller namn |
 
-Använd id för att specificera hamster.
+Använd id eller namn för att specificera hamster.
 ```
-/api/gethamster?id=:id Returnerar hamster med valt ID.
+/api/gethamster?id=:id Returnerar hamster med valt ID/namn.
 ```
 
 |Resurs    |Metod   |Förväntat svar|
