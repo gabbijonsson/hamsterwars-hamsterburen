@@ -5,7 +5,7 @@ import CombatantCard from '../components/CombatantCard';
 import PickWinnerBtn from '../components/PickWinnerBtn';
 import {useParams} from 'react-router-dom';
 
-const BattlePage = ({pickWinner,pickLoser}) => {
+const BattlePage = ({pickWinner}) => {
 	
 	const [hamsters, setHamsters] = useState([]);
 	let image1 = '';
@@ -55,7 +55,7 @@ const BattlePage = ({pickWinner,pickLoser}) => {
 
 		return () => mounted = false;
 		
-	}, [id1]);
+	}, []);
 	 
      if(hamsters.length > 0){
 		 image1 = hamsters[0].imgName;
@@ -65,31 +65,32 @@ const BattlePage = ({pickWinner,pickLoser}) => {
 	 }
 		
 
-	return (
+	return(
 		<div className="battlepage">
-			<div className="battlepage-main">
+			    
+            <div className="battlepage-main">
+
+
 				<div className="stack-up1">
 					<CombatantCard CombatantImg={image1} borderColor='blue'/>
-					<PickWinnerBtn  winId={hamster1} losId={hamster2} pickWinner={()=>pickWinner(hamster1)} pickLoser ={() => pickLoser(hamster2)}/>
+					<PickWinnerBtn  winId={hamster1} losId={hamster2} pickWinner={()=>pickWinner(hamster1)}/>
 				</div>
 
 				<h1>VS.</h1>
 
 				<div className="stack-up2">
 					<CombatantCard CombatantImg={image2} borderColor='purple'/>
-					<PickWinnerBtn winId={hamster2} losId={hamster1} pickWinner={()=>pickWinner(hamster2)} pickLoser ={() => pickLoser(hamster1)}/>
+					<PickWinnerBtn winId={hamster2} losId={hamster1} pickWinner={()=>pickWinner(hamster2)}/>
 				</div>
-
-				<div className="generic">
-					<GenericBtn
-						text="SELECT COMBATANTS"
-						color="teal"
-						link="/pickfighters"
-					/>
+			
+				<div className='generic'>
+					
+						<GenericBtn text ='Pick your own fighter' color='teal' link="/pickfighters" />
+	
 				</div>
 			</div>
 		</div>
-	);
+	)
 }
 
 export default BattlePage;
