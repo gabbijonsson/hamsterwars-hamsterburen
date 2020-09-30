@@ -1,10 +1,10 @@
 import React from 'react';
 import UploadForm from './UploadForm';
 
-const CreateHamsterView = () => {
+const CreateHamsterView = ({createHamster}) => {
     return(
         <>
-            <UploadForm/>
+            <UploadForm createHamster={createHamster}/>
         </>
     )
     

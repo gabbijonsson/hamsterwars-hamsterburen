@@ -7,6 +7,9 @@
 	line-height: 30px;
 	margin-left: 2em;
 }
+.loser-hamster.hide{
+	display: none;
+}
 
 .resultView-container{
 	display: flex;
