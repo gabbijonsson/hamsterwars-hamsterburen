@@ -57,7 +57,6 @@ function ResultView({fromOther}) {
 	}
 	if(loserHamster){
 		loser = loserHamster;
-		console.log('loser is:', loserHamster);
 	}
 
 	return (
