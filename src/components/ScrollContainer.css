@@ -31,7 +31,7 @@ div.scrollDiv.stats{
 }
 @media only screen and (min-width: 1025px){
     div.scrollDiv.hamsterInfo{
-        padding-top: 3em;
+        padding-top: 4em;
         padding-left: 1em;
         height: 80vh;
         width: 55vw;    
