@@ -13,20 +13,30 @@ function addHamster(newHamster, cb) {
 				return;
 			}
             newHamsterId((nextId) => {
-			    const col = client.db(dbName).collection(hamsterCollectionName);
-			    try {
-                    newHamster.id = nextId;
-                    newHamster.wins = 0;
-                    newHamster.defeats = 0;
-                    newHamster.games = 0;
-                    col.insertOne(newHamster).catch((err) => {
-                        console.error('Could not add hamster ', newHamster)
-                        console.error(err);
-                    });
-                    
-                    cb(newHamster);
-                } finally {
-                    client.close();
+                const col = client.db(dbName).collection(hamsterCollectionName);
+                let alreadyExist = col.findOne({
+                    $or: [
+                        { name: newHamster.name },
+                        { imgName: newHamster.imgName }
+                    ]
+                })
+                if(alreadyExist) {
+                    cb('Hamster already exist. Do not add duplicates.');
+                } else {
+                    try {
+                        newHamster.id = nextId;
+                        newHamster.wins = 0;
+                        newHamster.defeats = 0;
+                        newHamster.games = 0;
+                        col.insertOne(newHamster).catch((err) => {
+                            console.error('Could not add hamster ', newHamster)
+                            console.error(err);
+                        });
+                        
+                        cb(newHamster);
+                    } finally {
+                        client.close();
+                    }
                 }
             });
 		}
