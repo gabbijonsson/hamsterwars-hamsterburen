@@ -1,6 +1,7 @@
 import React from 'react';
 import './CombatantPicCard.css';
 
+
 const CombatantPicCard = ({CombatantImg}) => {
 
 	return(
