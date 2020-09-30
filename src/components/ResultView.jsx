@@ -4,7 +4,7 @@ import GenericBtn from './GenericBtn'
 import ScrollContainer from './ScrollContainer'
 import CombatantInfoCard from './CombatantInfoCard'
 import './ResultView.css'
-
+import {useParams} from 'react-router-dom';
 
 let hamster = 
 		{
@@ -19,38 +19,27 @@ let hamster =
 		}
 
 let hamsterImg;
-function ResultView({id}) {
+function ResultView({fromOther}) {
+	const {id} = useParams();
 	const [winnerHamster, setWinnerHamster] = useState();
-	
-	
-    useEffect(() => {
-			
-			let mounted = true;
-			function getHamster(callback) {
-				fetch(
-					` https://hamsterwars-hamsterburen.herokuapp.com/api/gethamster?id=${id}`
-				)
-					.then((res) => res.json())
-					.then(
-						(result) => {
-							if(mounted){
-								callback(result)
-							}
-							
-						},
-						(error) => {
-							console.error("error", error);
-						}
-					);
-			}
 
-				getHamster(setWinnerHamster);
-				return () => mounted = false;
-			
-			
+	if(!winnerHamster && !isNaN(Number(id))){
+		getHamster(id);
+	}
+	
+	
+	async function getHamster(id) {
+
+		let res = await fetch( `https://hamsterwars-hamsterburen.herokuapp.com/api/getmatch?id=${id}`);
+		let match = await res.json();
 		
-	}, [id]);
+		let res2 = await fetch( `https://hamsterwars-hamsterburen.herokuapp.com/api/gethamster?id=${match.winner}`)
+		let winner = await res2.json();
+		
+		setWinnerHamster(winner);
 
+	}
+	
 	if(winnerHamster){
 		
 		hamster = winnerHamster;

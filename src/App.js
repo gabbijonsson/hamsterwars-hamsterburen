@@ -47,6 +47,10 @@ function App() {
               <HeaderGeneric/>
               <ResultView id={winnerId}/>
             </Route>
+            <Route path="/new-fighter-added" exact>
+              <HeaderGeneric/>
+              <ResultView/>
+            </Route>
           </BrowserRouter>
 
         </div>
