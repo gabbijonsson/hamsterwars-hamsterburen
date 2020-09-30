@@ -21,6 +21,9 @@ function getSelectedHamster(req, cb) {
 					dbQuery = { name: hamsterID }
 				}
 				const hamster = await col.findOne( dbQuery );
+				if(!hamster) {
+					cb('Could not find hamster with provided ID/name.')
+				}
 				cb(hamster);
 			} catch (err) {
 				console.error("Invalid query! " + err);
