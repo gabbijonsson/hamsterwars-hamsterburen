@@ -6,6 +6,7 @@ import CombatantInfoCard from './CombatantInfoCard'
 import './ResultView.css'
 import LoserHamster from '../assets/frontend/CryingHamster.svg';
 
+import {useParams} from 'react-router-dom';
 
 let hamster = 
 		{
@@ -18,66 +19,36 @@ let hamster =
 			defeats:0,
 			games:0
 		}
+	let loser = '';
 
 let hamsterImg;
-function ResultView({winId,losId}) {
-	
+function ResultView({fromOther}) {
+	const {id} = useParams();
 	const [winnerHamster, setWinnerHamster] = useState();
 	const [loserHamster, setLoserHamster] = useState();
-	let loser='';
+
+	if(!winnerHamster && !isNaN(Number(id))){
+		getHamster(id);
+	}
 	
 	
-    useEffect(() => {
-			let mounted = true;
-			function getHamster(callback) {
-				fetch(
-					` https://hamsterwars-hamsterburen.herokuapp.com/api/gethamster?id=${winId}`
-				)
-					.then((res) => res.json())
-					.then(
-						(result) => {
-							if(mounted){
-								callback(result)
-							}
-							
-						},
-						(error) => {
-							console.error("error", error);
-						}
-					);
-			}
+	async function getHamster(id) {
 
-				getHamster(setWinnerHamster);	
-				return () => mounted = false;
+		let res = await fetch( `https://hamsterwars-hamsterburen.herokuapp.com/api/getmatch?id=${id}`);
+		let match = await res.json();
+		
+		let res2 = await fetch( `https://hamsterwars-hamsterburen.herokuapp.com/api/gethamster?id=${match.winner}`)
+		let winner = await res2.json();
 
-	}, [winId]);
+		let res3 = await fetch( `https://hamsterwars-hamsterburen.herokuapp.com/api/gethamster?id=${match.loser}`)
+		let loser = await res3.json();
+		
+		
+		setWinnerHamster(winner);
+		setLoserHamster(loser);
 
-	useEffect(() => {
-		let mounted = true;
-		function getLoser(callback) {
-			fetch(
-				` https://hamsterwars-hamsterburen.herokuapp.com/api/gethamster?id=${losId}`
-			)
-				.then((res) => res.json())
-				.then(
-					(result) => {
-						if(mounted){
-							callback(result)
-						}
-						
-					},
-					(error) => {
-						console.error("error", error);
-					}
-				);
-		}
-
-			getLoser(setLoserHamster);
-			return () => mounted = false;	
+	}
 	
-	}, [losId]);
-
-
 	if(winnerHamster){
 		
 		hamster = winnerHamster;

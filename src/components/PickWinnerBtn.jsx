@@ -21,7 +21,6 @@ const PickWinnerBtn = ({pickWinner,pickLoser,winId,losId}) => {
         body: JSON.stringify(winLosId)
           })
        const result = await response.json();
-	   console.log(result);
 	   if(result){
 		   let matchId = result.match.matchID
 		   switchToResult(matchId);

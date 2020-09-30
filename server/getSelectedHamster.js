@@ -12,8 +12,18 @@ function getSelectedHamster(req, cb) {
 			}
 			const col = client.db(dbName).collection(hamsterCollectionName);
 			try {
-				let hamsterID = Number(req.query.id);
-				const hamster = await col.findOne( {id: hamsterID} );
+				let dbQuery = {};
+				if(!isNaN(Number(req.query.id))) {
+					let hamsterID = Number(req.query.id);
+					dbQuery = { id: hamsterID };
+				} else {
+					let hamsterID = (req.query.id);
+					dbQuery = { name: hamsterID }
+				}
+				const hamster = await col.findOne( dbQuery );
+				if(!hamster) {
+					cb('Could not find hamster with provided ID/name.')
+				}
 				cb(hamster);
 			} catch (err) {
 				console.error("Invalid query! " + err);

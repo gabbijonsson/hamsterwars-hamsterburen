@@ -1,14 +1,18 @@
 import React, {useState} from 'react';
 import './UploadForm.css';
 import GenericBtn from './GenericBtn';
+import {useHistory} from 'react-router-dom';
 import dotenv from 'dotenv'
 dotenv.config()
 
 
+
 const UploadForm = () => {
 	
+	const history = useHistory();
+
 	const [name, setName] = useState('')
-	const [age, setAge] = useState(Number())
+	const [age, setAge] = useState()
 	const [favFood, setfavFood] = useState('')
 	const [loves, setLoves] = useState('')
 	
@@ -54,9 +58,13 @@ const UploadForm = () => {
 			!name.trim('') || !age.trim('') ||
 			!favFood.trim('') || !loves.trim('') ||
 			name.length > 15 || favFood.length > 15 ||
-			loves.length > 40 || Number.isInteger(age) || age < 0
+			loves.length > 40 || Number.isInteger(age) || age < 0 ||
+			isNaN(age)
 			){
 				setBroadcastMsg('Error - Did you forgot a field?')				
+			}
+			else if(!userSetImg){
+				setBroadcastMsg('Error - you must select a image')
 			}
 			else{	
 				const formData = new FormData();
@@ -112,6 +120,8 @@ const UploadForm = () => {
 				})
 				.then(result => {console.log(result)})
 				.catch(error => console.error('error ', error))
+
+				history.push('/new-fighter-added');
 			}
 
 			
@@ -166,12 +176,13 @@ const UploadForm = () => {
 										: { display: "none" }
 								}
 							>
-								Field Required
+								Field Require
 							</span>
 							<span
 								style={
 									(age < 0 ||
 										age > 99 ||
+										isNaN(age) ||
 										(Number.isInteger(age) && age)) &&
 									ageTouched
 										? { display: "block", color: "red" }
