@@ -1,3 +1,7 @@
+div.pickFighterArea{
+	padding-top: 0rem;
+}
+
 h1.selectFighterH1{
 	margin: 0 auto;
 	display: block;
@@ -22,6 +26,10 @@ h1.selectFighterH1{
 }
 @media(min-width: 1025px){
 
+	div.pickFighterArea{
+		padding-top: 1rem;
+	}
+
 	h1.selectFighterH1{
 		display: none;
 	}
@@ -31,6 +39,7 @@ h1.selectFighterH1{
 		grid-template-columns: 1fr 10% 1fr;
 	    justify-items: center;
 		align-items: center;
+		margin-top: 2rem;
 	}
 	
 	.pickWinnerBtns {

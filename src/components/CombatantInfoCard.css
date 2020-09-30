@@ -1,11 +1,10 @@
 .combatant-info {
 	width: 77vw;
-	height: 50vh;
+	height: 35vh;
 	display: flex;
 	flex-direction: column;
-	padding-bottom: 1em;
-	justify-content: space-between;
-	margin-bottom: 2em;
+	/* justify-content: space-between; */
+	font-size: 1.4rem;
 
 }
 .combatant-info > div {
@@ -14,7 +13,29 @@
 }
 .combatant-info > div span{
 		margin-right: 4%;
+}
+
+@media only screen and (max-height: 736px){
+	.combatant-info {
+		font-size: 1.2rem;
+	
 	}
+	.combatant-info > div {
+		padding: 0.2em;
+		
+	}
+}
+
+@media only screen and (max-height: 600px){
+	.combatant-info {
+		font-size: 1.1rem;
+	
+	}
+	.combatant-info > div {
+		padding: 0.2em;
+		
+	}
+}
 
 @media only screen and (min-width: 1025px){
 	.combatant-info > div{

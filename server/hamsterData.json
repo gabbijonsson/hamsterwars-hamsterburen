@@ -8,9 +8,9 @@
   "favFood": "ostbollar",
   "loves": "Running that wheeeeeeeeeeeeeeeel!",
   "imgName": "https://res.cloudinary.com/allseeingeye/image/upload/v1601243928/hamsterburen/hamster-1_qwxrea.jpg",
-  "wins": 1,
-  "defeats": 0,
-  "games": 1
+  "wins": 8,
+  "defeats": 1,
+  "games": 9
 },{
   "_id": {
     "$oid": "5f70ff4c973d861c5d6588bf"
@@ -21,9 +21,9 @@
   "favFood": "morot",
   "loves": "Running that wheeeeeeeeeeeeeeeel!",
   "imgName": "https://res.cloudinary.com/allseeingeye/image/upload/v1601243904/hamsterburen/hamster-2_pdcguy.jpg",
-  "wins": 0,
-  "defeats": 1,
-  "games": 1
+  "wins": 2,
+  "defeats": 6,
+  "games": 8
 },{
   "_id": {
     "$oid": "5f70ff4c973d861c5d6588c0"
@@ -47,9 +47,9 @@
   "favFood": "rädisor",
   "loves": "Running that wheeeeeeeeeeeeeeeel!",
   "imgName": "https://res.cloudinary.com/allseeingeye/image/upload/v1601243905/hamsterburen/hamster-4_tnlsuc.jpg",
-  "wins": 0,
+  "wins": 1,
   "defeats": 0,
-  "games": 0
+  "games": 1
 },{
   "_id": {
     "$oid": "5f70ff4c973d861c5d6588c2"
@@ -60,9 +60,9 @@
   "favFood": "ananas",
   "loves": "Running that wheeeeeeeeeeeeeeeel!",
   "imgName": "https://res.cloudinary.com/allseeingeye/image/upload/v1601243963/hamsterburen/hamster-5_dt8dax.jpg",
-  "wins": 0,
+  "wins": 2,
   "defeats": 0,
-  "games": 0
+  "games": 2
 },{
   "_id": {
     "$oid": "5f70ff4c973d861c5d6588c3"
@@ -87,8 +87,8 @@
   "loves": "Running that wheeeeeeeeeeeeeeeel!",
   "imgName": "https://res.cloudinary.com/allseeingeye/image/upload/v1601243891/hamsterburen/hamster-7_bds9an.jpg",
   "wins": 0,
-  "defeats": 0,
-  "games": 0
+  "defeats": 2,
+  "games": 2
 },{
   "_id": {
     "$oid": "5f70ff4c973d861c5d6588c5"
@@ -100,8 +100,8 @@
   "loves": "Running that wheeeeeeeeeeeeeeeel!",
   "imgName": "https://res.cloudinary.com/allseeingeye/image/upload/v1601243952/hamsterburen/hamster-8_uz7cge.jpg",
   "wins": 0,
-  "defeats": 0,
-  "games": 0
+  "defeats": 1,
+  "games": 1
 },{
   "_id": {
     "$oid": "5f70ff4c973d861c5d6588c6"
@@ -112,9 +112,9 @@
   "favFood": "rädisor",
   "loves": "Running that wheeeeeeeeeeeeeeeel!",
   "imgName": "https://res.cloudinary.com/allseeingeye/image/upload/v1601243932/hamsterburen/hamster-9_y5rt2k.jpg",
-  "wins": 1,
+  "wins": 2,
   "defeats": 0,
-  "games": 1
+  "games": 2
 },{
   "_id": {
     "$oid": "5f70ff4c973d861c5d6588c7"
@@ -126,8 +126,8 @@
   "loves": "Running that wheeeeeeeeeeeeeeeel!",
   "imgName": "https://res.cloudinary.com/allseeingeye/image/upload/v1601243916/hamsterburen/hamster-10_n7u7xr.jpg",
   "wins": 0,
-  "defeats": 0,
-  "games": 0
+  "defeats": 2,
+  "games": 2
 },{
   "_id": {
     "$oid": "5f70ff4c973d861c5d6588c8"
@@ -138,9 +138,9 @@
   "favFood": "ananas",
   "loves": "Running that wheeeeeeeeeeeeeeeel!",
   "imgName": "https://res.cloudinary.com/allseeingeye/image/upload/v1601243915/hamsterburen/hamster-11_fsvwft.jpg",
-  "wins": 0,
+  "wins": 2,
   "defeats": 0,
-  "games": 0
+  "games": 2
 },{
   "_id": {
     "$oid": "5f70ff4c973d861c5d6588c9"
@@ -152,8 +152,8 @@
   "loves": "Running that wheeeeeeeeeeeeeeeel!",
   "imgName": "https://res.cloudinary.com/allseeingeye/image/upload/v1601243913/hamsterburen/hamster-12_gtr6kk.jpg",
   "wins": 0,
-  "defeats": 0,
-  "games": 0
+  "defeats": 1,
+  "games": 1
 },{
   "_id": {
     "$oid": "5f70ff4c973d861c5d6588ca"
@@ -164,9 +164,9 @@
   "favFood": "cornflakes",
   "loves": "Running that wheeeeeeeeeeeeeeeel!",
   "imgName": "https://res.cloudinary.com/allseeingeye/image/upload/v1601243917/hamsterburen/hamster-13_ihgnry.jpg",
-  "wins": 0,
+  "wins": 1,
   "defeats": 0,
-  "games": 0
+  "games": 1
 },{
   "_id": {
     "$oid": "5f70ff4c973d861c5d6588cb"
@@ -190,9 +190,9 @@
   "favFood": "gurka",
   "loves": "Running that wheeeeeeeeeeeeeeeel!",
   "imgName": "https://res.cloudinary.com/allseeingeye/image/upload/v1601243919/hamsterburen/hamster-15_br4l99.jpg",
-  "wins": 0,
+  "wins": 1,
   "defeats": 0,
-  "games": 0
+  "games": 1
 },{
   "_id": {
     "$oid": "5f70ff4c973d861c5d6588cd"
@@ -204,8 +204,8 @@
   "loves": "Running that wheeeeeeeeeeeeeeeel!",
   "imgName": "https://res.cloudinary.com/allseeingeye/image/upload/v1601243931/hamsterburen/hamster-16_rvkxlg.jpg",
   "wins": 0,
-  "defeats": 0,
-  "games": 0
+  "defeats": 1,
+  "games": 1
 },{
   "_id": {
     "$oid": "5f70ff4c973d861c5d6588ce"
@@ -216,9 +216,9 @@
   "favFood": "ruccula",
   "loves": "Running that wheeeeeeeeeeeeeeeel!",
   "imgName": "https://res.cloudinary.com/allseeingeye/image/upload/v1601243919/hamsterburen/hamster-17_xxwspo.jpg",
-  "wins": 1,
+  "wins": 2,
   "defeats": 0,
-  "games": 1
+  "games": 2
 },{
   "_id": {
     "$oid": "5f70ff4c973d861c5d6588cf"
@@ -256,8 +256,8 @@
   "loves": "Running that wheeeeeeeeeeeeeeeel!",
   "imgName": "https://res.cloudinary.com/allseeingeye/image/upload/v1601243934/hamsterburen/hamster-20_cxxy6b.jpg",
   "wins": 0,
-  "defeats": 0,
-  "games": 0
+  "defeats": 1,
+  "games": 1
 },{
   "_id": {
     "$oid": "5f70ff4c973d861c5d6588d2"
@@ -281,9 +281,9 @@
   "favFood": "gräs",
   "loves": "Running that wheeeeeeeeeeeeeeeel!",
   "imgName": "https://res.cloudinary.com/allseeingeye/image/upload/v1601243942/hamsterburen/hamster-22_i0jl68.jpg",
-  "wins": 0,
-  "defeats": 0,
-  "games": 0
+  "wins": 1,
+  "defeats": 2,
+  "games": 3
 },{
   "_id": {
     "$oid": "5f70ff4c973d861c5d6588d4"
@@ -294,9 +294,9 @@
   "favFood": "morot",
   "loves": "Running that wheeeeeeeeeeeeeeeel!",
   "imgName": "https://res.cloudinary.com/allseeingeye/image/upload/v1601243936/hamsterburen/hamster-23_qkktkb.jpg",
-  "wins": 0,
-  "defeats": 0,
-  "games": 0
+  "wins": 1,
+  "defeats": 2,
+  "games": 3
 },{
   "_id": {
     "$oid": "5f70ff4c973d861c5d6588d5"
@@ -307,9 +307,9 @@
   "favFood": "sågspån",
   "loves": "Running that wheeeeeeeeeeeeeeeel!",
   "imgName": "https://res.cloudinary.com/allseeingeye/image/upload/v1601243976/hamsterburen/hamster-24_xta528.jpg",
-  "wins": 0,
-  "defeats": 0,
-  "games": 0
+  "wins": 1,
+  "defeats": 1,
+  "games": 2
 },{
   "_id": {
     "$oid": "5f70ff4c973d861c5d6588d6"
@@ -320,9 +320,9 @@
   "favFood": "morot",
   "loves": "Running that wheeeeeeeeeeeeeeeel!",
   "imgName": "https://res.cloudinary.com/allseeingeye/image/upload/v1601243952/hamsterburen/hamster-25_lyqicy.jpg",
-  "wins": 1,
+  "wins": 3,
   "defeats": 0,
-  "games": 1
+  "games": 3
 },{
   "_id": {
     "$oid": "5f70ff4c973d861c5d6588d7"
@@ -333,9 +333,9 @@
   "favFood": "skorpor",
   "loves": "Running that wheeeeeeeeeeeeeeeel!",
   "imgName": "https://res.cloudinary.com/allseeingeye/image/upload/v1601243943/hamsterburen/hamster-26_muuit8.jpg",
-  "wins": 0,
-  "defeats": 0,
-  "games": 0
+  "wins": 1,
+  "defeats": 1,
+  "games": 2
 },{
   "_id": {
     "$oid": "5f70ff4c973d861c5d6588d8"
@@ -346,9 +346,9 @@
   "favFood": "gräs",
   "loves": "Running that wheeeeeeeeeeeeeeeel!",
   "imgName": "https://res.cloudinary.com/allseeingeye/image/upload/v1601244339/hamsterburen/hamster-27_h9okd5.jpg",
-  "wins": 0,
+  "wins": 1,
   "defeats": 0,
-  "games": 0
+  "games": 1
 },{
   "_id": {
     "$oid": "5f70ff4c973d861c5d6588d9"
@@ -359,9 +359,9 @@
   "favFood": "sallad",
   "loves": "Running that wheeeeeeeeeeeeeeeel!",
   "imgName": "https://res.cloudinary.com/allseeingeye/image/upload/v1601243994/hamsterburen/hamster-28_qeaivl.jpg",
-  "wins": 0,
-  "defeats": 0,
-  "games": 0
+  "wins": 1,
+  "defeats": 2,
+  "games": 3
 },{
   "_id": {
     "$oid": "5f70ff4c973d861c5d6588da"
@@ -386,8 +386,8 @@
   "loves": "Running that wheeeeeeeeeeeeeeeel!",
   "imgName": "https://res.cloudinary.com/allseeingeye/image/upload/v1601244017/hamsterburen/hamster-30_czdpda.jpg",
   "wins": 0,
-  "defeats": 0,
-  "games": 0
+  "defeats": 2,
+  "games": 2
 },{
   "_id": {
     "$oid": "5f70ff4c973d861c5d6588dc"
@@ -411,9 +411,9 @@
   "favFood": "sallad",
   "loves": "Running that wheeeeeeeeeeeeeeeel!",
   "imgName": "https://res.cloudinary.com/allseeingeye/image/upload/v1601243971/hamsterburen/hamster-32_cezeqk.jpg",
-  "wins": 0,
-  "defeats": 1,
-  "games": 1
+  "wins": 1,
+  "defeats": 3,
+  "games": 4
 },{
   "_id": {
     "$oid": "5f70ff4c973d861c5d6588de"
@@ -438,8 +438,8 @@
   "loves": "Running that wheeeeeeeeeeeeeeeel!",
   "imgName": "https://res.cloudinary.com/allseeingeye/image/upload/v1601243984/hamsterburen/hamster-34_d6j3pg.jpg",
   "wins": 0,
-  "defeats": 0,
-  "games": 0
+  "defeats": 1,
+  "games": 1
 },{
   "_id": {
     "$oid": "5f70ff4c973d861c5d6588e0"
@@ -463,9 +463,9 @@
   "favFood": "ananas",
   "loves": "Running that wheeeeeeeeeeeeeeeel!",
   "imgName": "https://res.cloudinary.com/allseeingeye/image/upload/v1601244003/hamsterburen/hamster-36_gnvxat.jpg",
-  "wins": 0,
+  "wins": 1,
   "defeats": 0,
-  "games": 0
+  "games": 1
 },{
   "_id": {
     "$oid": "5f70ff4c973d861c5d6588e2"
@@ -476,9 +476,9 @@
   "favFood": "gräs",
   "loves": "Running that wheeeeeeeeeeeeeeeel!",
   "imgName": "https://res.cloudinary.com/allseeingeye/image/upload/v1601243998/hamsterburen/hamster-37_cvk3pw.jpg",
-  "wins": 0,
+  "wins": 1,
   "defeats": 0,
-  "games": 0
+  "games": 1
 },{
   "_id": {
     "$oid": "5f70ff4c973d861c5d6588e3"
@@ -490,8 +490,8 @@
   "loves": "Running that wheeeeeeeeeeeeeeeel!",
   "imgName": "https://res.cloudinary.com/allseeingeye/image/upload/v1601244000/hamsterburen/hamster-38_musgx2.jpg",
   "wins": 0,
-  "defeats": 0,
-  "games": 0
+  "defeats": 1,
+  "games": 1
 },{
   "_id": {
     "$oid": "5f70ff4c973d861c5d6588e4"
@@ -503,8 +503,8 @@
   "loves": "Running that wheeeeeeeeeeeeeeeel!",
   "imgName": "https://res.cloudinary.com/allseeingeye/image/upload/v1601244005/hamsterburen/hamster-39_hjjcm9.jpg",
   "wins": 0,
-  "defeats": 0,
-  "games": 0
+  "defeats": 1,
+  "games": 1
 },{
   "_id": {
     "$oid": "5f70ff4c973d861c5d6588e5"
@@ -515,7 +515,7 @@
   "favFood": "morot",
   "loves": "Running that wheeeeeeeeeeeeeeeel!",
   "imgName": "https://res.cloudinary.com/allseeingeye/image/upload/v1601244003/hamsterburen/hamster-40_wpafzo.jpg",
-  "wins": 0,
-  "defeats": 0,
-  "games": 0
+  "wins": 1,
+  "defeats": 1,
+  "games": 2
 }]
