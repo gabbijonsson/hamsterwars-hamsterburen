@@ -70,9 +70,9 @@ h1.selectFighterH1{
 	}
 	
 	.choose-fightersBtn{
-		display: block;	
 		display: flex;
 		align-items: center;
+		position: relative;
 	}
 
 	.choose-fightersBtn > button {
@@ -93,3 +93,78 @@ h1.selectFighterH1{
 	}
 	
   }
+
+  .select-fighter-form{
+	margin-top: 6em;
+}
+#select-fighter-1,#select-fighter-2{
+	padding: 12px 20px;
+	border: none;
+	width: 90vw;
+	display: block;
+	margin: auto;
+}
+.select-fighter-label{
+	margin-left: 5%;
+}
+.description-text-mobile{
+	display: block;
+	width: 16em;
+	text-align: center;
+	margin: auto;
+	margin-top: 5em;
+}
+.description-text-desktop{
+	display: none;
+}
+@media only screen and (min-width: 1025px){
+	.select-fighter-form{
+		display: grid;
+		margin-top: 1.3rem;
+		grid-template-columns: 1fr 1fr 1fr;
+		grid-template-rows: 1rem 3rem;
+		width: 100%;
+		
+	}
+	
+	#select-fighter-1,#select-fighter-2{
+		width: 20vw;
+		margin-left: 5%;
+		margin-right: 0;
+		margin-bottom: 0;
+	}
+
+	.select-fighter-label:first-child{
+		grid-area: 1 / 1 / span 1 / span 1;
+	}
+	.select-fighter-label:last-of-type{
+		grid-area: 1 / 2 / span 1 / span 1;
+	}
+	#select-fighter-1{
+		grid-area: 2 / 1 / span 1 / span 1;
+	}
+	#select-fighter-2{
+		grid-area: 2 / 2 / span 1 / span 1;
+	}
+
+	.description-text-mobile{
+		display: none;
+	}
+	.description-text-desktop{
+		display: block;
+		width: 18rem;
+		height: 2rem;
+		margin-left: -3rem;
+		grid-area: 2 / 3 / span 1 / span 1;
+		align-self: end;
+	}
+}
+.showError{
+	position: absolute;
+	top: 93%;
+	left:0;
+	font-size: 1rem;
+	display: inline-block;
+	width: 8rem;
+	color: red;
+}
