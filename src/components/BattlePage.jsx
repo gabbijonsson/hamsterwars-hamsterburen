@@ -3,10 +3,12 @@ import './BattlePage.css';
 import GenericBtn from '../components/GenericBtn';
 import CombatantCard from '../components/CombatantCard';
 import PickWinnerBtn from '../components/PickWinnerBtn';
-import {useParams} from 'react-router-dom';
+import {useParams, useLocation} from 'react-router-dom';
 
 const BattlePage = ({pickWinner}) => {
-	
+	const location = useLocation();
+		console.log(location.pathname);
+		sessionStorage.setItem('pathName', location.pathname)
 	const [hamsters, setHamsters] = useState([]);
 	const[updated, setUpdated] = useState(false);
 	let image1 = '';

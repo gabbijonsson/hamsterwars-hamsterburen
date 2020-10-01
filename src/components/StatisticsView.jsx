@@ -5,7 +5,7 @@ import StatsToplist from './StatsToplist';
 import StatsToplistCombatant from './StatsToplistCombatant';
 import GenericBtn from './GenericBtn';
 import TotalNoMatches from './TotalNoMatches';
-
+import {useLocation} from 'react-router-dom';
 
 
 
@@ -17,6 +17,9 @@ const StatisticsView = ({total}) => {
 	const [totalMatches, setTotalMatches] = useState(Number())
 	const [moreStats, setMoreStats] = useState(false);
 	const [buttonTxt,setButtonTxt] = useState('more stats');
+	const location = useLocation();
+		console.log(location.pathname);
+		sessionStorage.setItem('pathName', location.pathname)
 	
 	useEffect(() => {
 		let fetchStats = async () => {
