@@ -9,7 +9,7 @@ dotenv.config()
 
 const UploadForm = ({createHamster}) => {	
 		const location = useLocation();
-		console.log(location.pathname);
+		// console.log(location.pathname);
 		sessionStorage.setItem('pathName', location.pathname)
 	const history = useHistory();
 

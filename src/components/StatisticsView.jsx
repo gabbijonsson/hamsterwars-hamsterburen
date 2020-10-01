@@ -18,7 +18,7 @@ const StatisticsView = ({total}) => {
 	const [moreStats, setMoreStats] = useState(false);
 	const [buttonTxt,setButtonTxt] = useState('more stats');
 	const location = useLocation();
-		console.log(location.pathname);
+		// console.log(location.pathname);
 		sessionStorage.setItem('pathName', location.pathname)
 	
 	useEffect(() => {

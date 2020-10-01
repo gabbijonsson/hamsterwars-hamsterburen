@@ -17,15 +17,15 @@ const PORT = process.env.PORT || 1234;
 // Middleware
 
 app.use(cors());
-app.use(
-    (req, res, next) => {
-        console.log('LOGGER: ');
-        console.log(
-            `Method: ${req.method}. URL: ${req.url}.`
-            );
-            next()
-        }
-        );
+// app.use(
+//     (req, res, next) => {
+//         console.log('LOGGER: ');
+//         console.log(
+//             `Method: ${req.method}. URL: ${req.url}.`
+//             );
+//             next()
+//         }
+//         );
 app.use(express.static(__dirname + "/../build/"));
 // app.use(express.static(__dirname + "/../src/assets/"));
 // app.use(express.static(__dirname + "/../public/"));
@@ -133,5 +133,5 @@ app.get("*", (req, res) => res.sendFile(path.resolve("build", "index.html")));
 // START SERVER
 
 app.listen(PORT, () => {
-    console.log(`Server is listening on port: ${PORT}`);
+    // console.log(`Server is listening on port: ${PORT}`);
 });

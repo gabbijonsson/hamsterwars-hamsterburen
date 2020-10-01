@@ -7,7 +7,7 @@ import {useParams, useLocation} from 'react-router-dom';
 
 const BattlePage = ({pickWinner}) => {
 	const location = useLocation();
-		console.log(location.pathname);
+		// console.log(location.pathname);
 		sessionStorage.setItem('pathName', location.pathname)
 	const [hamsters, setHamsters] = useState([]);
 	const[updated, setUpdated] = useState(false);

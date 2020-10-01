@@ -37,7 +37,7 @@ function getRandomHamsters(query, cb) {
 					);
 					randomHamsters.push(randomHamster[0]);
 				}
-				console.log(randomHamsters);
+				// console.log(randomHamsters);
 				cb(randomHamsters);
 			} catch (err) {
 				console.error("Invalid query! " + err);
