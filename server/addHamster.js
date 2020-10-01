@@ -14,30 +14,31 @@ function addHamster(newHamster, cb) {
 			}
             newHamsterId((nextId) => {
                 const col = client.db(dbName).collection(hamsterCollectionName);
-                let alreadyExist = col.findOne({
+                col.findOne({
                     $or: [
                         { name: newHamster.name },
                         { imgName: newHamster.imgName }
                     ]
-                })
-                if(alreadyExist) {
-                    cb('Hamster already exist. Do not add duplicates.');
-                } else {
-                    try {
-                        newHamster.id = nextId;
-                        newHamster.wins = 0;
-                        newHamster.defeats = 0;
-                        newHamster.games = 0;
-                        col.insertOne(newHamster).catch((err) => {
-                            console.error('Could not add hamster ', newHamster)
-                            console.error(err);
-                        });
-                        
-                        cb(newHamster);
-                    } finally {
-                        client.close();
+                }).then((alreadyExist) => {
+                    if(alreadyExist) {
+                        cb('Hamster already exist. Do not add duplicates.');
+                    } else {
+                        try {
+                            newHamster.id = nextId;
+                            newHamster.wins = 0;
+                            newHamster.defeats = 0;
+                            newHamster.games = 0;
+                            col.insertOne(newHamster).catch((err) => {
+                                console.error('Could not add hamster ', newHamster)
+                                console.error(err);
+                            });
+                            
+                            cb(newHamster);
+                        } finally {
+                            client.close();
+                        }
                     }
-                }
+                })
             });
 		}
 	);
