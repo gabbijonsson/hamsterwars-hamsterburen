@@ -21,7 +21,7 @@ function addHamster(newHamster, cb) {
                     ]
                 }).then((alreadyExist) => {
                     if(alreadyExist) {
-                        cb('Hamster already exist. Do not add duplicates.');
+                        cb(alreadyExist);
                     } else {
                         try {
                             newHamster.id = nextId;
