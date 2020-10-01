@@ -67,7 +67,7 @@ const UploadForm = ({createHamster}) => {
 				setBroadcastMsg('Error - you must select a image')
 			}
 			else{	
-				setBroadcastMsg('Success!')
+				
 				const formData = new FormData();
 				formData.append('file', userSetImg)
 				formData.append('upload_preset', 'dev_hamster')
@@ -175,7 +175,7 @@ const UploadForm = ({createHamster}) => {
 										: { display: "none" }
 								}
 							>
-								Field Require
+								Field Required
 							</span>
 							<span
 								style={
