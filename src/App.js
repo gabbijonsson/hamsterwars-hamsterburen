@@ -27,7 +27,11 @@ function App() {
               <HeaderGeneric/>
               <BattlePage/>
             </Route>
-            <Route path="/battle/:id1/:id2" >
+            <Route path="/battle/:id1/" exact >
+              <HeaderGeneric/>
+              <BattlePage/>
+            </Route>
+            <Route path="/battle/:id1/:id2" exact>
               <HeaderGeneric/>
               <BattlePage/>
             </Route>

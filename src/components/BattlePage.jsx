@@ -8,23 +8,46 @@ import {useParams} from 'react-router-dom';
 const BattlePage = ({pickWinner}) => {
 	
 	const [hamsters, setHamsters] = useState([]);
+	const[updated, setUpdated] = useState(false);
 	let image1 = '';
 	let image2 = '';
 	let hamster1 = '', hamster2='';
 	
 	const {id1, id2} = useParams();
-	if(id1 && id2){
+	if(id1 && id2 && !updated){
 		getChosenHamsters(id1, id2);
+	} else if(id1 && !updated){
+		getChosenHamsters(id1)
 	}
 
 	async function getChosenHamsters(id1, id2){
-		let res1 = await fetch(`https://hamsterwars-hamsterburen.herokuapp.com/api/gethamster?id=${id1}`)
-		let userHamster1 = await res1.json();
-		
-		let res2 = await fetch(`https://hamsterwars-hamsterburen.herokuapp.com/api/gethamster?id=${id2}`)
-		let userHamster2 = await res2.json();
+		let userHamster1;
+		let userHamster2;
 
-		setHamsters([userHamster1 , userHamster2]);
+		if(id1 && id2){
+			let res1 = await fetch(`https://hamsterwars-hamsterburen.herokuapp.com/api/gethamster?id=${id1}`)
+			userHamster1 = await res1.json();
+			
+			let res2 = await fetch(`https://hamsterwars-hamsterburen.herokuapp.com/api/gethamster?id=${id2}`)
+			userHamster2 = await res2.json();
+			setHamsters([userHamster1, userHamster2]);
+
+			setUpdated(true);
+
+
+		} else if(id1){
+			let res1 = await fetch(`https://hamsterwars-hamsterburen.herokuapp.com/api/gethamster?id=${id1}`)
+			userHamster1 = await res1.json();
+
+			let res2 = await fetch(`https://hamsterwars-hamsterburen.herokuapp.com/api/gethamsters/random?count=1&excludeid=${id1.id}`)
+			userHamster2 = await res2.json();
+			userHamster2 = userHamster2[0]
+
+			setHamsters([userHamster1, userHamster2]);
+			setUpdated(true);
+		} 
+
+	
 	}
 
 
