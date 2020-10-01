@@ -28,6 +28,7 @@ function addHamster(newHamster, cb) {
                             newHamster.wins = 0;
                             newHamster.defeats = 0;
                             newHamster.games = 0;
+                            newHamster.age = Number(newHamster.age);
                             col.insertOne(newHamster).catch((err) => {
                                 console.error('Could not add hamster ', newHamster)
                                 console.error(err);

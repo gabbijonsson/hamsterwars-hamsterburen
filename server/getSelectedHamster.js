@@ -18,7 +18,7 @@ function getSelectedHamster(req, cb) {
 					dbQuery = { id: hamsterID };
 				} else {
 					let hamsterID = (req.query.id);
-					dbQuery = { name: hamsterID }
+					dbQuery = { name: { $regex : new RegExp(hamsterID, "i") } };
 				}
 				const hamster = await col.findOne( dbQuery );
 				if(!hamster) {
