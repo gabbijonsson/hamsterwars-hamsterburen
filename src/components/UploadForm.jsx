@@ -1,13 +1,16 @@
 import React, {useState} from 'react';
 import './UploadForm.css';
 import GenericBtn from './GenericBtn';
-import {useHistory} from 'react-router-dom';
+import {useHistory, useLocation} from 'react-router-dom';
 import dotenv from 'dotenv'
 dotenv.config()
 
 
 
 const UploadForm = ({createHamster}) => {	
+		const location = useLocation();
+		console.log(location.pathname);
+		sessionStorage.setItem('pathName', location.pathname)
 	const history = useHistory();
 
 	const [name, setName] = useState('')
@@ -295,3 +298,5 @@ const UploadForm = ({createHamster}) => {
 	);
 }
 export default UploadForm;
+
+
