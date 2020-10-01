@@ -55,7 +55,7 @@ const BattlePage = ({pickWinner}) => {
 
 		return () => mounted = false;
 		
-	}, []);
+	}, [id1]);
 	 
      if(hamsters.length > 0){
 		 image1 = hamsters[0].imgName;

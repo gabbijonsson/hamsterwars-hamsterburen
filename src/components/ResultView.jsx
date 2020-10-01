@@ -1,4 +1,4 @@
-import React, { useState,useEffect} from 'react'
+import React, { useState} from 'react'
 import CombatantPicCard from './CombatantPicCard'
 import GenericBtn from './GenericBtn'
 import ScrollContainer from './ScrollContainer'
