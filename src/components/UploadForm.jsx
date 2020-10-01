@@ -7,8 +7,7 @@ dotenv.config()
 
 
 
-const UploadForm = ({createHamster}) => {
-	
+const UploadForm = ({createHamster}) => {	
 	const history = useHistory();
 
 	const [name, setName] = useState('')
@@ -20,9 +19,8 @@ const UploadForm = ({createHamster}) => {
 	const [ageTouched, setAgeTouched] = useState(false)
 	const [favFoodTouched, setFavFoodTouched] = useState(false)
 	const [lovesTouched, setLovesTouched] = useState(false)
-	
 	const [broadcastMsg, setBroadcastMsg] = useState('add')
-	const [userSetImg, setUserSetImg] = useState({})
+	const [userSetImg, setUserSetImg] = useState(null)
 	const [loading, setLoading] = useState(false)
 	let cloudianyData;
 
@@ -32,27 +30,22 @@ const UploadForm = ({createHamster}) => {
 
 	const addImg = (e) => {
 		let impFile = e.target.files;
-		let allowedExtensions = ['jpeg', 'jpg', 'gif', 'tiff', 'psd', 'eps', 'ai', 'indd', 'raw'];
+		setUserSetImg(impFile)
+		let allowedExtensions = ['jpeg', 'jpg', 'gif', 'tiff', 'psd', 'eps', 'ai', 'indd', 'raw', 'png'];
 		for(let file of impFile){
 			let Extension = file.name.substring(file.name.lastIndexOf('.') + 1).toLowerCase();
-			
 			if(allowedExtensions.indexOf(Extension) === -1){
-				document.getElementById('fileReaderLabel').textContent = 'Sorry - This file type is not supperted !'
-				file = {}
-				setUserSetImg({})
-				console.log(userSetImg);
+				document.getElementById('fileReaderLabel').textContent = 'Sorry - This file type is not supperted!'
+				setUserSetImg(null)
 			}
 			else if(file.size > maxSize ){
 				document.getElementById('fileReaderLabel').textContent = 'Too large (MAX 3MB) - Select another one!'
-				file = {}
-				setUserSetImg({})
-				console.log(userSetImg);
+				setUserSetImg(null)
 			}
 			else{
-				document.getElementById('genericBtn-form').disabled = false
 				document.getElementById('fileReaderLabel').textContent = 'File Selected!'
 				setUserSetImg(file)
-				console.log(userSetImg);
+				
 			}
 		}
 	};
@@ -60,6 +53,7 @@ const UploadForm = ({createHamster}) => {
 	const onSubmit = async (e) => {
 		e.preventDefault();
 		setLoading(true)
+		setBroadcastMsg('Submiting...')
 		if(
 			!name.trim('') || !age.trim('') ||
 			!favFood.trim('') || !loves.trim('') ||
@@ -68,14 +62,12 @@ const UploadForm = ({createHamster}) => {
 			isNaN(age)
 			){
 				setBroadcastMsg('Error - Did you forgot a field?')	
-				console.log('Nu gör du fel igen... men jag rädda dig och skickade inget!');			
 			}
-			else if(Object.keys(userSetImg).length === 0 || userSetImg.constructor === Object || userSetImg === null || userSetImg === undefined ){
-				console.log('Nu gör du fel igen... men jag rädda dig och skickade inget!');
+			else if(userSetImg === null){
 				setBroadcastMsg('Error - you must select a image')
 			}
 			else{	
-				console.log('Hahaha! Jag skiter i att du gjort fel, Jag skickar iväg detta ändå!');
+				setBroadcastMsg('Success!')
 				const formData = new FormData();
 				formData.append('file', userSetImg)
 				formData.append('upload_preset', 'dev_hamster')
@@ -105,21 +97,16 @@ const UploadForm = ({createHamster}) => {
 					body: urlencoded,
 					redirect: 'follow'
 				}
-				await fetch('https://hamsterwars-hamsterburen.herokuapp.com/api/addhamster', requestOptions)
+				await fetch('/api/addhamster', requestOptions)
 				.then(async response => {
 					let hamster = await response.json();
-					console.log(hamster , response.status);
 					if( response.status === 200 ){
-						createHamster(hamster.id);
-						
+						setBroadcastMsg('Success!')
 						document.getElementById('checkMark').style.display = 'block'
 						document.getElementsByTagName('input').value = ''
 						document.getElementById('fileReader').value = ''
-						setBroadcastMsg('Success!')
-						// setTimeout(() => {
-						// 	setLoading(false)
-						// 	document.getElementById('checkMark').style.display = 'none'
-						// }, 5000)
+						setLoading(false)
+						createHamster(hamster.id);
 					}else{
 						setBroadcastMsg('Oops! Try again!')
 						document.getElementById('crossMark').style.display = 'block'
@@ -299,7 +286,7 @@ const UploadForm = ({createHamster}) => {
 				<path className="checkmark__check" fill="none" d="M14.1 27.2l7.1 7.2 16.7-16.8"/>
 			</svg>
 			
-			<div id="genericBtn-form" className="genericBtn-form" onClick={(e) => onSubmit(e)} disabled={true}>		
+			<div className="genericBtn-form" onClick={(e) => onSubmit(e)}>		
 				<GenericBtn text={loading ? broadcastMsg : 'add'} color={"peach"}/>
 			</div>
 		
